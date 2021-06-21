@@ -1,0 +1,46 @@
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Domain.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Domain.pdb
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\DataAccess.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\MySql.Data.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Google.Protobuf.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Zstandard.Net.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\K4os.Compression.LZ4.Streams.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\BouncyCastle.Crypto.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Ubiety.Dns.Core.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Renci.SshNet.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\System.Buffers.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\K4os.Compression.LZ4.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\K4os.Hash.xxHash.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\DataAccess.pdb
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\MySql.Data.xml
+C:\Users\SONIC\Desktop\butt\Domain\obj\Release\Domain.csprojAssemblyReference.cache
+C:\Users\SONIC\Desktop\butt\Domain\obj\Release\Domain.csproj.CoreCompileInputs.cache
+C:\Users\SONIC\Desktop\butt\Domain\obj\Release\Domain.csproj.CopyComplete
+C:\Users\SONIC\Desktop\butt\Domain\obj\Release\Domain.dll
+C:\Users\SONIC\Desktop\butt\Domain\obj\Release\Domain.pdb
+C:\Users\SONIC\Desktop\butt\Domain\bin\Release\Renci.SshNet.xml
+F:\butt rework\Domain\bin\Release\Domain.dll
+F:\butt rework\Domain\bin\Release\Domain.pdb
+F:\butt rework\Domain\bin\Release\DataAccess.dll
+F:\butt rework\Domain\bin\Release\WebDriver.dll
+F:\butt rework\Domain\bin\Release\MySql.Data.dll
+F:\butt rework\Domain\bin\Release\Google.Protobuf.dll
+F:\butt rework\Domain\bin\Release\Zstandard.Net.dll
+F:\butt rework\Domain\bin\Release\K4os.Compression.LZ4.Streams.dll
+F:\butt rework\Domain\bin\Release\BouncyCastle.Crypto.dll
+F:\butt rework\Domain\bin\Release\Ubiety.Dns.Core.dll
+F:\butt rework\Domain\bin\Release\Renci.SshNet.dll
+F:\butt rework\Domain\bin\Release\System.Buffers.dll
+F:\butt rework\Domain\bin\Release\K4os.Compression.LZ4.dll
+F:\butt rework\Domain\bin\Release\K4os.Hash.xxHash.dll
+F:\butt rework\Domain\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+F:\butt rework\Domain\bin\Release\DataAccess.pdb
+F:\butt rework\Domain\bin\Release\WebDriver.xml
+F:\butt rework\Domain\bin\Release\MySql.Data.xml
+F:\butt rework\Domain\bin\Release\Renci.SshNet.xml
+F:\butt rework\Domain\obj\Release\Domain.csprojAssemblyReference.cache
+F:\butt rework\Domain\obj\Release\Domain.csproj.CoreCompileInputs.cache
+F:\butt rework\Domain\obj\Release\Domain.csproj.CopyComplete
+F:\butt rework\Domain\obj\Release\Domain.dll
+F:\butt rework\Domain\obj\Release\Domain.pdb

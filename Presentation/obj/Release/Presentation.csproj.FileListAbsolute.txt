@@ -1,0 +1,127 @@
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\CsvHelper.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WebDriver.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Bunifu_UI_v1.52.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Domain.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\DataAccess.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\MySql.Data.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Google.Protobuf.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Zstandard.Net.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\K4os.Compression.LZ4.Streams.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\BouncyCastle.Crypto.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Ubiety.Dns.Core.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Renci.SshNet.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\System.Buffers.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\K4os.Compression.LZ4.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\K4os.Hash.xxHash.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Domain.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\DataAccess.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\MySql.Data.xml
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.csprojAssemblyReference.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.WAButtfrm.resources
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.Properties.Resources.resources
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.csproj.GenerateResource.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.csproj.CopyComplete
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\AutoUpdater.NET.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\AutoUpdater.NET.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ar\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\da\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\de\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\es\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\fr\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\it\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ja-JP\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ko\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\nl\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\pl\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\pt-BR\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\pt\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ru\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\sk\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\sv\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\th\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\tr\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\zh-tw\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\zh\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\XanderUI.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\Renci.SshNet.xml
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\System.ValueTuple.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WAButt.exe.config
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WAButt.exe.manifest
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WAButt.application
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WAButt.exe
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\WAButt.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Release\ICSharpCode.SharpZipLib.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\WAButt.TrustInfo.xml
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\WAButt.exe.manifest
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\WAButt.application
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\WAButt.exe
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\WAButt.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Release\Presentation.ExtractContacts.resources
+F:\butt rework\Presentation\obj\Release\Presentation.csprojAssemblyReference.cache
+F:\butt rework\Presentation\obj\Release\Presentation.ExtractContacts.resources
+F:\butt rework\Presentation\obj\Release\Presentation.WAButtfrm.resources
+F:\butt rework\Presentation\obj\Release\Presentation.Properties.Resources.resources
+F:\butt rework\Presentation\obj\Release\Presentation.csproj.GenerateResource.cache
+F:\butt rework\Presentation\obj\Release\Presentation.csproj.CoreCompileInputs.cache
+F:\butt rework\Presentation\obj\Release\WAButt.exe
+F:\butt rework\Presentation\obj\Release\WAButt.pdb
+F:\butt rework\Presentation\bin\Release\WAButt.exe.config
+F:\butt rework\Presentation\bin\Release\WAButt.exe.manifest
+F:\butt rework\Presentation\bin\Release\WAButt.application
+F:\butt rework\Presentation\bin\Release\WAButt.exe
+F:\butt rework\Presentation\bin\Release\WAButt.pdb
+F:\butt rework\Presentation\bin\Release\AutoUpdater.NET.dll
+F:\butt rework\Presentation\bin\Release\AutoUpdater.NET.pdb
+F:\butt rework\Presentation\bin\Release\ar\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\cs\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\da\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\de\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\es\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\fr\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\it\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\ja-JP\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\ko\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\nl\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\pl\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\pt-BR\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\pt\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\ru\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\sk\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\sv\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\th\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\tr\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\zh-tw\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\zh\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Release\CsvHelper.dll
+F:\butt rework\Presentation\bin\Release\SeleniumExtras.WaitHelpers.dll
+F:\butt rework\Presentation\bin\Release\WebDriver.dll
+F:\butt rework\Presentation\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\butt rework\Presentation\bin\Release\ICSharpCode.SharpZipLib.pdb
+F:\butt rework\Presentation\bin\Release\System.ValueTuple.dll
+F:\butt rework\Presentation\bin\Release\Bunifu_UI_v1.52.dll
+F:\butt rework\Presentation\bin\Release\Domain.dll
+F:\butt rework\Presentation\bin\Release\XanderUI.dll
+F:\butt rework\Presentation\bin\Release\DataAccess.dll
+F:\butt rework\Presentation\bin\Release\MySql.Data.dll
+F:\butt rework\Presentation\bin\Release\Google.Protobuf.dll
+F:\butt rework\Presentation\bin\Release\Zstandard.Net.dll
+F:\butt rework\Presentation\bin\Release\K4os.Compression.LZ4.Streams.dll
+F:\butt rework\Presentation\bin\Release\BouncyCastle.Crypto.dll
+F:\butt rework\Presentation\bin\Release\Ubiety.Dns.Core.dll
+F:\butt rework\Presentation\bin\Release\Renci.SshNet.dll
+F:\butt rework\Presentation\bin\Release\System.Buffers.dll
+F:\butt rework\Presentation\bin\Release\K4os.Compression.LZ4.dll
+F:\butt rework\Presentation\bin\Release\K4os.Hash.xxHash.dll
+F:\butt rework\Presentation\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+F:\butt rework\Presentation\bin\Release\Domain.pdb
+F:\butt rework\Presentation\bin\Release\DataAccess.pdb
+F:\butt rework\Presentation\bin\Release\MySql.Data.xml
+F:\butt rework\Presentation\bin\Release\Renci.SshNet.xml
+F:\butt rework\Presentation\obj\Release\WAButt.TrustInfo.xml
+F:\butt rework\Presentation\obj\Release\WAButt.exe.manifest
+F:\butt rework\Presentation\obj\Release\WAButt.application
+F:\butt rework\Presentation\obj\Release\Presentation.csproj.CopyComplete

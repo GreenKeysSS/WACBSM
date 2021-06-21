@@ -1,0 +1,249 @@
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\CsvHelper.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WebDriver.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Domain.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Domain.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.WAButtfrm.resources
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\DataAccess.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\MySql.Data.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Google.Protobuf.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Zstandard.Net.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Renci.SshNet.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\System.Buffers.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\DataAccess.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\MySql.Data.xml
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\AutoUpdater.NET.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\AutoUpdater.NET.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ar\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\da\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\de\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\es\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\fr\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\it\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ja-JP\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ko\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\nl\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\pl\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\pt-BR\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\pt\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ru\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\sk\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\sv\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\th\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\tr\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\zh-tw\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\zh\AutoUpdater.NET.resources.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\XanderUI.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\Renci.SshNet.xml
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\System.ValueTuple.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WAButt.exe.config
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WAButt.exe.manifest
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WAButt.application
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WAButt.exe
+C:\Users\SONIC\Desktop\butt\Presentation\bin\Debug\WAButt.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\WAButt.TrustInfo.xml
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\WAButt.exe.manifest
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\WAButt.application
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\WAButt.exe
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\WAButt.pdb
+C:\Users\SONIC\Desktop\butt\Presentation\obj\Debug\Presentation.ExtractContacts.resources
+E:\butt\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+E:\butt\Presentation\obj\Debug\Presentation.ExtractContacts.resources
+E:\butt\Presentation\obj\Debug\Presentation.WAButtfrm.resources
+E:\butt\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+E:\butt\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+E:\butt\Presentation\obj\Debug\WAButt.exe
+E:\butt\Presentation\obj\Debug\WAButt.pdb
+E:\butt\Presentation\bin\Debug\WAButt.exe.config
+E:\butt\Presentation\bin\Debug\WAButt.exe.manifest
+E:\butt\Presentation\bin\Debug\WAButt.application
+E:\butt\Presentation\bin\Debug\WAButt.exe
+E:\butt\Presentation\bin\Debug\WAButt.pdb
+E:\butt\Presentation\bin\Debug\AutoUpdater.NET.dll
+E:\butt\Presentation\bin\Debug\Bunifu_UI_v1.52.dll
+E:\butt\Presentation\bin\Debug\CsvHelper.dll
+E:\butt\Presentation\bin\Debug\Domain.dll
+E:\butt\Presentation\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\butt\Presentation\bin\Debug\WebDriver.dll
+E:\butt\Presentation\bin\Debug\DataAccess.dll
+E:\butt\Presentation\bin\Debug\System.ValueTuple.dll
+E:\butt\Presentation\bin\Debug\MySql.Data.dll
+E:\butt\Presentation\bin\Debug\Google.Protobuf.dll
+E:\butt\Presentation\bin\Debug\Zstandard.Net.dll
+E:\butt\Presentation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\butt\Presentation\bin\Debug\BouncyCastle.Crypto.dll
+E:\butt\Presentation\bin\Debug\Ubiety.Dns.Core.dll
+E:\butt\Presentation\bin\Debug\Renci.SshNet.dll
+E:\butt\Presentation\bin\Debug\System.Buffers.dll
+E:\butt\Presentation\bin\Debug\K4os.Compression.LZ4.dll
+E:\butt\Presentation\bin\Debug\K4os.Hash.xxHash.dll
+E:\butt\Presentation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\butt\Presentation\bin\Debug\Domain.pdb
+E:\butt\Presentation\bin\Debug\DataAccess.pdb
+E:\butt\Presentation\bin\Debug\MySql.Data.xml
+E:\butt\Presentation\bin\Debug\Renci.SshNet.xml
+E:\butt\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+E:\butt\Presentation\obj\Debug\WAButt.TrustInfo.xml
+E:\butt\Presentation\obj\Debug\WAButt.exe.manifest
+E:\butt\Presentation\obj\Debug\WAButt.application
+E:\butt\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+E:\butt\Presentation\bin\Debug\AutoUpdater.NET.pdb
+E:\butt\Presentation\bin\Debug\ar\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\da\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\de\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\es\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\fr\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\it\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\ja-JP\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\ko\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\nl\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\pl\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\pt-BR\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\pt\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\ru\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\sk\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\sv\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\th\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\tr\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\zh-tw\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\zh\AutoUpdater.NET.resources.dll
+E:\butt\Presentation\bin\Debug\ICSharpCode.SharpZipLib.pdb
+F:\butt rework\Presentation\bin\Debug\WAButt.exe.config
+F:\butt rework\Presentation\bin\Debug\WAButt.exe.manifest
+F:\butt rework\Presentation\bin\Debug\WAButt.application
+F:\butt rework\Presentation\bin\Debug\WAButt.exe
+F:\butt rework\Presentation\bin\Debug\WAButt.pdb
+F:\butt rework\Presentation\bin\Debug\AutoUpdater.NET.dll
+F:\butt rework\Presentation\bin\Debug\Bunifu_UI_v1.52.dll
+F:\butt rework\Presentation\bin\Debug\CsvHelper.dll
+F:\butt rework\Presentation\bin\Debug\Domain.dll
+F:\butt rework\Presentation\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\butt rework\Presentation\bin\Debug\WebDriver.dll
+F:\butt rework\Presentation\bin\Debug\DataAccess.dll
+F:\butt rework\Presentation\bin\Debug\System.ValueTuple.dll
+F:\butt rework\Presentation\bin\Debug\MySql.Data.dll
+F:\butt rework\Presentation\bin\Debug\Google.Protobuf.dll
+F:\butt rework\Presentation\bin\Debug\Zstandard.Net.dll
+F:\butt rework\Presentation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\butt rework\Presentation\bin\Debug\BouncyCastle.Crypto.dll
+F:\butt rework\Presentation\bin\Debug\Ubiety.Dns.Core.dll
+F:\butt rework\Presentation\bin\Debug\Renci.SshNet.dll
+F:\butt rework\Presentation\bin\Debug\System.Buffers.dll
+F:\butt rework\Presentation\bin\Debug\K4os.Compression.LZ4.dll
+F:\butt rework\Presentation\bin\Debug\K4os.Hash.xxHash.dll
+F:\butt rework\Presentation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\butt rework\Presentation\bin\Debug\Domain.pdb
+F:\butt rework\Presentation\bin\Debug\DataAccess.pdb
+F:\butt rework\Presentation\bin\Debug\MySql.Data.xml
+F:\butt rework\Presentation\bin\Debug\Renci.SshNet.xml
+F:\butt rework\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+F:\butt rework\Presentation\obj\Debug\Presentation.ExtractContacts.resources
+F:\butt rework\Presentation\obj\Debug\Presentation.WAButtfrm.resources
+F:\butt rework\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+F:\butt rework\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+F:\butt rework\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+F:\butt rework\Presentation\obj\Debug\WAButt.TrustInfo.xml
+F:\butt rework\Presentation\obj\Debug\WAButt.exe.manifest
+F:\butt rework\Presentation\obj\Debug\WAButt.application
+F:\butt rework\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+F:\butt rework\Presentation\obj\Debug\WAButt.exe
+F:\butt rework\Presentation\obj\Debug\WAButt.pdb
+E:\butt rework\Presentation\bin\Debug\WAButt.exe.config
+E:\butt rework\Presentation\bin\Debug\WAButt.exe.manifest
+E:\butt rework\Presentation\bin\Debug\WAButt.application
+E:\butt rework\Presentation\bin\Debug\WAButt.exe
+E:\butt rework\Presentation\bin\Debug\WAButt.pdb
+E:\butt rework\Presentation\bin\Debug\AutoUpdater.NET.dll
+E:\butt rework\Presentation\bin\Debug\Bunifu_UI_v1.52.dll
+E:\butt rework\Presentation\bin\Debug\CsvHelper.dll
+E:\butt rework\Presentation\bin\Debug\Domain.dll
+E:\butt rework\Presentation\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\butt rework\Presentation\bin\Debug\WebDriver.dll
+E:\butt rework\Presentation\bin\Debug\DataAccess.dll
+E:\butt rework\Presentation\bin\Debug\System.ValueTuple.dll
+E:\butt rework\Presentation\bin\Debug\MySql.Data.dll
+E:\butt rework\Presentation\bin\Debug\Google.Protobuf.dll
+E:\butt rework\Presentation\bin\Debug\Zstandard.Net.dll
+E:\butt rework\Presentation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\butt rework\Presentation\bin\Debug\BouncyCastle.Crypto.dll
+E:\butt rework\Presentation\bin\Debug\Ubiety.Dns.Core.dll
+E:\butt rework\Presentation\bin\Debug\Renci.SshNet.dll
+E:\butt rework\Presentation\bin\Debug\System.Buffers.dll
+E:\butt rework\Presentation\bin\Debug\K4os.Compression.LZ4.dll
+E:\butt rework\Presentation\bin\Debug\K4os.Hash.xxHash.dll
+E:\butt rework\Presentation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\butt rework\Presentation\bin\Debug\Domain.pdb
+E:\butt rework\Presentation\bin\Debug\DataAccess.pdb
+E:\butt rework\Presentation\bin\Debug\MySql.Data.xml
+E:\butt rework\Presentation\bin\Debug\Renci.SshNet.xml
+E:\butt rework\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+E:\butt rework\Presentation\obj\Debug\Presentation.ExtractContacts.resources
+E:\butt rework\Presentation\obj\Debug\Presentation.WAButtfrm.resources
+E:\butt rework\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+E:\butt rework\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+E:\butt rework\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+E:\butt rework\Presentation\obj\Debug\WAButt.TrustInfo.xml
+E:\butt rework\Presentation\obj\Debug\WAButt.exe.manifest
+E:\butt rework\Presentation\obj\Debug\WAButt.application
+E:\butt rework\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+E:\butt rework\Presentation\obj\Debug\WAButt.exe
+E:\butt rework\Presentation\obj\Debug\WAButt.pdb
+E:\butt rework\Presentation\bin\Debug\AutoUpdater.NET.pdb
+E:\butt rework\Presentation\bin\Debug\ar\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\da\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\de\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\es\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\fr\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\it\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\ja-JP\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\ko\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\nl\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\pl\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\pt-BR\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\pt\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\ru\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\sk\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\sv\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\th\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\tr\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\zh-tw\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\zh\AutoUpdater.NET.resources.dll
+E:\butt rework\Presentation\bin\Debug\ICSharpCode.SharpZipLib.pdb
+F:\butt rework\Presentation\bin\Debug\SeleniumExtras.WaitHelpers.dll
+F:\butt rework\Presentation\bin\Debug\AutoUpdater.NET.pdb
+F:\butt rework\Presentation\bin\Debug\ar\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\cs\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\da\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\de\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\es\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\fr\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\it\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\ja-JP\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\ko\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\nl\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\pl\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\pt-BR\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\pt\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\ru\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\sk\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\sv\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\th\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\tr\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\zh-tw\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\zh\AutoUpdater.NET.resources.dll
+F:\butt rework\Presentation\bin\Debug\ICSharpCode.SharpZipLib.pdb
+F:\butt rework\Presentation\bin\Debug\XanderUI.dll
