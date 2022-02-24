@@ -38,7 +38,7 @@ namespace Presentation
 
 
         private static string actualuser = Environment.UserName;
-
+        private static string AttachXPath = "//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]";
 
         public async Task LaunchBrowser()
         {
@@ -382,7 +382,7 @@ namespace Presentation
                     IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
                     string _script2 = "document.evaluate" +
-                    "('//body//footer//div//div//div//div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+                    "('//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
 
 
                     string title = (string)js.ExecuteScript(_script2);
@@ -433,34 +433,43 @@ namespace Presentation
 
           
 
-                if (FindElement(driver, By.XPath("//div[@id='main']//footer//div//div//div//div//div//span"), 10))
+                if (FindElement(driver, By.XPath(AttachXPath), 10))
                 {
-                    driver.FindElement(By.XPath("//div[@id='main']//footer//div//div//div//div//div//span")).Click();
-                    Task.Delay(2000).Wait();
+                    driver.FindElement(By.XPath(AttachXPath)).Click();
+                    Task.Delay(1000).Wait();
 
 
-                    IWebElement uploadElement = driver.FindElement(By.XPath("//li[1]//button[1]//input[1]"));
+                    IWebElement uploadElement = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]"));
                     uploadElement.SendKeys(imagedir);
 
 
 
 
-                    Task.Delay(3000 + preventblocktiming).Wait();
-
-                    IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-
-                    string _script2 = "document.evaluate" +
-                    "('//span//div[3]//div[1]//div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
-                    
+                    Task.Delay(1000 + preventblocktiming).Wait();
 
 
-                    string title = (string)js.ExecuteScript(_script2);
+                    if (FindElement(driver, By.XPath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]"), 10))
+                    {
+
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+                        string _script2 = "document.evaluate" +
+                        "('//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+
+
+
+                        string title = (string)js.ExecuteScript(_script2);
+
+                    }
+
+
+                   
 
 
                 }
 
 
-
+             
 
 
 
@@ -525,13 +534,13 @@ namespace Presentation
 
                
 
-                if (FindElement(driver, By.XPath("//body/div[@id='app']/div/div/div/div[@id='main']/footer/div/div/div/div/div/span[1]"), 10))
+                if (FindElement(driver, By.XPath(AttachXPath), 10))
                 {
-                    driver.FindElement(By.XPath("//body/div[@id='app']/div/div/div/div[@id='main']/footer/div/div/div/div/div/span[1]")).Click();
+                    driver.FindElement(By.XPath(AttachXPath)).Click();
                     Task.Delay(2000).Wait();
 
 
-                    IWebElement uploadElement = driver.FindElement(By.XPath("//li[1]//button[1]//input[1]"));
+                    IWebElement uploadElement = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]"));
 
                     uploadElement.SendKeys(audiodir);
 
@@ -539,15 +548,7 @@ namespace Presentation
 
                 }
 
-                Console.WriteLine("paso a verificar si el archivo es grande");
-
-                if (FindElement(driver,By.XPath("//div[contains(text(),'1 archivo de audio que intentaste añadir es mayor')]"),10))
-                {
-                
-                    driver.FindElement(By.XPath("//div[@id='app']//div//div//div//div//div//span//div//div//header//div//div//span")).Click();
-
-                }
-              
+               
 
             }
             catch (Exception ex)

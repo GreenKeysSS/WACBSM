@@ -4,17 +4,17 @@
   <description asmv2:publisher="WAButt" asmv2:product="WAButt" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.7" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="WAButt.exe.manifest" size="20000">
+    <dependentAssembly dependencyType="install" codebase="WAButt.exe.manifest" size="89613">
       <assemblyIdentity name="WAButt.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sDJJODc3Bmc0zlaTv0vFF6vQ7csyYNbt6C/4v8RQGAI=</dsig:DigestValue>
+        <dsig:DigestValue>GwUEFJCybjI7/scjPVC3YECSATOD/5arRUkrcPhUwDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

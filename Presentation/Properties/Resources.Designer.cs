@@ -59,14 +59,5 @@ namespace Presentation.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string cv {
-            get {
-                return ResourceManager.GetString("cv", resourceCulture);
-            }
-        }
     }
 }

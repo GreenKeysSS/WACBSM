@@ -1,93 +1,40 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6": {
-      "Autoupdater.NET.Official/1.6.4": {
+    ".NETFramework,Version=v4.7": {
+      "Autoupdater.NET.Official/1.7.0": {
         "type": "package",
         "frameworkAssemblies": [
+          "PresentationFramework",
+          "System",
+          "System.Data",
+          "System.Drawing",
           "System.Runtime.Serialization",
-          "System.Xaml"
+          "System.Windows.Forms",
+          "System.Xaml",
+          "System.Xml",
+          "WindowsBase"
         ],
         "compile": {
           "lib/net45/AutoUpdater.NET.dll": {}
         },
         "runtime": {
           "lib/net45/AutoUpdater.NET.dll": {}
-        },
-        "resource": {
-          "lib/net35/ar/AutoUpdater.NET.resources.dll": {
-            "locale": "ar"
-          },
-          "lib/net35/cs/AutoUpdater.NET.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/net35/da/AutoUpdater.NET.resources.dll": {
-            "locale": "da"
-          },
-          "lib/net35/de/AutoUpdater.NET.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net35/es/AutoUpdater.NET.resources.dll": {
-            "locale": "es"
-          },
-          "lib/net35/fr/AutoUpdater.NET.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net35/it/AutoUpdater.NET.resources.dll": {
-            "locale": "it"
-          },
-          "lib/net35/ja-JP/AutoUpdater.NET.resources.dll": {
-            "locale": "ja-JP"
-          },
-          "lib/net35/ko/AutoUpdater.NET.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/net35/nl/AutoUpdater.NET.resources.dll": {
-            "locale": "nl"
-          },
-          "lib/net35/pl/AutoUpdater.NET.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/net35/pt-BR/AutoUpdater.NET.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/net35/pt/AutoUpdater.NET.resources.dll": {
-            "locale": "pt"
-          },
-          "lib/net35/ru/AutoUpdater.NET.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net35/sk/AutoUpdater.NET.resources.dll": {
-            "locale": "sk"
-          },
-          "lib/net35/sv/AutoUpdater.NET.resources.dll": {
-            "locale": "sv"
-          },
-          "lib/net35/th/AutoUpdater.NET.resources.dll": {
-            "locale": "th"
-          },
-          "lib/net35/tr/AutoUpdater.NET.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/net35/zh-tw/AutoUpdater.NET.resources.dll": {
-            "locale": "zh-tw"
-          },
-          "lib/net35/zh/AutoUpdater.NET.resources.dll": {
-            "locale": "zh"
-          }
         }
       },
       "CsvHelper/19.0.0": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
-          "System.ValueTuple": "4.4.0"
+          "System.Threading.Tasks.Extensions": "4.5.2"
         },
         "compile": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         },
         "runtime": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         }
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
@@ -108,6 +55,34 @@
           "build/ILMerge.props": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -120,19 +95,28 @@
           "lib/net45/_._": {}
         }
       },
-      "Selenium.WebDriver/3.141.0": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Selenium.WebDriver/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Drawing"
         ],
         "compile": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         }
       },
-      "SharpZipLib/1.3.1": {
+      "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
@@ -141,13 +125,37 @@
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "System.ValueTuple/4.4.0": {
+      "SpeedTest.NetCore/2.1.0": {
         "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
         "compile": {
-          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -172,93 +180,40 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6/win": {
-      "Autoupdater.NET.Official/1.6.4": {
+    ".NETFramework,Version=v4.7/win": {
+      "Autoupdater.NET.Official/1.7.0": {
         "type": "package",
         "frameworkAssemblies": [
+          "PresentationFramework",
+          "System",
+          "System.Data",
+          "System.Drawing",
           "System.Runtime.Serialization",
-          "System.Xaml"
+          "System.Windows.Forms",
+          "System.Xaml",
+          "System.Xml",
+          "WindowsBase"
         ],
         "compile": {
           "lib/net45/AutoUpdater.NET.dll": {}
         },
         "runtime": {
           "lib/net45/AutoUpdater.NET.dll": {}
-        },
-        "resource": {
-          "lib/net35/ar/AutoUpdater.NET.resources.dll": {
-            "locale": "ar"
-          },
-          "lib/net35/cs/AutoUpdater.NET.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/net35/da/AutoUpdater.NET.resources.dll": {
-            "locale": "da"
-          },
-          "lib/net35/de/AutoUpdater.NET.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net35/es/AutoUpdater.NET.resources.dll": {
-            "locale": "es"
-          },
-          "lib/net35/fr/AutoUpdater.NET.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net35/it/AutoUpdater.NET.resources.dll": {
-            "locale": "it"
-          },
-          "lib/net35/ja-JP/AutoUpdater.NET.resources.dll": {
-            "locale": "ja-JP"
-          },
-          "lib/net35/ko/AutoUpdater.NET.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/net35/nl/AutoUpdater.NET.resources.dll": {
-            "locale": "nl"
-          },
-          "lib/net35/pl/AutoUpdater.NET.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/net35/pt-BR/AutoUpdater.NET.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/net35/pt/AutoUpdater.NET.resources.dll": {
-            "locale": "pt"
-          },
-          "lib/net35/ru/AutoUpdater.NET.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net35/sk/AutoUpdater.NET.resources.dll": {
-            "locale": "sk"
-          },
-          "lib/net35/sv/AutoUpdater.NET.resources.dll": {
-            "locale": "sv"
-          },
-          "lib/net35/th/AutoUpdater.NET.resources.dll": {
-            "locale": "th"
-          },
-          "lib/net35/tr/AutoUpdater.NET.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/net35/zh-tw/AutoUpdater.NET.resources.dll": {
-            "locale": "zh-tw"
-          },
-          "lib/net35/zh/AutoUpdater.NET.resources.dll": {
-            "locale": "zh"
-          }
         }
       },
       "CsvHelper/19.0.0": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
-          "System.ValueTuple": "4.4.0"
+          "System.Threading.Tasks.Extensions": "4.5.2"
         },
         "compile": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         },
         "runtime": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         }
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
@@ -279,6 +234,34 @@
           "build/ILMerge.props": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -291,19 +274,28 @@
           "lib/net45/_._": {}
         }
       },
-      "Selenium.WebDriver/3.141.0": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Selenium.WebDriver/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Drawing"
         ],
         "compile": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         }
       },
-      "SharpZipLib/1.3.1": {
+      "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
@@ -312,13 +304,37 @@
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "System.ValueTuple/4.4.0": {
+      "SpeedTest.NetCore/2.1.0": {
         "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
         "compile": {
-          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -343,93 +359,40 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6/win-x64": {
-      "Autoupdater.NET.Official/1.6.4": {
+    ".NETFramework,Version=v4.7/win-x64": {
+      "Autoupdater.NET.Official/1.7.0": {
         "type": "package",
         "frameworkAssemblies": [
+          "PresentationFramework",
+          "System",
+          "System.Data",
+          "System.Drawing",
           "System.Runtime.Serialization",
-          "System.Xaml"
+          "System.Windows.Forms",
+          "System.Xaml",
+          "System.Xml",
+          "WindowsBase"
         ],
         "compile": {
           "lib/net45/AutoUpdater.NET.dll": {}
         },
         "runtime": {
           "lib/net45/AutoUpdater.NET.dll": {}
-        },
-        "resource": {
-          "lib/net35/ar/AutoUpdater.NET.resources.dll": {
-            "locale": "ar"
-          },
-          "lib/net35/cs/AutoUpdater.NET.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/net35/da/AutoUpdater.NET.resources.dll": {
-            "locale": "da"
-          },
-          "lib/net35/de/AutoUpdater.NET.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net35/es/AutoUpdater.NET.resources.dll": {
-            "locale": "es"
-          },
-          "lib/net35/fr/AutoUpdater.NET.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net35/it/AutoUpdater.NET.resources.dll": {
-            "locale": "it"
-          },
-          "lib/net35/ja-JP/AutoUpdater.NET.resources.dll": {
-            "locale": "ja-JP"
-          },
-          "lib/net35/ko/AutoUpdater.NET.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/net35/nl/AutoUpdater.NET.resources.dll": {
-            "locale": "nl"
-          },
-          "lib/net35/pl/AutoUpdater.NET.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/net35/pt-BR/AutoUpdater.NET.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/net35/pt/AutoUpdater.NET.resources.dll": {
-            "locale": "pt"
-          },
-          "lib/net35/ru/AutoUpdater.NET.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net35/sk/AutoUpdater.NET.resources.dll": {
-            "locale": "sk"
-          },
-          "lib/net35/sv/AutoUpdater.NET.resources.dll": {
-            "locale": "sv"
-          },
-          "lib/net35/th/AutoUpdater.NET.resources.dll": {
-            "locale": "th"
-          },
-          "lib/net35/tr/AutoUpdater.NET.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/net35/zh-tw/AutoUpdater.NET.resources.dll": {
-            "locale": "zh-tw"
-          },
-          "lib/net35/zh/AutoUpdater.NET.resources.dll": {
-            "locale": "zh"
-          }
         }
       },
       "CsvHelper/19.0.0": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
-          "System.ValueTuple": "4.4.0"
+          "System.Threading.Tasks.Extensions": "4.5.2"
         },
         "compile": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         },
         "runtime": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         }
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
@@ -450,6 +413,34 @@
           "build/ILMerge.props": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -462,19 +453,28 @@
           "lib/net45/_._": {}
         }
       },
-      "Selenium.WebDriver/3.141.0": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Selenium.WebDriver/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Drawing"
         ],
         "compile": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         }
       },
-      "SharpZipLib/1.3.1": {
+      "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
@@ -483,13 +483,37 @@
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "System.ValueTuple/4.4.0": {
+      "SpeedTest.NetCore/2.1.0": {
         "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
         "compile": {
-          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -514,93 +538,40 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6/win-x86": {
-      "Autoupdater.NET.Official/1.6.4": {
+    ".NETFramework,Version=v4.7/win-x86": {
+      "Autoupdater.NET.Official/1.7.0": {
         "type": "package",
         "frameworkAssemblies": [
+          "PresentationFramework",
+          "System",
+          "System.Data",
+          "System.Drawing",
           "System.Runtime.Serialization",
-          "System.Xaml"
+          "System.Windows.Forms",
+          "System.Xaml",
+          "System.Xml",
+          "WindowsBase"
         ],
         "compile": {
           "lib/net45/AutoUpdater.NET.dll": {}
         },
         "runtime": {
           "lib/net45/AutoUpdater.NET.dll": {}
-        },
-        "resource": {
-          "lib/net35/ar/AutoUpdater.NET.resources.dll": {
-            "locale": "ar"
-          },
-          "lib/net35/cs/AutoUpdater.NET.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/net35/da/AutoUpdater.NET.resources.dll": {
-            "locale": "da"
-          },
-          "lib/net35/de/AutoUpdater.NET.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net35/es/AutoUpdater.NET.resources.dll": {
-            "locale": "es"
-          },
-          "lib/net35/fr/AutoUpdater.NET.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net35/it/AutoUpdater.NET.resources.dll": {
-            "locale": "it"
-          },
-          "lib/net35/ja-JP/AutoUpdater.NET.resources.dll": {
-            "locale": "ja-JP"
-          },
-          "lib/net35/ko/AutoUpdater.NET.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/net35/nl/AutoUpdater.NET.resources.dll": {
-            "locale": "nl"
-          },
-          "lib/net35/pl/AutoUpdater.NET.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/net35/pt-BR/AutoUpdater.NET.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/net35/pt/AutoUpdater.NET.resources.dll": {
-            "locale": "pt"
-          },
-          "lib/net35/ru/AutoUpdater.NET.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net35/sk/AutoUpdater.NET.resources.dll": {
-            "locale": "sk"
-          },
-          "lib/net35/sv/AutoUpdater.NET.resources.dll": {
-            "locale": "sv"
-          },
-          "lib/net35/th/AutoUpdater.NET.resources.dll": {
-            "locale": "th"
-          },
-          "lib/net35/tr/AutoUpdater.NET.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/net35/zh-tw/AutoUpdater.NET.resources.dll": {
-            "locale": "zh-tw"
-          },
-          "lib/net35/zh/AutoUpdater.NET.resources.dll": {
-            "locale": "zh"
-          }
         }
       },
       "CsvHelper/19.0.0": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
-          "System.ValueTuple": "4.4.0"
+          "System.Threading.Tasks.Extensions": "4.5.2"
         },
         "compile": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         },
         "runtime": {
-          "lib/net45/CsvHelper.dll": {}
+          "lib/net47/CsvHelper.dll": {}
         }
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
@@ -621,6 +592,34 @@
           "build/ILMerge.props": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -633,19 +632,28 @@
           "lib/net45/_._": {}
         }
       },
-      "Selenium.WebDriver/3.141.0": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Selenium.WebDriver/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Drawing"
         ],
         "compile": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/net45/WebDriver.dll": {}
+          "lib/net47/WebDriver.dll": {}
         }
       },
-      "SharpZipLib/1.3.1": {
+      "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
@@ -654,13 +662,37 @@
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "System.ValueTuple/4.4.0": {
+      "SpeedTest.NetCore/2.1.0": {
         "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
         "compile": {
-          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net45/SpeedTest.Net.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -687,67 +719,66 @@
     }
   },
   "libraries": {
-    "Autoupdater.NET.Official/1.6.4": {
-      "sha512": "XBolz4NgByGCmNT9ivBmA9uvBQxxESo3kCXImCzYQJddxn3oVFCaEuMfI1AiDvBvCFnVZ7c/2WnSmCUx7gI24g==",
+    "Autoupdater.NET.Official/1.7.0": {
+      "sha512": "gNBNXwaiLc9oNtJ0WWwRvWsmGVpCN8ii2acpHpYtttkKh3xYJjmbLG2uf243r+nXbmo6KVauXGC82Igt2kHhxw==",
       "type": "package",
-      "path": "autoupdater.net.official/1.6.4",
+      "path": "autoupdater.net.official/1.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "autoupdater.net.official.1.6.4.nupkg.sha512",
+        "autoupdater.net.official.1.7.0.nupkg.sha512",
         "autoupdater.net.official.nuspec",
-        "lib/net20/AutoUpdater.NET.dll",
-        "lib/net20/AutoUpdater.NET.pdb",
-        "lib/net20/AutoUpdater.NET.xml",
-        "lib/net20/ar/AutoUpdater.NET.resources.dll",
-        "lib/net20/cs/AutoUpdater.NET.resources.dll",
-        "lib/net20/da/AutoUpdater.NET.resources.dll",
-        "lib/net20/de/AutoUpdater.NET.resources.dll",
-        "lib/net20/es/AutoUpdater.NET.resources.dll",
-        "lib/net20/fr/AutoUpdater.NET.resources.dll",
-        "lib/net20/it/AutoUpdater.NET.resources.dll",
-        "lib/net20/ja-JP/AutoUpdater.NET.resources.dll",
-        "lib/net20/ko/AutoUpdater.NET.resources.dll",
-        "lib/net20/nl/AutoUpdater.NET.resources.dll",
-        "lib/net20/pl/AutoUpdater.NET.resources.dll",
-        "lib/net20/pt-BR/AutoUpdater.NET.resources.dll",
-        "lib/net20/pt/AutoUpdater.NET.resources.dll",
-        "lib/net20/ru/AutoUpdater.NET.resources.dll",
-        "lib/net20/sk/AutoUpdater.NET.resources.dll",
-        "lib/net20/sv/AutoUpdater.NET.resources.dll",
-        "lib/net20/th/AutoUpdater.NET.resources.dll",
-        "lib/net20/tr/AutoUpdater.NET.resources.dll",
-        "lib/net20/zh-tw/AutoUpdater.NET.resources.dll",
-        "lib/net20/zh/AutoUpdater.NET.resources.dll",
-        "lib/net35/AutoUpdater.NET.dll",
-        "lib/net35/AutoUpdater.NET.pdb",
-        "lib/net35/AutoUpdater.NET.xml",
-        "lib/net35/ar/AutoUpdater.NET.resources.dll",
-        "lib/net35/cs/AutoUpdater.NET.resources.dll",
-        "lib/net35/da/AutoUpdater.NET.resources.dll",
-        "lib/net35/de/AutoUpdater.NET.resources.dll",
-        "lib/net35/es/AutoUpdater.NET.resources.dll",
-        "lib/net35/fr/AutoUpdater.NET.resources.dll",
-        "lib/net35/it/AutoUpdater.NET.resources.dll",
-        "lib/net35/ja-JP/AutoUpdater.NET.resources.dll",
-        "lib/net35/ko/AutoUpdater.NET.resources.dll",
-        "lib/net35/nl/AutoUpdater.NET.resources.dll",
-        "lib/net35/pl/AutoUpdater.NET.resources.dll",
-        "lib/net35/pt-BR/AutoUpdater.NET.resources.dll",
-        "lib/net35/pt/AutoUpdater.NET.resources.dll",
-        "lib/net35/ru/AutoUpdater.NET.resources.dll",
-        "lib/net35/sk/AutoUpdater.NET.resources.dll",
-        "lib/net35/sv/AutoUpdater.NET.resources.dll",
-        "lib/net35/th/AutoUpdater.NET.resources.dll",
-        "lib/net35/tr/AutoUpdater.NET.resources.dll",
-        "lib/net35/zh-tw/AutoUpdater.NET.resources.dll",
-        "lib/net35/zh/AutoUpdater.NET.resources.dll",
-        "lib/net40/AutoUpdater.NET.dll",
-        "lib/net40/AutoUpdater.NET.pdb",
-        "lib/net40/AutoUpdater.NET.xml",
         "lib/net45/AutoUpdater.NET.dll",
         "lib/net45/AutoUpdater.NET.pdb",
-        "lib/net45/AutoUpdater.NET.xml"
+        "lib/net45/AutoUpdater.NET.xml",
+        "lib/net5.0-windows/AutoUpdater.NET.deps.json",
+        "lib/net5.0-windows/AutoUpdater.NET.dll",
+        "lib/net5.0-windows/AutoUpdater.NET.pdb",
+        "lib/net5.0-windows/AutoUpdater.NET.xml",
+        "lib/net5.0-windows/ar/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/cs/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/da/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/de/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/es/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/fr/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/it/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/ja-JP/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/ko/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/nl/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/pl/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/pt-BR/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/pt/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/ru/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/sk/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/sv/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/th/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/tr/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/zh-tw/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows/zh/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/AutoUpdater.NET.deps.json",
+        "lib/netcoreapp3.1/AutoUpdater.NET.dll",
+        "lib/netcoreapp3.1/AutoUpdater.NET.pdb",
+        "lib/netcoreapp3.1/AutoUpdater.NET.xml",
+        "lib/netcoreapp3.1/ar/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/cs/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/da/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/de/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/es/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/fr/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/it/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/ja-JP/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/ko/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/nl/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/pl/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/pt-BR/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/pt/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/ru/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/sk/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/sv/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/th/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/tr/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/zh-tw/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/zh/AutoUpdater.NET.resources.dll"
       ]
     },
     "CsvHelper/19.0.0": {
@@ -799,6 +830,57 @@
         "ilmerge.nuspec",
         "tools/net452/ILMerge.exe",
         "tools/net452/System.Compiler.dll"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Bcl.HashCode/1.1.0": {
+      "sha512": "J2G1k+u5unBV+aYcwxo94ip16Rkp65pgWFb0R6zwJipzWNMgvqlWeuI7/+R+e8bob66LnSG+llLJ+z8wI94cHg==",
+      "type": "package",
+      "path": "microsoft.bcl.hashcode/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.HashCode.dll",
+        "lib/net461/Microsoft.Bcl.HashCode.xml",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
+        "microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
+        "microsoft.bcl.hashcode.nuspec",
+        "ref/net461/Microsoft.Bcl.HashCode.dll",
+        "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -869,29 +951,60 @@
         "version.txt"
       ]
     },
-    "Selenium.WebDriver/3.141.0": {
-      "sha512": "wPqzXO3f79DzqauTZSzLMKiaBCN0Z2Mv7KvWP+hnV6EL88zh/pJJnFtdIR1X5wa3hsTOpF/bBJs45rz7kArsiA==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "selenium.webdriver/3.141.0",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net35/WebDriver.dll",
-        "lib/net35/WebDriver.xml",
-        "lib/net40/WebDriver.dll",
-        "lib/net40/WebDriver.xml",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Selenium.WebDriver/4.1.0": {
+      "sha512": "d4smisz4a/wJCM2TzkKTl+BLfvZUTvaobhKElDfCVZlvY8ThsC8VAoBNWTlg1H/GGzIP//yVGko/W0FILTgkYA==",
+      "type": "package",
+      "path": "selenium.webdriver/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/icon.png",
         "lib/net45/WebDriver.dll",
-        "lib/net45/WebDriver.xml",
+        "lib/net46/WebDriver.dll",
+        "lib/net47/WebDriver.dll",
+        "lib/net48/WebDriver.dll",
+        "lib/net5.0/WebDriver.dll",
         "lib/netstandard2.0/WebDriver.dll",
-        "lib/netstandard2.0/WebDriver.xml",
-        "selenium.webdriver.3.141.0.nupkg.sha512",
+        "lib/netstandard2.1/WebDriver.dll",
+        "selenium.webdriver.4.1.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
       ]
     },
-    "SharpZipLib/1.3.1": {
-      "sha512": "/iMph6bLdKzDhwM/vkAo4BU8z5QQnyodlkZon3XRMtRmVuWv5Rph1kaDmd9XjrQxjPJPuLquTSrkEoSPq/flVw==",
+    "SharpZipLib/1.3.3": {
+      "sha512": "N8+hwhsKZm25tDJfWpBSW7EGhH/R7EMuiX+KJ4C4u+fCWVc1lJ5zg1u3S1RPPVYgTqhx/C3hxrqUpi6RwK5+Tg==",
       "type": "package",
-      "path": "sharpziplib/1.3.1",
+      "path": "sharpziplib/1.3.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -902,14 +1015,58 @@
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
-        "sharpziplib.1.3.1.nupkg.sha512",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.3.3.nupkg.sha512",
         "sharpziplib.nuspec"
       ]
     },
-    "System.ValueTuple/4.4.0": {
-      "sha512": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
+    "SpeedTest.NetCore/2.1.0": {
+      "sha512": "cSVOn5QywOvX/bZ0pGQBGZcENjGI7GueOeLTRXYd0KXF8eOF26yvf75hvxuO/61C+Um1DJdawh5vPWT9dauCaQ==",
       "type": "package",
-      "path": "system.valuetuple/4.4.0",
+      "path": "speedtest.netcore/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.jpg",
+        "lib/net45/SpeedTest.Net.dll",
+        "lib/netcoreapp3.1/SpeedTest.Net.deps.json",
+        "lib/netcoreapp3.1/SpeedTest.Net.dll",
+        "license.txt",
+        "speedtest.netcore.2.1.0.nupkg.sha512",
+        "speedtest.netcore.nuspec"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -917,36 +1074,26 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net461/System.ValueTuple.xml",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "ref/netcoreapp2.1/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.4.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
+        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -963,14 +1110,15 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.6": [
-      "Autoupdater.NET.Official >= 1.6.4",
+    ".NETFramework,Version=v4.7": [
+      "Autoupdater.NET.Official >= 1.7.0",
       "CsvHelper >= 19.0.0",
       "Domain >= 1.0.0",
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
       "ILMerge >= 3.0.41",
-      "Selenium.WebDriver >= 3.141.0",
-      "SharpZipLib >= 1.3.1"
+      "Selenium.WebDriver >= 4.1.0",
+      "SharpZipLib >= 1.3.3",
+      "SpeedTest.NetCore >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -979,11 +1127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\butt rework\\Presentation\\Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\SONIC\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\Presentation.csproj",
       "projectName": "Presentation",
-      "projectPath": "F:\\butt rework\\Presentation\\Presentation.csproj",
+      "projectPath": "C:\\Users\\SONIC\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\Presentation.csproj",
       "packagesPath": "C:\\Users\\SONIC\\.nuget\\packages\\",
-      "outputPath": "F:\\butt rework\\Presentation\\obj\\",
+      "outputPath": "C:\\Users\\SONIC\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -991,28 +1139,28 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net46"
+        "net47"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net46": {
+        "net47": {
           "projectReferences": {
-            "F:\\butt rework\\Domain\\Domain.csproj": {
-              "projectPath": "F:\\butt rework\\Domain\\Domain.csproj"
+            "C:\\Users\\SONIC\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\SONIC\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Domain\\Domain.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "net46": {
+      "net47": {
         "dependencies": {
           "Autoupdater.NET.Official": {
             "target": "Package",
-            "version": "[1.6.4, )"
+            "version": "[1.7.0, )"
           },
           "CsvHelper": {
             "target": "Package",
@@ -1028,11 +1176,15 @@
           },
           "Selenium.WebDriver": {
             "target": "Package",
-            "version": "[3.141.0, )"
+            "version": "[4.1.0, )"
           },
           "SharpZipLib": {
             "target": "Package",
-            "version": "[1.3.1, )"
+            "version": "[1.3.3, )"
+          },
+          "SpeedTest.NetCore": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           }
         }
       }

@@ -24,14 +24,18 @@ using System.Collections.Specialized;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Drawing.Text;
 using System.Text.RegularExpressions;
-using Microsoft.Win32;
+
+using System.Net.NetworkInformation;
+using SpeedTest.Net.Enums;
+using SpeedTest.Net.Models;
+using SpeedTest.Net;
 
 namespace Presentation
 {
     public partial class WAButtfrm : Form
     {
 
-
+        
         public WA wa = new WA();
 
         public static string filenameextracted = string.Empty;
@@ -69,20 +73,10 @@ namespace Presentation
         int eachmessagetiming2 = 0;
 
 
+
+
+
         private static string actualuser = Environment.UserName;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -151,7 +145,79 @@ namespace Presentation
             ExecuteStart();
 
 
+            
+
+            GetConnectionSpeed();
+           
+
         }
+        private void GetConnectionSpeed()
+        {
+
+
+            ExecuteSpeedTest(SpeedTestSource.Speedtest);
+            /*/
+            FetchServer();
+
+            if (Server != null)
+            {
+
+               
+
+            }
+            else
+            {
+                MessageBox.Show("Fetch Server first");
+            }
+            */
+
+
+        }
+        private Server Server { get; set; }
+        private async void FetchServer()
+        {
+            
+
+            try
+            {
+               
+                Server = await SpeedTestClient.GetServer();
+              
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private async void ExecuteSpeedTest(SpeedTestSource source, Server server = null)
+        {
+            try
+            {
+           
+
+                DownloadSpeed speed = null;
+
+                if (source == SpeedTestSource.Speedtest)
+                    speed = await SpeedTestClient.GetDownloadSpeed(server, SpeedTestUnit.KiloBitsPerSecond);
+                else
+                    speed = await FastClient.GetDownloadSpeed(SpeedTestUnit.KiloBitsPerSecond);
+
+                var message = $"Source: {speed.Source} Download Speed: {speed?.Speed} {speed.Unit}";
+
+                if (speed?.Server?.Id != null)
+                    message += $" (Server Id = {speed?.Server?.Id})";
+                Console.WriteLine(message);
+
+            }
+            catch (System.Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+              
+            }
+        }
+
+
 
         public bool GetChromeVersion() {
 
@@ -168,8 +234,8 @@ namespace Presentation
                     chromedriverversion = FileVersionInfo.GetVersionInfo(path.ToString()).FileVersion;
 
                     chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
-
-                    //Dwchromedriver();
+                    //https://chromedriver.storage.googleapis.com/98.0.4758.102/chromedriver_win32.zip
+                    Dwchromedriver();
                 }
                 else if (File.Exists(path2))
                 {
@@ -177,7 +243,7 @@ namespace Presentation
 
                     chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
 
-                    //Dwchromedriver();
+                    Dwchromedriver();
                 }
                 else
                 {
@@ -537,54 +603,126 @@ namespace Presentation
 
         private void imagenYVideoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile.ShowDialog();
-            uploadedfilename = openFile.FileName;
-            filenametxt.Text = uploadedfilename;
-            filetype = "I";
+            var ofd = new OpenFileDialog();
 
-            if (String.IsNullOrEmpty(uploadedfilename) == true)
+
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                fileexist = false;
-            }
-            else
-            {
-                fileexist = true;
+                var size = new FileInfo(ofd.FileName).Length;
+                string filename = ofd.FileName;
+
+
+                if (String.IsNullOrEmpty(filename) == true)
+                {
+                    fileexist = false;
+
+                }
+                else
+                {
+
+
+                    if (size < 67108864)
+                    {
+                        filenametxt.Text = filename;
+                        uploadedfilename = filename;
+                        filetype = "I"; fileexist = true;
+                    }
+                    else
+                    {
+                        fileexist = false;
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+
+                }
             }
         }
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile.ShowDialog();
-            string filename = openFile.FileName;
-            filenametxt.Text = filename;
-            filetype = "A";
+            var ofd = new OpenFileDialog();
 
-            if (String.IsNullOrEmpty(filename) == true)
+
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                fileexist = false;
+                var size = new FileInfo(ofd.FileName).Length;
+                string filename = ofd.FileName;
+               
+      
+                if (String.IsNullOrEmpty(filename) == true)
+                {
+                    fileexist = false;
+                    
+                }
+                else
+                {
+                    
+
+                    if (size < 67108864)
+                    {
+                        filenametxt.Text = filename; uploadedfilename = filename;
+
+                        filetype = "A"; fileexist = true;
+                    }
+                    else
+                    {
+                        fileexist = false;
+
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    
+                   
+                }
             }
-            else
-            {
-                fileexist = true;
-            }
+
+
+
+            
         }
 
         private void documentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile.ShowDialog();
-            string filename = openFile.FileName;
-            filenametxt.Text = filename;
-            filetype = "D";
+            var ofd = new OpenFileDialog();
 
-            if (String.IsNullOrEmpty(filename) == true)
+
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                fileexist = false;
-            }
-            else
-            {
-                fileexist = true;
+                var size = new FileInfo(ofd.FileName).Length;
+                string filename = ofd.FileName;
+
+
+                if (String.IsNullOrEmpty(filename) == true)
+                {
+                    fileexist = false;
+
+                }
+                else
+                {
+
+
+                    if (size  < 67108864)
+                    {
+                        filenametxt.Text = filename; uploadedfilename = filename;
+
+                        filetype = "D"; fileexist = true;
+                    }
+                    else
+                    {
+                        fileexist = false;
+
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+
+                }
             }
         }
+       
+      
+
 
         private void emojibtn_Click(object sender, EventArgs e)
         {
@@ -2217,8 +2355,8 @@ namespace Presentation
                                             {
                                                 Console.WriteLine("el numero no esta vacio y paso a busca contacto");
 
-
-                                                await Task.Run(() =>
+                                                
+                                                    await Task.Run(() =>
                                                 {
                                                     if (pausetiming != 0)
                                                     {
@@ -2237,12 +2375,12 @@ namespace Presentation
 
                                                     try
                                                     {
-                                                        Task.Delay(3000).Wait();
+                                                        //Task.Delay(3000).Wait();
                                                         Actions action = new Actions(WA.driver);
                                                         WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
 
                                                         wa.ContactSearch(actualnumber);
-                                                        Task.Delay(2000).Wait();
+                                                        Task.Delay(1000).Wait();
                                                         action.SendKeys(Keys.Space).Build().Perform();
 
                                                    
@@ -2258,7 +2396,7 @@ namespace Presentation
                                                         //action.SendKeys(Keys.Enter).Build().Perform();
                                                         //wa.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                                                        // wa.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
-                                                        Task.Delay(3000).Wait();
+                                                        Task.Delay(2000).Wait();
 
                                                     }
                                                     catch (Exception ex)
@@ -2321,9 +2459,6 @@ namespace Presentation
 
 
 
-
-                                                                    Task.Delay(1000).Wait();
-
                                                                     Actions action = new Actions(WA.driver);
                                                                     wa.ContactFileImage(filename, actualmessagetosend);
 
@@ -2332,7 +2467,7 @@ namespace Presentation
                                                                     action.SendKeys("A").Build().Perform();
                                                                     action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
 
-                                                                    Task.Delay(4000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
                                                                     wa.ContactSend();
@@ -2340,11 +2475,9 @@ namespace Presentation
                                                                     fila.Cells[2].Value = "S";
 
 
-                                                                    Task.Delay(2000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                    Task.Delay(1000).Wait();
-
-
+                                                                   
                                                                     Console.WriteLine("Envio imagen y texto");
 
                                                                 }
@@ -2384,29 +2517,30 @@ namespace Presentation
                                                                 try
                                                                 {
 
-                                                                    Task.Delay(1000).Wait();
+                                                      
 
                                                                     Actions action = new Actions(WA.driver);
 
+                                                                 
                                                                     wa.ContactFileAudio(filename);
 
                                                                     wa.ContactSend();
 
-
-                                                                    Task.Delay(4000 + wa.preventblocktiming).Wait();
-
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
                                                                     WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
 
                                                                     wa.ContactSearch(actualnumber);
-                                                                    Task.Delay(2000).Wait();
+                                                                   
                                                                     action.SendKeys(Keys.Space).Build().Perform();
 
                                                                     wa.ContactClick();
 
-                                                                  
 
-                                                                    Task.Delay(3000 + wa.preventblocktiming).Wait();
+
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
 
 
 
@@ -2418,7 +2552,7 @@ namespace Presentation
 
 
                                                                     Console.WriteLine("solo Mensaje escrito");
-                                                                    Task.Delay(4000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
                                                                     wa.ContactSend();
                                                                     Console.WriteLine("presione enter para enviar");
@@ -2428,10 +2562,7 @@ namespace Presentation
 
 
 
-                                                                    Task.Delay(2000 + wa.preventblocktiming).Wait();
-
-
-                                                                    Task.Delay(1000).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
                                                                     Console.WriteLine("Envio audio y texto");
@@ -2471,7 +2602,6 @@ namespace Presentation
                                                                 try
                                                                 {
 
-                                                                    Task.Delay(1000).Wait();
 
                                                                     Actions action = new Actions(WA.driver);
 
@@ -2482,20 +2612,20 @@ namespace Presentation
                                                                     wa.ContactSend();
 
 
-                                                                    Task.Delay(4000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
 
                                                                     WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
 
                                                                     wa.ContactSearch(actualnumber);
-                                                                    Task.Delay(2000).Wait();
+                                                                 
                                                                     action.SendKeys(Keys.Space).Build().Perform();
 
 
                                                                     wa.ContactClick();
 
-                                                                    Task.Delay(3000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
 
@@ -2507,7 +2637,7 @@ namespace Presentation
 
 
                                                                     Console.WriteLine("solo Mensaje escrito");
-                                                                    Task.Delay(4000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
                                                                     wa.ContactSend();
                                                                     Console.WriteLine("presione enter para enviar");
@@ -2517,10 +2647,8 @@ namespace Presentation
 
 
 
-                                                                    Task.Delay(2000 + wa.preventblocktiming).Wait();
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-
-                                                                    Task.Delay(1000).Wait();
 
 
                                                                     Console.WriteLine("Envio file y texto");
@@ -2564,7 +2692,6 @@ namespace Presentation
 
                                                             }
 
-                                                            Task.Delay(2000).Wait();
 
                                                             try
                                                             {
@@ -2579,7 +2706,7 @@ namespace Presentation
 
 
                                                                 Console.WriteLine("solo Mensaje escrito");
-                                                                Task.Delay(4000 + wa.preventblocktiming).Wait();
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
 
                                                                 wa.ContactSend();
                                                                 Console.WriteLine("presione enter para enviar");
@@ -2588,13 +2715,6 @@ namespace Presentation
 
 
 
-
-                                                                Task.Delay(2000 + wa.preventblocktiming).Wait();
-
-
-
-
-                                                                Task.Delay(1000).Wait();
 
 
                                                             }
