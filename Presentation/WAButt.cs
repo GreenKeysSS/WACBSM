@@ -5201,6 +5201,39 @@ namespace Presentation
             contactsdgv.Columns.Clear();
             contactsdgv.DataSource = items;
         }
+
+        private void dgvwacopymodecms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in contactsdgv.SelectedRows)
+            {
+                int index = contactsdgv.Rows.Add(r.Clone() as DataGridViewRow);
+
+                foreach (DataGridViewCell o in r.Cells)
+                {
+                    contactsdgv.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
+
+                    
+                }
+            }
+        }
+
+        private void contactsdgv_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right )
+            {
+
+                int currentMouseOverRow = contactsdgv.HitTest(e.X, e.Y).RowIndex;
+                
+
+                copyrowcms.Show(contactsdgv, new Point(e.X, e.Y));
+
+            }
+        }
     }
     
 }
