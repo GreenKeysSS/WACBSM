@@ -546,3 +546,4 @@ C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\WAButt.application
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\WAButt.exe
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\WAButt.pdb
+C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\Presentation.LoadWindow.resources

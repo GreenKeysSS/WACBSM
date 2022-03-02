@@ -24,18 +24,20 @@ using System.Collections.Specialized;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Drawing.Text;
 using System.Text.RegularExpressions;
-
 using System.Net.NetworkInformation;
 using SpeedTest.Net.Enums;
 using SpeedTest.Net.Models;
 using SpeedTest.Net;
+using System.Net.Http;
+using OpenQA.Selenium.Remote;
+using Newtonsoft.Json;
 
 namespace Presentation
 {
     public partial class WAButtfrm : Form
     {
 
-        
+
         public WA wa = new WA();
 
         public static string filenameextracted = string.Empty;
@@ -126,7 +128,8 @@ namespace Presentation
 
             //AddUpdateAppSettings("cv", "true");
 
-            if (!GetChromeVersion())
+
+            if (!ChromeDriverState())
             {
                 this.Load += (sender, e) => { this.Close(); }; return;
             }
@@ -145,10 +148,10 @@ namespace Presentation
             ExecuteStart();
 
 
-            
+
 
             GetConnectionSpeed();
-           
+
 
         }
         private void GetConnectionSpeed()
@@ -176,13 +179,13 @@ namespace Presentation
         private Server Server { get; set; }
         private async void FetchServer()
         {
-            
+
 
             try
             {
-               
+
                 Server = await SpeedTestClient.GetServer();
-              
+
             }
             catch (System.Exception ex)
             {
@@ -193,7 +196,7 @@ namespace Presentation
         {
             try
             {
-           
+
 
                 DownloadSpeed speed = null;
 
@@ -213,47 +216,63 @@ namespace Presentation
             {
 
                 MessageBox.Show(ex.Message);
-              
+
             }
         }
 
+        private void FetchChromeDriverVersion()
+        {
 
-
-        public bool GetChromeVersion() {
-
-
-
-            if (Environment.Is64BitOperatingSystem == true)
+            try
             {
+                var webRequest = WebRequest.Create(@"https://chromedriver.storage.googleapis.com/LATEST_RELEASE");
 
-                string path = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-                string path2 = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
-
-                if (File.Exists(path))
+                using (var response = webRequest.GetResponse())
+                using (var content = response.GetResponseStream())
+                using (var reader = new StreamReader(content))
                 {
-                    chromedriverversion = FileVersionInfo.GetVersionInfo(path.ToString()).FileVersion;
+                    var strContent = reader.ReadToEnd();
+                    chromedriverversion = strContent;
+                    Console.WriteLine(Convert.ToString(strContent));
 
-                    chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
-                    //https://chromedriver.storage.googleapis.com/98.0.4758.102/chromedriver_win32.zip
-                    Dwchromedriver();
                 }
-                else if (File.Exists(path2))
-                {
-                    chromedriverversion = FileVersionInfo.GetVersionInfo(path2.ToString()).FileVersion;
 
-                    chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
 
-                    Dwchromedriver();
-                }
-                else
-                {
-                    DialogResult msg = MessageBox.Show("La instalacion de Google Chrome actualmente no se encuentra en la carpeta por default, cambiarla para continuar ", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    if (msg == DialogResult.OK)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Observación", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+
+            }
+
+
+
+        }
+        public bool ChromeDriverState()
+        {
+
+
+
+            if (Environment.Is64BitOperatingSystem)
+            {
+                try
+                {/*
+                    await Task.Run(() =>
                     {
-                        return false;
-                    }
-                }
+                        
+                        
+                    });*/
 
+
+
+                    FetchChromeDriverVersion();
+                    chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
+                    Dwchromedriver();
+
+
+
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message, "Observación", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
 
             }
 
@@ -268,13 +287,14 @@ namespace Presentation
             }
 
 
-
-
             return true;
 
 
+
+
         }
-        private void KillWeDriver() {
+        private void KillWebDriver()
+        {
             Process[] _proceses = null;
             _proceses = Process.GetProcessesByName("chromedriver");
 
@@ -286,7 +306,8 @@ namespace Presentation
                 }
             }
         }
-        private void updatestart() {
+        private void updatestart()
+        {
 
             try
             {
@@ -310,7 +331,7 @@ namespace Presentation
             string result = "";
             try
             {
-                
+
                 var appSettings = ConfigurationManager.AppSettings;
 
 
@@ -328,37 +349,38 @@ namespace Presentation
                 return result;
             }
 
-          
-        }
-        
 
-        private void Dwchromedriver() {
+        }
+
+
+        private void Dwchromedriver()
+        {
 
             try
             {
 
-                KillWeDriver();
+                KillWebDriver();
 
 
-                string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver";
                 DirectoryInfo di = Directory.CreateDirectory(path);
 
 
 
-                bool file1 = File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.exe");
-                bool file2 = File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                bool file1 = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
+                bool file2 = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
 
 
                 if (file1)
                 {
 
-                    File.Delete("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.exe");
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
                     Console.WriteLine("FILES DELETED");
                 }
                 if (file2)
                 {
 
-                    File.Delete("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
                     Console.WriteLine("FILES DELETED");
                 }
 
@@ -367,22 +389,18 @@ namespace Presentation
 
 
 
-                if (!File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.exe"))
+                if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe"))
                 {
                     using (WebClient Client = new WebClient())
                     {
 
-                        Client.DownloadFile(chromedriverdwlink, "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                        Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
 
 
 
+                        var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
 
-
-
-
-                        var zipFileName = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.zip";
-
-                        var targetDir = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\";
+                        var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
 
 
                         FastZip fastZip = new FastZip();
@@ -392,7 +410,7 @@ namespace Presentation
                         fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
 
 
-                        File.Delete("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                        File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
 
 
 
@@ -554,9 +572,21 @@ namespace Presentation
 
 
         }
-        private void StoreSettings() {
+        private void WriteJSONToFile(string data, string filename)
+        {
 
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt";
 
+            DirectoryInfo di = Directory.CreateDirectory(path);
+
+            File.WriteAllText(path + "\\" + filename, data);
+
+        }
+
+        private void StoreSettings()
+        {
+
+            /*
             AddUpdateAppSettings("waeachmsgpausecant", eachmessagetimingtxt.Text);
             AddUpdateAppSettings("wafullname", Convert.ToString(sendfullnamecb.Checked));
             AddUpdateAppSettings("waevitblock", Convert.ToString(preventblockcb.Checked));
@@ -571,12 +601,119 @@ namespace Presentation
             AddUpdateAppSettings("smssendmanymsg", Convert.ToString(manymessages2cb.Checked));
             AddUpdateAppSettings("smsseveralpausecant", severalpause2txt.Text);
 
+            */
+            DataTable dt = new DataTable();
+
+
+
+            dt.Columns.Add("waeachmsgpausecant", typeof(string));
+            dt.Columns.Add("wafullname", typeof(string));
+            dt.Columns.Add("waevitblock", typeof(string));
+            dt.Columns.Add("wasenddt", typeof(string));
+            dt.Columns.Add("wasendmanymsg", typeof(string));
+            dt.Columns.Add("waseveralpausecant", typeof(string));
+            dt.Columns.Add("wafileatt", typeof(string));
+
+
+            dt.Columns.Add("smseachmsgpausecant", typeof(string));
+            dt.Columns.Add("smsfullname", typeof(string));
+            dt.Columns.Add("smsevitblock", typeof(string));
+            dt.Columns.Add("smssenddt", typeof(string));
+            dt.Columns.Add("smssendmanymsg", typeof(string));
+            dt.Columns.Add("smsseveralpausecant", typeof(string));
+
+
+
+            DataRow row = dt.NewRow();
+
+            row["waeachmsgpausecant"] = eachmessagetimingtxt.Text;
+            row["wafullname"] = Convert.ToString(sendfullnamecb.Checked);
+            row["waevitblock"] = Convert.ToString(preventblockcb.Checked);
+            row["wasenddt"] = Convert.ToString(senddatetimecb.Checked);
+            row["wasendmanymsg"] = Convert.ToString(manymessagescb.Checked);
+            row["waseveralpausecant"] = severalpausetxt.Text;
+            row["wafileatt"] = filenametxt.Text;
+
+            row["smseachmsgpausecant"] = eachmessagetiming2txt.Text;
+            row["smsfullname"] = Convert.ToString(sendfullname2cb.Checked);
+            row["smsevitblock"] = Convert.ToString(preventblock2cb.Checked);
+            row["smssenddt"] = Convert.ToString(senddatetime2cb.Checked);
+            row["smssendmanymsg"] = Convert.ToString(manymessages2cb.Checked);
+            row["smsseveralpausecant"] = severalpause2txt.Text;
+            //row["smsseveralpausecant"] = .Text;
+
+
+            dt.Rows.Add(row);
+
+
+            string JSONDataTable;
+            JSONDataTable = JsonConvert.SerializeObject(dt);
+
+
+            WriteJSONToFile(JSONDataTable, "UserSettings.json");
 
 
         }
         private void OpenSettings()
         {
 
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\" + "UserSettings.json";
+            Console.WriteLine(path);
+
+            string jsonReadResult;
+
+            if (File.Exists(path))
+            {
+                jsonReadResult = File.ReadAllText(path);
+
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(jsonReadResult, typeof(DataTable));
+
+
+
+                eachmessagetimingtxt.Text = Convert.ToString(dt.Rows[0][0]);
+                sendfullnamecb.Checked = Convert.ToBoolean(dt.Rows[0][1]);
+                preventblockcb.Checked = Convert.ToBoolean(dt.Rows[0][2]);
+                senddatetimecb.Checked = Convert.ToBoolean(dt.Rows[0][3]);
+                manymessagescb.Checked = Convert.ToBoolean(dt.Rows[0][4]);
+                severalpausetxt.Text = Convert.ToString(dt.Rows[0][5]);
+                filenametxt.Text = Convert.ToString(dt.Rows[0][6]);
+
+                eachmessagetiming2txt.Text = Convert.ToString(dt.Rows[0][7]);
+                sendfullname2cb.Checked = Convert.ToBoolean(dt.Rows[0][8]);
+                preventblock2cb.Checked = Convert.ToBoolean(dt.Rows[0][9]);
+                senddatetime2cb.Checked = Convert.ToBoolean(dt.Rows[0][10]);
+                manymessages2cb.Checked = Convert.ToBoolean(dt.Rows[0][11]);
+                severalpause2txt.Text = Convert.ToString(dt.Rows[0][12]);
+
+
+            }
+            else
+            {
+                eachmessagetimingtxt.Text = "30";
+                sendfullnamecb.Checked = false;
+                preventblockcb.Checked = false;
+                senddatetimecb.Checked = false;
+                manymessagescb.Checked = false;
+                severalpausetxt.Text = "300";
+                filenametxt.Text = "";
+
+                eachmessagetiming2txt.Text = "30";
+                sendfullname2cb.Checked = false;
+                preventblock2cb.Checked = false;
+                senddatetime2cb.Checked = false;
+                manymessages2cb.Checked = false;
+                severalpause2txt.Text = "300";
+
+            }
+
+
+
+
+
+
+            /*
             eachmessagetimingtxt.Text = ReadSetting("waeachmsgpausecant");
             sendfullnamecb.Checked = Convert.ToBoolean(ReadSetting("wafullname"));
             preventblockcb.Checked = Convert.ToBoolean(ReadSetting("waevitblock"));
@@ -590,7 +727,7 @@ namespace Presentation
             senddatetime2cb.Checked = Convert.ToBoolean(ReadSetting("smssenddt"));
             manymessages2cb.Checked = Convert.ToBoolean(ReadSetting("smssendmanymsg"));
             severalpause2txt.Text = ReadSetting("smsseveralpausecant");
-
+            */
         }
 
         private void uploadbtn_Click(object sender, EventArgs e)
@@ -631,7 +768,7 @@ namespace Presentation
                     else
                     {
                         fileexist = false;
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
 
 
@@ -649,16 +786,16 @@ namespace Presentation
             {
                 var size = new FileInfo(ofd.FileName).Length;
                 string filename = ofd.FileName;
-               
-      
+
+
                 if (String.IsNullOrEmpty(filename) == true)
                 {
                     fileexist = false;
-                    
+
                 }
                 else
                 {
-                    
+
 
                     if (size < 67108864)
                     {
@@ -670,16 +807,16 @@ namespace Presentation
                     {
                         fileexist = false;
 
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    
-                   
+
+
                 }
             }
 
 
 
-            
+
         }
 
         private void documentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -703,7 +840,7 @@ namespace Presentation
                 {
 
 
-                    if (size  < 67108864)
+                    if (size < 67108864)
                     {
                         filenametxt.Text = filename; uploadedfilename = filename;
 
@@ -713,15 +850,15 @@ namespace Presentation
                     {
                         fileexist = false;
 
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
 
 
                 }
             }
         }
-       
-      
+
+
 
 
         private void emojibtn_Click(object sender, EventArgs e)
@@ -743,21 +880,21 @@ namespace Presentation
                 {
                     loadmessagelbl.Text = "Estado: Conectando . . . ";
 
-                   
-
-                        await  wa.LaunchBrowser();
 
 
-                        if (wa.driverstate)
-                        {
-                            loadmessagelbl.Text = "Estado: Navegador Abierto, escanee código QR o empiece a enviar";
-                            controls(true);
-                            logoutbtn.Enabled = true;
+                    await wa.LaunchBrowser();
 
-                        
-                        }
-                        
-                        
+
+                    if (wa.driverstate)
+                    {
+                        loadmessagelbl.Text = "Estado: Navegador Abierto, escanee código QR o empiece a enviar";
+                        controls(true);
+                        logoutbtn.Enabled = true;
+
+
+                    }
+
+
 
 
                 }
@@ -778,7 +915,7 @@ namespace Presentation
 
 
         }
-      
+
         private void exportDgvToGmail()
         {
 
@@ -1900,7 +2037,7 @@ namespace Presentation
             eachmessagetoken = new CancellationTokenSource();
             severalpausetoken = new CancellationTokenSource();
 
-          
+
 
             await Excecutesendtask();
 
@@ -2063,7 +2200,8 @@ namespace Presentation
 
         }
 
-        private async Task Excecutesendtask() {
+        private async Task Excecutesendtask()
+        {
 
 
             if (CheckForInternetConnection())
@@ -2099,7 +2237,7 @@ namespace Presentation
                 notsendedmessagelbl.Text = sendedmessage.ToString();
                 sendedmessagelbl.Text = notsendedmessage.ToString();
 
-               
+
 
 
 
@@ -2186,7 +2324,7 @@ namespace Presentation
                                         {
                                             eachmessagetiming = 0;
                                         }
-                                        
+
 
 
                                         if (Convert.ToString(fila.Cells[0].Value) != string.Empty)
@@ -2219,7 +2357,7 @@ namespace Presentation
 
 
 
-                                  
+
 
                                         string actualmessagetosend = "";
 
@@ -2337,8 +2475,8 @@ namespace Presentation
 
 
                                         }
-                                        
-                                        
+
+
 
                                         try
                                         {
@@ -2355,8 +2493,8 @@ namespace Presentation
                                             {
                                                 Console.WriteLine("el numero no esta vacio y paso a busca contacto");
 
-                                                
-                                                    await Task.Run(() =>
+
+                                                await Task.Run(() =>
                                                 {
                                                     if (pausetiming != 0)
                                                     {
@@ -2377,25 +2515,25 @@ namespace Presentation
                                                     {
                                                         //Task.Delay(3000).Wait();
                                                         Actions action = new Actions(WA.driver);
-                                                        WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
+
+                                                        wa.ClickSearchIcon();
 
                                                         wa.ContactSearch(actualnumber);
-                                                        Task.Delay(1000).Wait();
-                                                        action.SendKeys(Keys.Space).Build().Perform();
 
-                                                   
+                                               
+                                                        action.SendKeys(Keys.Space).Build().Perform();
+                                                        
 
                                                         //Task.Delay(3000).Wait();
-
-
+                                                    
                                                         Console.WriteLine("doy click en el contacto");
 
-                                                        
+
 
                                                         wa.ContactClick();
                                                         //action.SendKeys(Keys.Enter).Build().Perform();
                                                         //wa.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                                                       // wa.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+                                                        // wa.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
                                                         Task.Delay(2000).Wait();
 
                                                     }
@@ -2463,21 +2601,20 @@ namespace Presentation
                                                                     wa.ContactFileImage(filename, actualmessagetosend);
 
 
-
-                                                                    action.SendKeys("A").Build().Perform();
+                                                                    action.SendKeys(".").Build().Perform();
                                                                     action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
 
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
-                                                                    wa.ContactSend();
+                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
 
                                                                     fila.Cells[2].Value = "S";
 
 
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                   
+
                                                                     Console.WriteLine("Envio imagen y texto");
 
                                                                 }
@@ -2517,21 +2654,21 @@ namespace Presentation
                                                                 try
                                                                 {
 
-                                                      
+
 
                                                                     Actions action = new Actions(WA.driver);
 
-                                                                 
+
                                                                     wa.ContactFileAudio(filename);
 
-                                                                    wa.ContactSend();
+                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
 
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                    WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
+                                                                    wa.ClickSearchIcon();
 
                                                                     wa.ContactSearch(actualnumber);
-                                                                   
+
                                                                     action.SendKeys(Keys.Space).Build().Perform();
 
                                                                     wa.ContactClick();
@@ -2552,9 +2689,10 @@ namespace Presentation
 
 
                                                                     Console.WriteLine("solo Mensaje escrito");
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                    wa.ContactSend();
+
+                                                                    wa.ContactActionEnter();
+
                                                                     Console.WriteLine("presione enter para enviar");
 
 
@@ -2609,7 +2747,7 @@ namespace Presentation
 
                                                                     wa.ContactFile(filename);
 
-                                                                    wa.ContactSend();
+                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
 
 
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
@@ -2619,7 +2757,7 @@ namespace Presentation
                                                                     WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
 
                                                                     wa.ContactSearch(actualnumber);
-                                                                 
+
                                                                     action.SendKeys(Keys.Space).Build().Perform();
 
 
@@ -2639,7 +2777,7 @@ namespace Presentation
                                                                     Console.WriteLine("solo Mensaje escrito");
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                    wa.ContactSend();
+                                                                    wa.ContactActionEnter();
                                                                     Console.WriteLine("presione enter para enviar");
 
 
@@ -2669,7 +2807,7 @@ namespace Presentation
 
 
                                                     }
-                                                    
+
                                                     else
                                                     {
 
@@ -2698,7 +2836,10 @@ namespace Presentation
 
                                                                 Actions action = new Actions(WA.driver);
 
+
+
                                                                 wa.ContactMessage(actualmessagetosend);
+
 
                                                                 action.SendKeys("A").Build().Perform();
                                                                 action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
@@ -2708,7 +2849,7 @@ namespace Presentation
                                                                 Console.WriteLine("solo Mensaje escrito");
                                                                 Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                wa.ContactSend();
+                                                                wa.ContactActionEnter();
                                                                 Console.WriteLine("presione enter para enviar");
                                                                 fila.Cells[2].Value = "S";
 
@@ -2721,7 +2862,7 @@ namespace Presentation
                                                             catch (Exception ex)
                                                             {
                                                                 Console.WriteLine(ex.Message);
-                                                             
+
 
 
                                                             }
@@ -2735,18 +2876,18 @@ namespace Presentation
                                                     sendedmessage++;
                                                     sendedmessagelbl.Text = Convert.ToString(sendedmessage);
                                                     Console.WriteLine(sendedmessage);
-                                                   
+
                                                 }
                                                 else
-                                                { 
+                                                {
                                                     Actions action = new Actions(WA.driver);
                                                     action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
-                                                    
+
                                                     fila.Cells[2].Value = "N";
                                                     notsendedmessage++;
                                                     notsendedmessagelbl.Text = Convert.ToString(notsendedmessage);
                                                     Console.WriteLine(notsendedmessage);
-                                                   
+
 
 
                                                 }
@@ -2767,7 +2908,7 @@ namespace Presentation
                                         catch (Exception ex)
                                         {
                                             Console.WriteLine(ex.Message.ToString());
-                                            
+
 
                                         }
                                     }
@@ -3179,7 +3320,7 @@ namespace Presentation
                                                 }
 
                                             }
-                                            
+
                                             if (senddatetime2cb.Checked || actualmessagetosend.Contains("{fecha}"))
                                             {
                                                 DateTime actualdate = getTimeNow();
@@ -3524,7 +3665,7 @@ namespace Presentation
             string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt";
             DirectoryInfo di = Directory.CreateDirectory(path);
 
-         
+
             File.WriteAllText(path + "\\m1.txt", m1txt.Text);
             File.WriteAllText(path + "\\m2.txt", m2txt.Text);
             File.WriteAllText(path + "\\m3.txt", m3txt.Text);
@@ -3546,7 +3687,7 @@ namespace Presentation
         private void Restoremessages()
         {
 
-         
+
 
 
             if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m1.txt"))
@@ -3795,7 +3936,7 @@ namespace Presentation
 
 
         }
-       
+
 
         private void gmailbtn_Click(object sender, EventArgs e)
         {
@@ -4064,7 +4205,8 @@ namespace Presentation
 
         }
 
-        private void pausetimingaction(Int32 pauset, CancellationToken token) {
+        private void pausetimingaction(Int32 pauset, CancellationToken token)
+        {
             try
             {
                 if (pauset > 0)
@@ -4088,7 +4230,8 @@ namespace Presentation
 
         }
 
-        private void ExecuteStart() {
+        private void ExecuteStart()
+        {
 
 
 
@@ -4123,12 +4266,8 @@ namespace Presentation
                 logoutbtn.Enabled = false;
                 logout2btn.Enabled = false;
 
-                
 
-               
 
-                eachmessagetimingcb.Checked = true;
-                eachmessagetiming2cb.Checked = true;
 
                 OpenSettings();
 
@@ -4142,7 +4281,8 @@ namespace Presentation
 
         }
 
-        private void CheckUserProfileExist() {
+        private void CheckUserProfileExist()
+        {
 
 
             if (!Directory.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile\\"))
@@ -4315,13 +4455,7 @@ namespace Presentation
                 {
                     try
                     {
-                        if (wa.IfConnected(By.XPath("//header//div[3]//div[1]//span[1]")))
-                        {
-
-                            wa.LogoutWA();
-
-
-                        }
+                        wa.LogoutWA();
                     }
                     catch (Exception ex)
                     {
@@ -4462,10 +4596,10 @@ namespace Presentation
 
         }
 
-        
+
         public async Task GetContactsFromGroup(string tosearch)
         {
-          
+
             StringBuilder str = new StringBuilder();
             strex = new StringBuilder();
             await Task.Run(() =>
@@ -4492,8 +4626,8 @@ namespace Presentation
 
                         StreamWriter swOut = new StreamWriter(filenameextracted);
 
-                        strex.Append(str.ToString().Replace(", ", "\n,").Replace("\n,Tú", ""));
-                        swOut.Write(str.ToString().Replace(", ", "\n,").Replace("\n,Tú", ""));
+                        strex.Append(str.ToString().Replace(", ", "\n,").Replace("\n,Tú", "").Replace("\n,You", ""));
+                        swOut.Write(str.ToString().Replace(", ", "\n,").Replace("\n,Tú", "").Replace("\n,You", ""));
 
                         swOut.Close();
 
@@ -4513,7 +4647,7 @@ namespace Presentation
 
             });
 
-            
+
 
 
 
@@ -4533,16 +4667,16 @@ namespace Presentation
             if (File.Exists(path))
             {
                 Console.WriteLine("READCSV3 OPEN");
-               
+
                 StreamReader sr = new StreamReader(path);
                 StringBuilder sb = new StringBuilder();
 
 
                 string s;
-                
 
-                dt.Columns.Add("Numero",typeof(string));
-               
+
+                dt.Columns.Add("Numero", typeof(string));
+
 
 
                 int indexname;
@@ -4586,7 +4720,7 @@ namespace Presentation
                 sr.Close();
 
 
-                
+
 
             }
 
@@ -4674,8 +4808,8 @@ namespace Presentation
 
                 extractlbl.Visible = true;
 
-                
-                severalpauselbl.Location = new Point(786, 57); 
+
+                severalpauselbl.Location = new Point(786, 57);
                 severalpausetxt.Location = new Point(823, 22);
 
 
@@ -4695,13 +4829,13 @@ namespace Presentation
             {
                 colorpanel.BackColor = Color.FromArgb(8, 112, 100);
             }
-           
+
             else
             {
                 colorpanel.BackColor = Color.FromArgb(19, 116, 233);
             }
-           
-        
+
+
 
         }
         private async void connectgoobtn_Click(object sender, EventArgs e)
@@ -4719,18 +4853,18 @@ namespace Presentation
                 {
                     loadmessage2lbl.Text = "Estado: Conectando . . . ";
 
-                   
+
                     await wa.LaunchBrowser2();
-                    
+
 
                     loadmessage2lbl.Text = "Estado: Navegador Abierto, escanee código QR o empiece a enviar";
 
 
-                   
+
                     controls2(true);
                     logout2btn.Enabled = true;
 
-    
+
 
 
                 }
@@ -4750,13 +4884,13 @@ namespace Presentation
         private void selectwabtn_Click(object sender, EventArgs e)
         {
             apptab.SelectedTab = wabottab;
-           
-          
+
+
         }
         private void selectsmsbtn_Click(object sender, EventArgs e)
         {
             apptab.SelectedTab = smsbottab;
-         
+
 
         }
         private void pastedata2btn_Click(object sender, EventArgs e)
@@ -4990,8 +5124,8 @@ namespace Presentation
             await Excecutesendtask2();
 
 
-            
-           
+
+
 
         }
 
@@ -5009,7 +5143,7 @@ namespace Presentation
                     start2btn.Enabled = false;
                     logout2btn.Enabled = false;
                     connectgoobtn.Enabled = true;
-                    
+
 
 
                 }
@@ -5141,7 +5275,7 @@ namespace Presentation
                         stopbtnclicked2 = true;
                         logout2btn.Enabled = true;
                         connectgoobtn.Enabled = true;
-                       
+
 
                         pause2btn.Text = "Pausar";
 
@@ -5159,7 +5293,8 @@ namespace Presentation
             }
         }
 
-        public void ClearEmptyRows() {
+        public void ClearEmptyRows()
+        {
 
 
 
@@ -5172,7 +5307,7 @@ namespace Presentation
                 }
             }
 
-           
+
 
 
 
@@ -5192,8 +5327,8 @@ namespace Presentation
             for (int i = 0; i < contactsdgv.Rows.Count; i++)
             {
                 DataRow rw = items.NewRow();
-                rw[0] = Convert.ToString( contactsdgv.Rows[i].Cells[0].Value);
-                rw[1] = Convert.ToString( contactsdgv.Rows[i].Cells[1].Value);
+                rw[0] = Convert.ToString(contactsdgv.Rows[i].Cells[0].Value);
+                rw[1] = Convert.ToString(contactsdgv.Rows[i].Cells[1].Value);
                 rw[2] = Convert.ToString(contactsdgv.Rows[i].Cells[2].Value);
                 if (!items.Rows.Cast<DataRow>().Any(row => row["Numero o Grupo"].Equals(rw["Numero o Grupo"])))
                     items.Rows.Add(rw);
@@ -5204,7 +5339,7 @@ namespace Presentation
 
         private void dgvwacopymodecms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
+
         }
 
         private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5217,23 +5352,41 @@ namespace Presentation
                 {
                     contactsdgv.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
 
-                    
+
                 }
             }
         }
 
         private void contactsdgv_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right )
+            if (e.Button == MouseButtons.Right)
             {
 
                 int currentMouseOverRow = contactsdgv.HitTest(e.X, e.Y).RowIndex;
-                
+
 
                 copyrowcms.Show(contactsdgv, new Point(e.X, e.Y));
 
             }
         }
+        private string EncodeNonAsciiCharacters(string value)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in value)
+            {
+                if (c > 127)
+                {
+                    // This character is too big for ASCII
+                    string encodedValue = "\\u" + ((int)c).ToString("x4");
+                    sb.Append(encodedValue);
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+
     }
-    
 }

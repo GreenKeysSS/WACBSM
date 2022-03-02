@@ -36,9 +36,26 @@ namespace Presentation
         public int preventblocktiming2 = 0;
 
 
+        
+
+
+
+
 
         private static string actualuser = Environment.UserName;
-        private static string AttachXPath = "//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]";
+        public static string AttachPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]";
+        public static string ContactSearchBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/label[1]/div[1]/div[2]";
+        public static string ContactSearchIconPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/button[1]/div[2]/span[1]";
+        public static string DocumentAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[4]/button[1]/input[1]";
+        public static string ImageAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]";
+        public static string MessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]";
+        public static string ImageMessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]";
+        public static string ContactOrChatBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]";
+        public static string SendIADButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/span[1]";
+        public static string LogOutButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]";
+
+
+
 
         public async Task LaunchBrowser()
         {
@@ -130,7 +147,10 @@ namespace Presentation
 
 
         }
-
+        public void ClickSearchIcon()
+        {
+            WA.driver.FindElement(By.XPath(ContactSearchIconPath)).Click();
+        }
         
         public void ContactSearch(string tosearch)
         {
@@ -139,15 +159,13 @@ namespace Presentation
             {
                 
 
-                if (FindElement(driver, By.XPath("//body//label//div[2]"), 20))
+                if (FindElement(driver, By.XPath(ContactSearchBoxPath), 20))
                 {
                     IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
 
-                    string _script1 = "document.evaluate" +
-                        "('//body//label//div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + tosearch + "'";
-                    string _script2 = "document.evaluate" +
-                        "('//body//label//div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML=''";
+                    string _script1 = "document.evaluate" +"('"+ ContactSearchBoxPath + "', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + tosearch + "'";
+                    string _script2 = "document.evaluate" +"('"+ ContactSearchBoxPath + "', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + tosearch + "'";
 
 
                     string title2 = (string)js.ExecuteScript(_script2);
@@ -300,11 +318,11 @@ namespace Presentation
         public static bool FindElement(IWebDriver driver, By by, int timeoutInSeconds)
         {
             
-            Task.Delay(TimeSpan.FromSeconds(3)).Wait();
+            Task.Delay(TimeSpan.FromSeconds(1)).Wait();
             
             try
             {
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
                 IWebElement SearchResult = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(by));
                 return true;
@@ -326,22 +344,22 @@ namespace Presentation
             
 
             Actions action = new Actions(driver);
-
-
-            if (FindElement(driver, By.XPath("//div[contains(text(),'Chats')]"),20) || FindElement(driver,By.XPath("//div[contains(text(),'Contactos')]"), 20)  )
+           
+            if (FindElement(driver, By.XPath(ContactOrChatBoxPath), 6))
             {
                 clickstate = true;
                 action.SendKeys(Keys.Enter).Build().Perform();
                 Console.WriteLine("contact or group founded");
-              
+
             }
             else
             {
 
                 clickstate = false;
                 Console.WriteLine("not founded contact o group");
-            }
+                ClickSearchIcon();
 
+            }
 
 
             //action.MoveToElement(driver.FindElement(By.XPath("//body//div[@id='pane-side']//div//div//div//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//span[1]"))).Click().Perform();
@@ -375,22 +393,20 @@ namespace Presentation
 
             try
             {
-               
 
-                if (FindElement(driver,By.XPath("//body//footer//div//div//div//div[2]"),20))
+                
+                if (FindElement(driver,By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]"),20))
                 {
                     IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
                     string _script2 = "document.evaluate" +
-                    "('//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+                    "('/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
 
 
                     string title = (string)js.ExecuteScript(_script2);
                 }
-
-               
-
                 
+
 
             }
             catch (Exception ex)
@@ -433,34 +449,37 @@ namespace Presentation
 
           
 
-                if (FindElement(driver, By.XPath(AttachXPath), 10))
+                if (FindElement(driver, By.XPath(AttachPath), 10))
                 {
-                    driver.FindElement(By.XPath(AttachXPath)).Click();
-                    Task.Delay(1000).Wait();
+                    driver.FindElement(By.XPath(AttachPath)).Click();
 
-
-                    IWebElement uploadElement = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]"));
-                    uploadElement.SendKeys(imagedir);
-
-
-
-
-                    Task.Delay(1000 + preventblocktiming).Wait();
-
-
-                    if (FindElement(driver, By.XPath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]"), 10))
+                    if (FindElement(driver, By.XPath(ImageAttachFilePath), 10))
                     {
 
-                        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-
-                        string _script2 = "document.evaluate" +
-                        "('//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+                        IWebElement uploadElement = driver.FindElement(By.XPath(ImageAttachFilePath));
+                        uploadElement.SendKeys(imagedir);
 
 
 
-                        string title = (string)js.ExecuteScript(_script2);
+                        Task.Delay(1000 + preventblocktiming).Wait();
 
+
+                        if (FindElement(driver, By.XPath(ImageMessageBoxPath), 10))
+                        {
+
+                            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+                            string _script2 = "document.evaluate" +
+                            "(' " + ImageMessageBoxPath + "', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+
+
+
+                            string title = (string)js.ExecuteScript(_script2);
+
+                        }
                     }
+
+                   
 
 
                    
@@ -492,28 +511,20 @@ namespace Presentation
 
            
 
-                if (FindElement(driver, By.XPath("//body/div[@id='app']/div/div/div/div[@id='main']/footer/div/div/div/div/div/span[1]"), 10))
+                if (FindElement(driver, By.XPath(AttachPath), 10))
                 {
-                    driver.FindElement(By.XPath("//body/div[@id='app']/div/div/div/div[@id='main']/footer/div/div/div/div/div/span[1]")).Click();
+                    driver.FindElement(By.XPath(AttachPath)).Click();
 
-                    Task.Delay(2000).Wait();
+                    if (FindElement(driver, By.XPath(DocumentAttachFilePath), 10))
+                    {
+                        IWebElement uploadElement = driver.FindElement(By.XPath(DocumentAttachFilePath));
+                        uploadElement.SendKeys(filedir);
 
+                    }
                     
-                    IWebElement uploadElement = driver.FindElement(By.XPath("//li[3]//button[1]//input[1]"));
-                    uploadElement.SendKeys(filedir);
-                    
-                    Task.Delay(3000 + preventblocktiming).Wait();
+                    Task.Delay(2000 + preventblocktiming).Wait();
                 }
                
-
-                if (FindElement(driver, By.XPath("//div[contains(text(),'1 documento que intentaste añadir es mayor al lími')]"),10))
-                {
-             
-                    driver.FindElement(By.XPath("//div[@id='app']//div//div//div//div//div//span//div//div//header//div//div//span")).Click();
-
-                }
-
-
 
 
             }
@@ -534,17 +545,23 @@ namespace Presentation
 
                
 
-                if (FindElement(driver, By.XPath(AttachXPath), 10))
+                if (FindElement(driver, By.XPath(AttachPath), 10))
                 {
-                    driver.FindElement(By.XPath(AttachXPath)).Click();
-                    Task.Delay(2000).Wait();
+                    driver.FindElement(By.XPath(AttachPath)).Click();
+                    
+
+                    if (FindElement(driver, By.XPath(ImageAttachFilePath), 10))
+                    {
+                        IWebElement uploadElement = driver.FindElement(By.XPath(ImageAttachFilePath));
 
 
-                    IWebElement uploadElement = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]"));
+                        uploadElement.SendKeys(audiodir);
+                    }
 
-                    uploadElement.SendKeys(audiodir);
+                        
 
-                    Task.Delay(3000 + preventblocktiming).Wait();
+
+
 
                 }
 
@@ -559,18 +576,45 @@ namespace Presentation
             }
 
         }
-        public void ContactSend()
+        public void ContactSend(By by)
         {
-            try
-            {
-                new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
-            }
-            catch (Exception ex)
+            if (FindElement(driver, By.XPath(SendIADButton), 10))
             {
 
-                Console.WriteLine(ex.Message);
+
+                try
+                {
+                    new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
+
+
+
             }
+            
            
+
+        }
+        public void ContactActionEnter()
+        {
+            
+
+                try
+                {
+                    new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
+
+
+
 
         }
         public void ContactSend2()
@@ -599,7 +643,6 @@ namespace Presentation
 
             ContactSearch(tosearch);
 
-            Task.Delay(1000).Wait();
 
             action.SendKeys(Keys.Space).Build().Perform();
             
@@ -613,7 +656,7 @@ namespace Presentation
                 Task.Delay(5000).Wait();
 
 
-                if (FindElement(driver,By.XPath("//header/div[2]/div[2]"),10))
+                if (FindElement(driver,By.XPath(ContactOrChatBoxPath),10))
                 {
                     IList<IWebElement> selectElements = driver.FindElements(By.XPath("//header/div[2]/div[2]"));
 
@@ -639,6 +682,7 @@ namespace Presentation
                         str.Append(item.ToString());
                     }
                 }
+                
                
             }
 
@@ -707,12 +751,27 @@ namespace Presentation
         }
         public void  LogoutWA()
         {
-          
-            driver.FindElement(By.XPath("//header//div[3]//div[1]//span[1]")).Click();
+            if (FindElement(WA.driver, By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]"), 5))
+            {
+
+                driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]")).Click();
+
+                if (FindElement(driver, By.XPath(LogOutButton), 5))
+                {
+
+                    
+                        driver.FindElement(By.XPath(LogOutButton)).Click();
+                   
+
+                }
+            }
             
 
-            if (FindElement(driver, By.XPath("//body//li[7]"), 10))
-            { driver.FindElement(By.XPath("//body//li[7]")).Click(); }
+            
+            
+            
+
+           
 
               
 

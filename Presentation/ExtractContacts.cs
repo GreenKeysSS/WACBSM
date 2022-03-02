@@ -58,7 +58,7 @@ namespace Presentation
                     }
                     else
                     {
-                      MessageBox.Show("El grupo no exite en la lista de grupos de tu WhatsApp, intentar con otro", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                      MessageBox.Show("El grupo ingresado no exite en la lista de grupos de WhatsApp", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
 
