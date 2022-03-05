@@ -25,12 +25,9 @@ using ICSharpCode.SharpZipLib.Zip;
 using System.Drawing.Text;
 using System.Text.RegularExpressions;
 using System.Net.NetworkInformation;
-using SpeedTest.Net.Enums;
-using SpeedTest.Net.Models;
-using SpeedTest.Net;
-using System.Net.Http;
 using OpenQA.Selenium.Remote;
 using Newtonsoft.Json;
+using WIN32 = Microsoft.Win32;
 
 namespace Presentation
 {
@@ -60,8 +57,8 @@ namespace Presentation
         bool stopbtnclicked;
         bool stopbtnclicked2;
 
-        public bool fileexist = false;
-        static string uploadedfilename;
+       
+       
         int sendedmessage;
         int sendedmessage2;
 
@@ -150,81 +147,28 @@ namespace Presentation
 
 
 
-            GetConnectionSpeed();
-
-
-        }
-        private void GetConnectionSpeed()
-        {
-
-
-            ExecuteSpeedTest(SpeedTestSource.Speedtest);
-            /*/
-            FetchServer();
-
-            if (Server != null)
-            {
-
-               
-
-            }
-            else
-            {
-                MessageBox.Show("Fetch Server first");
-            }
-            */
-
+          
 
         }
-        private Server Server { get; set; }
-        private async void FetchServer()
-        {
-
-
-            try
-            {
-
-                Server = await SpeedTestClient.GetServer();
-
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private async void ExecuteSpeedTest(SpeedTestSource source, Server server = null)
-        {
-            try
-            {
-
-
-                DownloadSpeed speed = null;
-
-                if (source == SpeedTestSource.Speedtest)
-                    speed = await SpeedTestClient.GetDownloadSpeed(server, SpeedTestUnit.KiloBitsPerSecond);
-                else
-                    speed = await FastClient.GetDownloadSpeed(SpeedTestUnit.KiloBitsPerSecond);
-
-                var message = $"Source: {speed.Source} Download Speed: {speed?.Speed} {speed.Unit}";
-
-                if (speed?.Server?.Id != null)
-                    message += $" (Server Id = {speed?.Server?.Id})";
-                Console.WriteLine(message);
-
-            }
-            catch (System.Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-
-            }
-        }
+        
+       
+        
 
         private void FetchChromeDriverVersion()
         {
 
             try
             {
+                WIN32.RegistryKey key = WIN32.Registry.CurrentUser.OpenSubKey(@"Software\Google\Chrome\BLBeacon");
+
+                if (key != null)
+                {
+                    Console.WriteLine(key.GetValue("version"));
+                    chromedriverversion = Convert.ToString( key.GetValue("version"));
+
+                    key.Close();
+                }
+                /*
                 var webRequest = WebRequest.Create(@"https://chromedriver.storage.googleapis.com/LATEST_RELEASE");
 
                 using (var response = webRequest.GetResponse())
@@ -236,7 +180,7 @@ namespace Presentation
                     Console.WriteLine(Convert.ToString(strContent));
 
                 }
-
+                */
 
             }
             catch (Exception ex)
@@ -263,9 +207,10 @@ namespace Presentation
                         
                     });*/
 
+                     FetchChromeDriverVersion();
+                   
 
 
-                    FetchChromeDriverVersion();
                     chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
                     Dwchromedriver();
 
@@ -622,7 +567,7 @@ namespace Presentation
             dt.Columns.Add("smssendmanymsg", typeof(string));
             dt.Columns.Add("smsseveralpausecant", typeof(string));
 
-
+            dt.Columns.Add("filetype", typeof(string));
 
             DataRow row = dt.NewRow();
 
@@ -641,6 +586,9 @@ namespace Presentation
             row["smssendmanymsg"] = Convert.ToString(manymessages2cb.Checked);
             row["smsseveralpausecant"] = severalpause2txt.Text;
             //row["smsseveralpausecant"] = .Text;
+
+            row["filetype"] = filetype;
+
 
 
             dt.Rows.Add(row);
@@ -687,6 +635,8 @@ namespace Presentation
                 manymessages2cb.Checked = Convert.ToBoolean(dt.Rows[0][11]);
                 severalpause2txt.Text = Convert.ToString(dt.Rows[0][12]);
 
+                filetype = Convert.ToString(dt.Rows[0][13]);
+
 
             }
             else
@@ -698,7 +648,7 @@ namespace Presentation
                 manymessagescb.Checked = false;
                 severalpausetxt.Text = "300";
                 filenametxt.Text = "";
-
+                filetype = "";
                 eachmessagetiming2txt.Text = "30";
                 sendfullname2cb.Checked = false;
                 preventblock2cb.Checked = false;
@@ -750,29 +700,18 @@ namespace Presentation
                 string filename = ofd.FileName;
 
 
-                if (String.IsNullOrEmpty(filename) == true)
+                if (size < 67108864)
                 {
-                    fileexist = false;
-
+                    filenametxt.Text = filename;
+                    filetype = "I";
                 }
                 else
                 {
-
-
-                    if (size < 67108864)
-                    {
-                        filenametxt.Text = filename;
-                        uploadedfilename = filename;
-                        filetype = "I"; fileexist = true;
-                    }
-                    else
-                    {
-                        fileexist = false;
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-
+                    filenametxt.Clear();
+                    MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+
+                
             }
         }
 
@@ -788,29 +727,17 @@ namespace Presentation
                 string filename = ofd.FileName;
 
 
-                if (String.IsNullOrEmpty(filename) == true)
+                if (size < 67108864)
                 {
-                    fileexist = false;
+                    filenametxt.Text = filename; 
 
+                    filetype = "A"; 
                 }
                 else
                 {
+                    filenametxt.Clear();
 
-
-                    if (size < 67108864)
-                    {
-                        filenametxt.Text = filename; uploadedfilename = filename;
-
-                        filetype = "A"; fileexist = true;
-                    }
-                    else
-                    {
-                        fileexist = false;
-
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-
+                    MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
 
@@ -831,29 +758,17 @@ namespace Presentation
                 string filename = ofd.FileName;
 
 
-                if (String.IsNullOrEmpty(filename) == true)
+                if (size < 67108864)
                 {
-                    fileexist = false;
+                    filenametxt.Text = filename;
 
+                    filetype = "D";
                 }
                 else
                 {
+                    filenametxt.Clear();
 
-
-                    if (size < 67108864)
-                    {
-                        filenametxt.Text = filename; uploadedfilename = filename;
-
-                        filetype = "D"; fileexist = true;
-                    }
-                    else
-                    {
-                        fileexist = false;
-
-                        MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-
+                    MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -2564,8 +2479,9 @@ namespace Presentation
 
 
 
-                                                    if (fileexist)
+                                                    if (!string.IsNullOrEmpty(filenametxt.Text))
                                                     {
+                                                      
 
                                                         if (filetype == "I")
                                                         {
@@ -2598,7 +2514,10 @@ namespace Presentation
 
 
                                                                     Actions action = new Actions(WA.driver);
-                                                                    wa.ContactFileImage(filename, actualmessagetosend);
+
+
+
+                                                                    wa.ImageTextMessage(filename, actualmessagetosend);
 
 
                                                                     action.SendKeys(".").Build().Perform();
@@ -2661,17 +2580,10 @@ namespace Presentation
 
                                                                     wa.ContactFileAudio(filename);
 
+
+
                                                                     wa.ContactSend(By.XPath(WA.SendIADButton));
 
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-                                                                    wa.ClickSearchIcon();
-
-                                                                    wa.ContactSearch(actualnumber);
-
-                                                                    action.SendKeys(Keys.Space).Build().Perform();
-
-                                                                    wa.ContactClick();
 
 
 
@@ -2679,21 +2591,45 @@ namespace Presentation
 
 
 
+                                                                    if (!CheckAttachMessageStatus())
+                                                                    {
+                                                                        wa.ClickSearchIcon();
+
+                                                                        wa.ContactSearch(actualnumber);
+
+                                                                        action.SendKeys(Keys.Space).Build().Perform();
+
+                                                                        wa.ContactClick();
 
 
-                                                                    wa.ContactMessage(actualmessagetosend);
 
-                                                                    action.SendKeys("A").Build().Perform();
-                                                                    action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
+                                                                        wa.ContactMessage(actualmessagetosend);
 
-                                                                    Console.WriteLine("solo Mensaje escrito");
+                                                                        action.SendKeys("A").Build().Perform();
+                                                                        action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
 
 
-                                                                    wa.ContactActionEnter();
 
-                                                                    Console.WriteLine("presione enter para enviar");
+                                                                        Console.WriteLine("solo Mensaje escrito");
+
+
+                                                                        wa.ContactActionEnter();
+
+                                                                        Console.WriteLine("presione enter para enviar");
+                                                                    }
+                                                                    
+
+
+                                                                    
+
+
+
+
+
+
 
 
                                                                     fila.Cells[2].Value = "S";
@@ -3958,8 +3894,6 @@ namespace Presentation
         private void clearfilenamebtn_Click(object sender, EventArgs e)
         {
             filenametxt.Clear();
-            uploadedfilename = "";
-            fileexist = false;
 
         }
 
@@ -5387,6 +5321,7 @@ namespace Presentation
             }
             return sb.ToString();
         }
-
+        
+        
     }
 }

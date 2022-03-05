@@ -439,7 +439,7 @@ namespace Presentation
             }
 
         }
-        public void ContactFileImage(string imagedir,string totype)
+        public void ImageTextMessage(string imagedir,string totype)
         {
 
 
@@ -489,6 +489,53 @@ namespace Presentation
 
 
              
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+        public void ImageMessage(string imagedir, string totype)
+        {
+
+
+
+            try
+            {
+
+
+
+                if (FindElement(driver, By.XPath(AttachPath), 10))
+                {
+                    driver.FindElement(By.XPath(AttachPath)).Click();
+
+                    if (FindElement(driver, By.XPath(ImageAttachFilePath), 10))
+                    {
+
+                        IWebElement uploadElement = driver.FindElement(By.XPath(ImageAttachFilePath));
+                        uploadElement.SendKeys(imagedir);
+
+
+
+                        Task.Delay(1000 + preventblocktiming).Wait();
+
+
+                       
+                    }
+
+
+
+
+                }
+
+
+
 
 
 
