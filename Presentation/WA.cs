@@ -50,6 +50,7 @@ namespace Presentation
         public static string ImageAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]";
         public static string MessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]";
         public static string ImageMessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]";
+        public static string VideoMessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]";
         public static string ContactOrChatBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]";
         public static string SendIADButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/span[1]";
         public static string LogOutButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]";
@@ -322,7 +323,7 @@ namespace Presentation
             
             try
             {
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(12);
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
                 IWebElement SearchResult = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(by));
                 return true;
@@ -501,6 +502,68 @@ namespace Presentation
             }
 
         }
+        public void VideoTextMessage(string imagedir, string totype)
+        {
+
+
+
+            try
+            {
+
+
+
+                if (FindElement(driver, By.XPath(AttachPath), 10))
+                {
+                    driver.FindElement(By.XPath(AttachPath)).Click();
+
+                    if (FindElement(driver, By.XPath(ImageAttachFilePath), 10))
+                    {
+
+                        IWebElement uploadElement = driver.FindElement(By.XPath(ImageAttachFilePath));
+                        uploadElement.SendKeys(imagedir);
+
+
+
+                        Task.Delay(1000 + preventblocktiming).Wait();
+
+
+                        if (FindElement(driver, By.XPath(VideoMessageBoxPath), 10))
+                        {
+
+                            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+                            string _script2 = "document.evaluate" +
+                            "(' " + VideoMessageBoxPath + "', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+
+
+
+                            string title = (string)js.ExecuteScript(_script2);
+
+                        }
+                    }
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+
+                Console.WriteLine(ex.Message);
+            }
+
+        }
         public void ImageMessage(string imagedir)
         {
 
@@ -545,6 +608,7 @@ namespace Presentation
             }
 
         }
+       
         public void ContactFile(string filedir)
         {
 

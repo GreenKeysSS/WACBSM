@@ -573,6 +573,7 @@ namespace Presentation
             dt.Columns.Add("smsseveralpausecant", typeof(string));
 
             dt.Columns.Add("filetype", typeof(string));
+            dt.Columns.Add("sendonlyattach", typeof(string));
 
             DataRow row = dt.NewRow();
 
@@ -593,6 +594,7 @@ namespace Presentation
             //row["smsseveralpausecant"] = .Text;
 
             row["filetype"] = filetype;
+            row["sendonlyattach"] = Convert.ToString(sendonlyattachcb.Checked);
 
 
 
@@ -641,6 +643,7 @@ namespace Presentation
                 severalpause2txt.Text = Convert.ToString(dt.Rows[0][12]);
 
                 filetype = Convert.ToString(dt.Rows[0][13]);
+                sendonlyattachcb.Checked = Convert.ToBoolean(dt.Rows[0][14]);
 
 
             }
@@ -660,7 +663,7 @@ namespace Presentation
                 senddatetime2cb.Checked = false;
                 manymessages2cb.Checked = false;
                 severalpause2txt.Text = "300";
-
+                sendonlyattachcb.Checked = false;
             }
 
 
@@ -696,9 +699,11 @@ namespace Presentation
         private void imagenYVideoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
+            ofd.Filter = "Archivos Personalizados " +
+                "(*.tif;*.pjp;*xbm;*jxl;*.svgz;*.jpg;*.jpeg;*.ico;*.tiff;*.gif;*.svg;*.jfif;*.webp;*.png;*.bmp;*.pjpeg;*.avif;*.m4v;*.mp4;*.3gpp;*.mov) | " +
+                "*.tif;*.pjp;*xbm;*jxl;*.svgz;*.jpg;*.jpeg;*.ico;*.tiff;*.gif;*.svg;*.jfif;*.webp;*.png;*.bmp;*.pjpeg;*.avif;*.m4v;*.mp4;*.3gpp;*.mov";
 
-
-
+            //Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 var size = new FileInfo(ofd.FileName).Length;
@@ -2522,24 +2527,86 @@ namespace Presentation
                                                                 
                                                                 if (!CheckAttachMessageStatus())
                                                                 {
-
                                                                     wa.ImageMessage(filename);
+                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
 
+
+                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
                                                                 }
                                                                 else
                                                                 {
-                                                                    wa.ImageTextMessage(filename, actualmessagetosend);
-                                                                    action.SendKeys(".").Build().Perform();
-                                                                    action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+                                                                    if (GetImageState(filename))
+                                                                    {
+                                                                        
+                                                                        wa.ImageTextMessage(filename, actualmessagetosend);
+                                                                        action.SendKeys(".").Build().Perform();
+                                                                        action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+                                                                        wa.ContactSend(By.XPath(WA.SendIADButton));
+                                                                    }
+
+                                                                    else if (GetVideoState(filename))
+                                                                    {
+                                                                       
+                                                                        wa.VideoTextMessage(filename, actualmessagetosend);
+                                                                        action.SendKeys(".").Build().Perform();
+                                                                        action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+                                                                        Console.WriteLine("only video attached");
+
+                                                                        wa.ContactSend(By.XPath(WA.SendIADButton));
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        wa.ImageMessage(filename);
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+                                                                        wa.ContactSend(By.XPath(WA.SendIADButton));
+
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+                                                                        wa.ClickSearchIcon();
+
+                                                                        wa.ContactSearch(actualnumber);
+
+                                                                        action.SendKeys(Keys.Space).Build().Perform();
+
+                                                                        wa.ContactClick();
+
+
+
+                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+                                                                        wa.ContactMessage(actualmessagetosend);
+
+                                                                        action.SendKeys("A").Build().Perform();
+                                                                        action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+
+
+
+                                                                        Console.WriteLine("solo Mensaje escrito");
+
+
+                                                                        wa.ContactActionEnter();
+
+                                                                        Console.WriteLine("presione enter para enviar");
+
+
+                                                                    }
+
+
                                                                 }
                                                                 
                                                                
                                                                
 
-                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-
-                                                                wa.ContactSend(By.XPath(WA.SendIADButton));
+                                                                
 
                                                                 fila.Cells[2].Value = "S";
 
@@ -2547,7 +2614,7 @@ namespace Presentation
                                                                 Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
-                                                                Console.WriteLine("Envio imagen y texto");
+                                                                Console.WriteLine("Envio imagen o video y texto");
 
                                                             }
                                                             catch (Exception)
@@ -5380,5 +5447,33 @@ namespace Presentation
             return true;
         }
 
+        
+        private string GetExtension(string path)
+        {
+            return Path.GetExtension(path);
+        }
+        private bool GetImageState(string path)
+        {
+            if (GetExtension(path) ==".svg" || GetExtension(path) == ".png" || GetExtension(path) == ".jpg"
+                || GetExtension(path) == ".jpeg" || GetExtension(path) == ".ico" || GetExtension(path) == ".gif" || GetExtension(path) == ".jfif"
+                || GetExtension(path) == ".webp" || GetExtension(path) == ".pjpeg" || GetExtension(path) == ".avif")
+            {
+                Console.WriteLine("it's a image with preview");
+                return true;
+            }
+            return false;
+
+        }
+        private bool GetVideoState(string path)
+        {
+            if (GetExtension(path) == ".m4v" || GetExtension(path) == ".mov" || GetExtension(path) == ".mp4")
+            {
+                Console.WriteLine("it's a video with preview");
+
+                return true;
+            }
+            return false;
+
+        }
     }
 }
