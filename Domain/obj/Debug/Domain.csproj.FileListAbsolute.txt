@@ -91,3 +91,4 @@ C:\Users\USER\Documents\GitHub\WACBSM\Domain\obj\Debug\Domain.csproj.CoreCompile
 C:\Users\USER\Documents\GitHub\WACBSM\Domain\obj\Debug\Domain.csproj.CopyComplete
 C:\Users\USER\Documents\GitHub\WACBSM\Domain\obj\Debug\Domain.dll
 C:\Users\USER\Documents\GitHub\WACBSM\Domain\obj\Debug\Domain.pdb
+C:\Users\USER\Documents\GitHub\WACBSM\Domain\bin\Debug\Renci.SshNet.dll

@@ -501,7 +501,7 @@ namespace Presentation
             }
 
         }
-        public void ImageMessage(string imagedir, string totype)
+        public void ImageMessage(string imagedir)
         {
 
 
@@ -521,9 +521,6 @@ namespace Presentation
                         IWebElement uploadElement = driver.FindElement(By.XPath(ImageAttachFilePath));
                         uploadElement.SendKeys(imagedir);
 
-
-
-                        Task.Delay(1000 + preventblocktiming).Wait();
 
 
                        

@@ -50,7 +50,7 @@ namespace Presentation
         private CancellationTokenSource pauseToken2;
         private CancellationTokenSource eachmessagetoken2;
         private CancellationTokenSource severalpausetoken2;
-
+        
         int pausetiming = 0;
         int pausetiming2 = 0;
 
@@ -93,6 +93,11 @@ namespace Presentation
         {
             AutoUpdater.InstalledVersion = Version.Parse("1.0.0.14");
             UserModel user = new UserModel();
+
+
+
+
+
             if (!CheckForInternetConnection())
             {
 
@@ -135,7 +140,7 @@ namespace Presentation
             CheckUserProfileExist();
 
             InitializeComponent();
-
+            CheckForIllegalCrossThreadCalls = false;
 
 
 
@@ -2162,204 +2167,131 @@ namespace Presentation
                 {
 
 
-                    if (m1txt.Text == "") { MessageBox.Show("No existe mensaje para enviar!.\nUtilice el espacio de <Mensaje 1>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else
+
+
+
+
+                    if (wa.IsBrowserClosed(WA.driver) == false)
                     {
-
-
-
-
-
-                        if (wa.IsBrowserClosed(WA.driver) == false)
+                        if (wa.IfConnected(By.XPath("//header/div[2]/div[1]/span[1]/div[2]/div[1]/span[1]")) == false)
                         {
-                            if (wa.IfConnected(By.XPath("//header/div[2]/div[1]/span[1]/div[2]/div[1]/span[1]")) == false)
+                            DialogResult d;
+                            d = MessageBox.Show("Debe escanear el codigo QR para empezar a enviar", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                        }
+
+
+                        else
+                        {
+
+                            startbtn.Enabled = false;
+                            pausebtn.Enabled = true;
+                            stopbtn.Enabled = true;
+                            pausetiming = 0;
+                            logoutbtn.Enabled = false;
+                            uploadbtn.Enabled = false;
+                            clearfilenamebtn.Enabled = false;
+                            connectwabtn.Enabled = false;
+                            int countmessage = 0;
+                            loadmessagelbl.Text = "Estado: Conectado . . .";
+                            bool activatemanymessages = false;
+                            contactsdgv.AllowUserToAddRows = false;
+                            contactsdgv.AllowUserToDeleteRows = false;
+                            if (manymessagescb.Checked == true)
                             {
-                                DialogResult d;
-                                d = MessageBox.Show("Debe escanear el codigo QR para empezar a enviar", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                if (m2txt.Text == "" || m3txt.Text == "" || m4txt.Text == "" || m5txt.Text == "")
+                                {
+                                    manymessagescb.Checked = false;
+                                    MessageBox.Show("No llenó todos los espacios de mensajes, no se usará la opción <Enviar varios textos en un solo envío>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
+
+                                }
                             }
 
 
-                            else
+
+                            foreach (DataGridViewRow fila in contactsdgv.Rows)
                             {
 
-                                startbtn.Enabled = false;
-                                pausebtn.Enabled = true;
-                                stopbtn.Enabled = true;
-                                pausetiming = 0;
-                                logoutbtn.Enabled = false;
-                                uploadbtn.Enabled = false;
-                                clearfilenamebtn.Enabled = false;
-                                connectwabtn.Enabled = false;
-                                int countmessage = 0;
-                                loadmessagelbl.Text = "Estado: Conectado . . .";
-                                bool activatemanymessages = false;
-                                contactsdgv.AllowUserToAddRows = false;
-                                contactsdgv.AllowUserToDeleteRows = false;
-                                if (manymessagescb.Checked == true)
+
+                                if (fila.IsNewRow) continue;
+
+
+
+
+                                if (CheckForInternetConnection())
                                 {
-                                    if (m2txt.Text == "" || m3txt.Text == "" || m4txt.Text == "" || m5txt.Text == "")
+
+                                    if (preventblockcb.Checked == true)
                                     {
-                                        manymessagescb.Checked = false;
-                                        MessageBox.Show("No llenó todos los espacios de mensajes, no se usará la opción <Enviar varios textos en un solo envío>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
+                                        wa.preventblocktiming = 4000;
                                     }
-                                }
-
-
-
-                                foreach (DataGridViewRow fila in contactsdgv.Rows)
-                                {
-
-
-                                    if (fila.IsNewRow) continue;
-
-
-
-
-                                    if (CheckForInternetConnection())
+                                    else
                                     {
+                                        wa.preventblocktiming = 0;
+                                    }
+                                    if (eachmessagetimingcb.Checked == true)
+                                    {
+                                        eachmessagetiming = Convert.ToInt32(eachmessagetimingtxt.Text) * 1000;
+                                    }
+                                    else
+                                    {
+                                        eachmessagetiming = 0;
+                                    }
 
-                                        if (preventblockcb.Checked == true)
+
+
+                                    if (Convert.ToString(fila.Cells[0].Value) != string.Empty)
+                                    { actualnumber = Convert.ToString(fila.Cells[0].Value); Console.WriteLine(actualnumber); }
+                                    else { actualnumber = "numero vacio"; Console.WriteLine(actualnumber); }
+
+                                    if (Convert.ToString(fila.Cells[1].Value) != string.Empty)
+                                    { actualname = Convert.ToString(fila.Cells[1].Value); Console.WriteLine(actualname); }
+                                    else { actualname = "nombre vacio"; Console.WriteLine(actualname); }
+
+
+
+
+                                    //mensajes
+
+                                    string m1 = m1txt.Text.Replace("\n", "<br/>");
+                                    string m2 = m2txt.Text.Replace("\n", "<br/>");
+                                    string m3 = m3txt.Text.Replace("\n", "<br/>");
+                                    string m4 = m4txt.Text.Replace("\n", "<br/>");
+                                    string m5 = m5txt.Text.Replace("\n", "<br/>");
+
+                                    var messages = new List<string>
+                                    {
+                                        m1,
+                                        m2,
+                                        m3,
+                                        m4,
+                                        m5
+                                    };
+
+
+
+
+
+                                    string actualmessagetosend = "";
+
+
+                                    //bucle de mensajes 2, 3, 4 , 5 yremplazo con regards y goodbyes
+
+
+
+                                    if (manymessagescb.Checked == true && activatemanymessages == true)
+                                    {
+                                        countmessage++;
+
+
+
+
+                                        if (countmessage == 5)
                                         {
-                                            wa.preventblocktiming = 4000;
-                                        }
-                                        else
-                                        {
-                                            wa.preventblocktiming = 0;
-                                        }
-                                        if (eachmessagetimingcb.Checked == true)
-                                        {
-                                            eachmessagetiming = Convert.ToInt32(eachmessagetimingtxt.Text) * 1000;
-                                        }
-                                        else
-                                        {
-                                            eachmessagetiming = 0;
-                                        }
-
-
-
-                                        if (Convert.ToString(fila.Cells[0].Value) != string.Empty)
-                                        { actualnumber = Convert.ToString(fila.Cells[0].Value); Console.WriteLine(actualnumber); }
-                                        else { actualnumber = "numero vacio"; Console.WriteLine(actualnumber); }
-
-                                        if (Convert.ToString(fila.Cells[1].Value) != string.Empty)
-                                        { actualname = Convert.ToString(fila.Cells[1].Value); Console.WriteLine(actualname); }
-                                        else { actualname = "nombre vacio"; Console.WriteLine(actualname); }
-
-
-
-
-                                        //mensajes
-
-                                        string m1 = m1txt.Text.Replace("\n", "<br/>");
-                                        string m2 = m2txt.Text.Replace("\n", "<br/>");
-                                        string m3 = m3txt.Text.Replace("\n", "<br/>");
-                                        string m4 = m4txt.Text.Replace("\n", "<br/>");
-                                        string m5 = m5txt.Text.Replace("\n", "<br/>");
-
-                                        var messages = new List<string>
-                                        {
-                                            m1,
-                                            m2,
-                                            m3,
-                                            m4,
-                                            m5
-                                        };
-
-
-
-
-
-                                        string actualmessagetosend = "";
-
-
-                                        //bucle de mensajes 2, 3, 4 , 5 yremplazo con regards y goodbyes
-
-
-
-                                        if (manymessagescb.Checked == true && activatemanymessages == true)
-                                        {
-                                            countmessage++;
-
-
-
-
-                                            if (countmessage == 5)
-                                            {
-                                                countmessage = 0;
-
-                                                actualmessagetosend = actualmessagetosend + messages[0];
-
-
-                                                if (sendfullnamecb.Checked == true)
-                                                {
-
-                                                    if (actualname == "nombre vacio")
-                                                    {
-                                                        actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
-                                                    }
-
-                                                    else
-                                                    {
-                                                        actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
-                                                    }
-
-                                                }
-                                                if (senddatetimecb.Checked)
-                                                {
-                                                    DateTime actualdate = getTimeNow();
-
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate));
-
-                                                }
-
-
-
-
-                                                activatemanymessages = false;
-
-
-
-                                            }
-                                            else
-                                            {
-
-
-                                                actualmessagetosend = actualmessagetosend + messages[countmessage];
-
-                                                if (sendfullnamecb.Checked == true)
-                                                {
-
-                                                    if (actualname == "nombre vacio")
-                                                    {
-                                                        actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
-                                                    }
-
-                                                    else
-                                                    {
-                                                        actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
-                                                    }
-
-                                                }
-                                                if (senddatetimecb.Checked)
-                                                {
-                                                    DateTime actualdate = getTimeNow();
-
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate));
-
-                                                }
-
-
-                                            }
-
-                                        }
-                                        else
-                                        {
-
+                                            countmessage = 0;
 
                                             actualmessagetosend = actualmessagetosend + messages[0];
 
@@ -2369,9 +2301,7 @@ namespace Presentation
 
                                                 if (actualname == "nombre vacio")
                                                 {
-
                                                     actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
-
                                                 }
 
                                                 else
@@ -2384,242 +2314,325 @@ namespace Presentation
                                             {
                                                 DateTime actualdate = getTimeNow();
 
-                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate));
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
+
+                                            }
+
+
+
+
+                                            activatemanymessages = false;
+
+
+
+                                        }
+                                        else
+                                        {
+
+
+                                            actualmessagetosend = actualmessagetosend + messages[countmessage];
+
+                                            if (sendfullnamecb.Checked == true)
+                                            {
+
+                                                if (actualname == "nombre vacio")
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
+                                                }
+
+                                                else
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
+                                                }
+
+                                            }
+                                            if (senddatetimecb.Checked)
+                                            {
+                                                DateTime actualdate = getTimeNow();
+
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
 
                                             }
 
 
                                         }
 
+                                    }
+                                    else
+                                    {
 
 
-                                        try
+                                        actualmessagetosend = actualmessagetosend + messages[0];
+
+
+                                        if (sendfullnamecb.Checked == true)
                                         {
 
-
-
-                                            loadmessagelbl.Text = "";
-                                            loadmessagelbl.Text = "Estado: Conectado . . .";
-
-
-
-
-                                            if (actualnumber != "numero vacio")
+                                            if (actualname == "nombre vacio")
                                             {
-                                                Console.WriteLine("el numero no esta vacio y paso a busca contacto");
+
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
+
+                                            }
+
+                                            else
+                                            {
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
+                                            }
+
+                                        }
+                                        if (senddatetimecb.Checked)
+                                        {
+                                            DateTime actualdate = getTimeNow();
+
+                                            actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
+
+                                        }
 
 
-                                                await Task.Run(() =>
+                                    }
+
+
+
+                                    try
+                                    {
+
+
+
+                                        loadmessagelbl.Text = "";
+                                        loadmessagelbl.Text = "Estado: Conectado . . .";
+
+
+
+
+                                        if (actualnumber != "numero vacio")
+                                        {
+                                            Console.WriteLine("el numero no esta vacio y paso a busca contacto");
+
+
+                                            await Task.Run(() =>
+                                            {
+                                                if (pausetiming != 0)
                                                 {
-                                                    if (pausetiming != 0)
-                                                    {
-                                                        try
-                                                        {
-                                                            pausetimingaction(pausetiming, pauseToken.Token);
-                                                            pausetiming = 0;
-                                                        }
-                                                        catch (Exception ex)
-                                                        {
-
-                                                            Console.WriteLine(ex.Message);
-                                                        }
-
-                                                    }
-
                                                     try
                                                     {
-                                                        //Task.Delay(3000).Wait();
-                                                        Actions action = new Actions(WA.driver);
-
-                                                        wa.ClickSearchIcon();
-
-                                                        wa.ContactSearch(actualnumber);
-
-                                               
-                                                        action.SendKeys(Keys.Space).Build().Perform();
-                                                        
-
-                                                        //Task.Delay(3000).Wait();
-                                                    
-                                                        Console.WriteLine("doy click en el contacto");
-
-
-
-                                                        wa.ContactClick();
-                                                        //action.SendKeys(Keys.Enter).Build().Perform();
-                                                        //wa.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                                                        // wa.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
-                                                        Task.Delay(2000).Wait();
-
+                                                        pausetimingaction(pausetiming, pauseToken.Token);
+                                                        pausetiming = 0;
                                                     }
                                                     catch (Exception ex)
                                                     {
-                                                        Console.WriteLine(ex.Message.ToString());
 
+                                                        Console.WriteLine(ex.Message);
                                                     }
 
+                                                }
 
-
-
-
-
-
-
-
-                                                }, cancellationToken.Token);
-
-
-
-
-                                                if (wa.clickstate)
+                                                try
                                                 {
+                                                    //Task.Delay(3000).Wait();
+                                                    Actions action = new Actions(WA.driver);
 
-                                                    Console.WriteLine("entre a escribir");
+                                                    wa.ClickSearchIcon();
+
+                                                    wa.ContactSearch(actualnumber);
+
+                                               
+                                                    action.SendKeys(Keys.Space).Build().Perform();
+                                                        
+
+                                                    //Task.Delay(3000).Wait();
+                                                    
+                                                    Console.WriteLine("doy click en el contacto");
+
+
+
+                                                    wa.ContactClick();
+                                                    //action.SendKeys(Keys.Enter).Build().Perform();
+                                                    //wa.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                                                    // wa.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+                                                    Task.Delay(2000).Wait();
+
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    Console.WriteLine(ex.Message.ToString());
+
+                                                }
 
 
 
 
-                                                    if (!string.IsNullOrEmpty(filenametxt.Text))
-                                                    {
+
+
+
+
+
+                                            }, cancellationToken.Token);
+
+
+
+
+                                            if (wa.clickstate)
+                                            {
+
+                                                Console.WriteLine("entre a escribir");
+
+
+
+
+                                                if (!string.IsNullOrEmpty(filenametxt.Text))
+                                                {
                                                       
 
-                                                        if (filetype == "I")
+                                                    if (filetype == "I")
+                                                    {
+
+                                                        await Task.Run(() =>
                                                         {
-
-                                                            await Task.Run(() =>
+                                                            if (pausetiming != 0)
                                                             {
-                                                                if (pausetiming != 0)
-                                                                {
-                                                                    try
-                                                                    {
-                                                                        pausetimingaction(pausetiming, pauseToken.Token);
-                                                                        pausetiming = 0;
-                                                                    }
-                                                                    catch (Exception ex)
-                                                                    {
-
-                                                                        Console.WriteLine(ex.Message);
-                                                                    }
-
-                                                                }
-
-
-
-
-
                                                                 try
                                                                 {
+                                                                    pausetimingaction(pausetiming, pauseToken.Token);
+                                                                    pausetiming = 0;
+                                                                }
+                                                                catch (Exception ex)
+                                                                {
+
+                                                                    Console.WriteLine(ex.Message);
+                                                                }
+
+                                                            }
 
 
 
 
-                                                                    Actions action = new Actions(WA.driver);
+
+                                                            try
+                                                            {
 
 
 
+
+                                                                Actions action = new Actions(WA.driver);
+
+
+
+                                                                   
+                                                                
+                                                                if (!CheckAttachMessageStatus())
+                                                                {
+
+                                                                    wa.ImageMessage(filename);
+
+                                                                }
+                                                                else
+                                                                {
                                                                     wa.ImageTextMessage(filename, actualmessagetosend);
-
-
                                                                     action.SendKeys(".").Build().Perform();
                                                                     action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
-
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-
-                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
-
-                                                                    fila.Cells[2].Value = "S";
-
-
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-
-                                                                    Console.WriteLine("Envio imagen y texto");
-
                                                                 }
-                                                                catch (Exception)
-                                                                {
+                                                                
+                                                               
+                                                               
 
-                                                                    throw;
-                                                                }
-
-
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
+                                                                wa.ContactSend(By.XPath(WA.SendIADButton));
 
-                                                            }, cancellationToken.Token);
+                                                                fila.Cells[2].Value = "S";
 
-                                                        }
-                                                        if (filetype == "A")
-                                                        {
 
-                                                            await Task.Run(() =>
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+                                                                Console.WriteLine("Envio imagen y texto");
+
+                                                            }
+                                                            catch (Exception)
                                                             {
-                                                                if (pausetiming != 0)
-                                                                {
-                                                                    try
-                                                                    {
-                                                                        pausetimingaction(pausetiming, pauseToken.Token);
-                                                                        pausetiming = 0;
-                                                                    }
-                                                                    catch (Exception ex)
-                                                                    {
 
-                                                                        Console.WriteLine(ex.Message);
-                                                                    }
+                                                                throw;
+                                                            }
 
-                                                                }
 
+
+
+
+                                                        }, cancellationToken.Token);
+
+                                                    }
+                                                    if (filetype == "A")
+                                                    {
+
+                                                        await Task.Run(() =>
+                                                        {
+                                                            if (pausetiming != 0)
+                                                            {
                                                                 try
                                                                 {
+                                                                    pausetimingaction(pausetiming, pauseToken.Token);
+                                                                    pausetiming = 0;
+                                                                }
+                                                                catch (Exception ex)
+                                                                {
+
+                                                                    Console.WriteLine(ex.Message);
+                                                                }
+
+                                                            }
+
+                                                            try
+                                                            {
 
 
 
-                                                                    Actions action = new Actions(WA.driver);
+                                                                Actions action = new Actions(WA.driver);
 
 
-                                                                    wa.ContactFileAudio(filename);
+                                                                wa.ContactFileAudio(filename);
 
 
 
-                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
+                                                                wa.ContactSend(By.XPath(WA.SendIADButton));
 
+
+
+
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+
+
+                                                                if (!CheckAttachMessageStatus())
+                                                                {
+                                                                    wa.ClickSearchIcon();
+
+                                                                    wa.ContactSearch(actualnumber);
+
+                                                                    action.SendKeys(Keys.Space).Build().Perform();
+
+                                                                    wa.ContactClick();
 
 
 
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
+                                                                    wa.ContactMessage(actualmessagetosend);
 
-                                                                    if (!CheckAttachMessageStatus())
-                                                                    {
-                                                                        wa.ClickSearchIcon();
-
-                                                                        wa.ContactSearch(actualnumber);
-
-                                                                        action.SendKeys(Keys.Space).Build().Perform();
-
-                                                                        wa.ContactClick();
+                                                                    action.SendKeys("A").Build().Perform();
+                                                                    action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
 
 
 
-                                                                        Task.Delay(1000 + wa.preventblocktiming).Wait();
+                                                                    Console.WriteLine("solo Mensaje escrito");
 
 
-                                                                        wa.ContactMessage(actualmessagetosend);
+                                                                    wa.ContactActionEnter();
 
-                                                                        action.SendKeys("A").Build().Perform();
-                                                                        action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
-
-
-
-                                                                        Console.WriteLine("solo Mensaje escrito");
-
-
-                                                                        wa.ContactActionEnter();
-
-                                                                        Console.WriteLine("presione enter para enviar");
-                                                                    }
+                                                                    Console.WriteLine("presione enter para enviar");
+                                                                }
                                                                     
 
 
@@ -2632,65 +2645,71 @@ namespace Presentation
 
 
 
-                                                                    fila.Cells[2].Value = "S";
+                                                                fila.Cells[2].Value = "S";
 
 
 
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
 
 
-                                                                    Console.WriteLine("Envio audio y texto");
+                                                                Console.WriteLine("Envio audio y texto");
 
 
 
-                                                                }
-                                                                catch (Exception)
-                                                                {
-
-
-                                                                }
-
-
-                                                            }, cancellationToken.Token);
-                                                        }
-                                                        if (filetype == "D")
-                                                        {
-
-                                                            await Task.Run(() =>
+                                                            }
+                                                            catch (Exception)
                                                             {
-                                                                if (pausetiming != 0)
-                                                                {
-                                                                    try
-                                                                    {
-                                                                        pausetimingaction(pausetiming, pauseToken.Token);
-                                                                        pausetiming = 0;
-                                                                    }
-                                                                    catch (Exception ex)
-                                                                    {
 
-                                                                        Console.WriteLine(ex.Message);
-                                                                    }
 
-                                                                }
+                                                            }
 
+
+                                                        }, cancellationToken.Token);
+                                                    }
+                                                    if (filetype == "D")
+                                                    {
+
+                                                        await Task.Run(() =>
+                                                        {
+                                                            if (pausetiming != 0)
+                                                            {
                                                                 try
                                                                 {
+                                                                    pausetimingaction(pausetiming, pauseToken.Token);
+                                                                    pausetiming = 0;
+                                                                }
+                                                                catch (Exception ex)
+                                                                {
+
+                                                                    Console.WriteLine(ex.Message);
+                                                                }
+
+                                                            }
+
+                                                            try
+                                                            {
 
 
-                                                                    Actions action = new Actions(WA.driver);
+                                                                Actions action = new Actions(WA.driver);
 
 
 
-                                                                    wa.ContactFile(filename);
+                                                                wa.ContactFile(filename);
 
-                                                                    wa.ContactSend(By.XPath(WA.SendIADButton));
-
-
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
+                                                                wa.ContactSend(By.XPath(WA.SendIADButton));
 
 
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
 
-                                                                    WA.driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
+
+
+
+
+                                                                if (!CheckAttachMessageStatus())
+                                                                {
+
+
+                                                                    wa.ClickSearchIcon();
 
                                                                     wa.ContactSearch(actualnumber);
 
@@ -2711,259 +2730,271 @@ namespace Presentation
 
 
                                                                     Console.WriteLine("solo Mensaje escrito");
+
+
+
+
+
                                                                     Task.Delay(1000 + wa.preventblocktiming).Wait();
 
                                                                     wa.ContactActionEnter();
-                                                                    Console.WriteLine("presione enter para enviar");
-
-
-                                                                    fila.Cells[2].Value = "S";
-
-
-
-                                                                    Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-
-
-                                                                    Console.WriteLine("Envio file y texto");
-
-
-                                                                }
-                                                                catch (Exception)
-                                                                {
-
 
                                                                 }
 
 
 
-                                                            }, cancellationToken.Token);
-                                                        }
 
-
-
-                                                    }
-
-                                                    else
-                                                    {
-
-                                                        await Task.Run(() =>
-                                                        {
-
-
-                                                            if (pausetiming != 0)
-                                                            {
-                                                                try
-                                                                {
-                                                                    pausetimingaction(pausetiming, pauseToken.Token);
-                                                                    pausetiming = 0;
-                                                                }
-                                                                catch (Exception ex)
-                                                                {
-
-                                                                    Console.WriteLine(ex.Message);
-                                                                }
-
-                                                            }
-
-
-                                                            try
-                                                            {
-
-                                                                Actions action = new Actions(WA.driver);
-
-
-
-                                                                wa.ContactMessage(actualmessagetosend);
-
-
-                                                                action.SendKeys("A").Build().Perform();
-                                                                action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
-
-
-
-                                                                Console.WriteLine("solo Mensaje escrito");
-                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
-
-                                                                wa.ContactActionEnter();
                                                                 Console.WriteLine("presione enter para enviar");
+
+                                                                    
+
                                                                 fila.Cells[2].Value = "S";
 
 
 
+                                                                Task.Delay(1000 + wa.preventblocktiming).Wait();
 
+
+
+                                                                Console.WriteLine("Envio file y texto");
 
 
                                                             }
-                                                            catch (Exception ex)
+                                                            catch (Exception)
                                                             {
-                                                                Console.WriteLine(ex.Message);
-
 
 
                                                             }
+
 
 
                                                         }, cancellationToken.Token);
-
-
                                                     }
 
-                                                    sendedmessage++;
-                                                    sendedmessagelbl.Text = Convert.ToString(sendedmessage);
-                                                    Console.WriteLine(sendedmessage);
+
 
                                                 }
+
                                                 else
                                                 {
-                                                    Actions action = new Actions(WA.driver);
-                                                    action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
 
-                                                    fila.Cells[2].Value = "N";
-                                                    notsendedmessage++;
-                                                    notsendedmessagelbl.Text = Convert.ToString(notsendedmessage);
-                                                    Console.WriteLine(notsendedmessage);
+                                                    await Task.Run(() =>
+                                                    {
 
+
+                                                        if (pausetiming != 0)
+                                                        {
+                                                            try
+                                                            {
+                                                                pausetimingaction(pausetiming, pauseToken.Token);
+                                                                pausetiming = 0;
+                                                            }
+                                                            catch (Exception ex)
+                                                            {
+
+                                                                Console.WriteLine(ex.Message);
+                                                            }
+
+                                                        }
+
+
+                                                        try
+                                                        {
+
+                                                            Actions action = new Actions(WA.driver);
+
+
+
+                                                            wa.ContactMessage(actualmessagetosend);
+
+
+                                                            action.SendKeys("A").Build().Perform();
+                                                            action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+
+
+
+                                                            Console.WriteLine("solo Mensaje escrito");
+                                                            Task.Delay(1000 + wa.preventblocktiming).Wait();
+
+                                                            wa.ContactActionEnter();
+                                                            Console.WriteLine("presione enter para enviar");
+                                                            fila.Cells[2].Value = "S";
+
+
+
+
+
+
+                                                        }
+                                                        catch (Exception ex)
+                                                        {
+                                                            Console.WriteLine(ex.Message);
+
+
+
+                                                        }
+
+
+                                                    }, cancellationToken.Token);
 
 
                                                 }
 
-
+                                                sendedmessage++;
+                                                sendedmessagelbl.Text = Convert.ToString(sendedmessage);
+                                                Console.WriteLine(sendedmessage);
 
                                             }
                                             else
                                             {
+                                                Actions action = new Actions(WA.driver);
+                                                action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+
                                                 fila.Cells[2].Value = "N";
                                                 notsendedmessage++;
                                                 notsendedmessagelbl.Text = Convert.ToString(notsendedmessage);
                                                 Console.WriteLine(notsendedmessage);
+
+
+
                                             }
+
+
+
+                                        }
+                                        else
+                                        {
+                                            fila.Cells[2].Value = "N";
+                                            notsendedmessage++;
+                                            notsendedmessagelbl.Text = Convert.ToString(notsendedmessage);
+                                            Console.WriteLine(notsendedmessage);
+                                        }
+
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine(ex.Message.ToString());
+
+
+                                    }
+                                }
+
+                                else
+                                {
+
+
+                                    stopbtn.Enabled = false;
+                                    pausebtn.Enabled = false;
+                                    startbtn.Enabled = true;
+                                    MessageBox.Show("Se detuvieron los envios de WA debido a que no cuenta con acceso a internet.", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    break;
+                                }
+
+                                count++;
+                                if (count <= rowcount)
+                                {
+                                    sendpbr.Value = count;
+                                }
+
+                                activatemanymessages = true;
+
+
+                                if (severalpausetxt.Text != "")
+                                {
+
+
+                                    if (fila.Index == Convert.ToInt32(severalpausetxt.Text) && !severalpausetoken.IsCancellationRequested)
+                                    {
+
+                                        Console.WriteLine("<<<<<<<<<<<<<<<<<<<este es la cuenta ctual de la fila  " + fila.Index);
+                                        MessageBox.Show("El envio se pausó debido al <# mensajes para Pausar> designado en esta sección.\nRecomendamos esta pausa para no ser bloqueado en WhatsApp.\nLa pausa suele durar 15 minutos y se empezo el <" + getTimeNow() + ">, actualmente se pausa cada " + severalpausetxt.Text + " mensajes", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        await Task.Run(() =>
+                                            {
+                                                try
+                                                {
+                                                    Task.Delay(TimeSpan.FromSeconds(900), severalpausetoken.Token).Wait();
+
+                                                }
+                                                catch (Exception ex)
+                                                {
+
+                                                    Console.WriteLine(ex.Message);
+                                                }
+
+
+                                            });
+
+
+
+                                    }
+
+
+
+                                }
+                                if (wa.clickstate)
+                                {
+                                    await Task.Run(() =>
+                                    {
+                                        try
+                                        {
+                                            Task.Delay(eachmessagetiming, eachmessagetoken.Token).Wait();
 
 
                                         }
                                         catch (Exception ex)
                                         {
+
                                             Console.WriteLine(ex.Message.ToString());
-
-
-                                        }
-                                    }
-
-                                    else
-                                    {
-
-
-                                        stopbtn.Enabled = false;
-                                        pausebtn.Enabled = false;
-                                        startbtn.Enabled = true;
-                                        MessageBox.Show("Se detuvieron los envios de WA debido a que no cuenta con acceso a internet.", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                        break;
-                                    }
-
-                                    count++;
-                                    if (count <= rowcount)
-                                    {
-                                        sendpbr.Value = count;
-                                    }
-
-                                    activatemanymessages = true;
-
-
-                                    if (severalpausetxt.Text != "")
-                                    {
-
-
-                                        if (fila.Index == Convert.ToInt32(severalpausetxt.Text) && !severalpausetoken.IsCancellationRequested)
-                                        {
-
-                                            Console.WriteLine("<<<<<<<<<<<<<<<<<<<este es la cuenta ctual de la fila  " + fila.Index);
-                                            MessageBox.Show("El envio se pausó debido al <# mensajes para Pausar> designado en esta sección.\nRecomendamos esta pausa para no ser bloqueado en WhatsApp.\nLa pausa suele durar 15 minutos y se empezo el <" + getTimeNow() + ">, actualmente se pausa cada " + severalpausetxt.Text + " mensajes", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                            await Task.Run(() =>
-                                                {
-                                                    try
-                                                    {
-                                                        Task.Delay(TimeSpan.FromSeconds(900), severalpausetoken.Token).Wait();
-
-                                                    }
-                                                    catch (Exception ex)
-                                                    {
-
-                                                        Console.WriteLine(ex.Message);
-                                                    }
-
-
-                                                });
-
-
-
                                         }
 
 
 
-                                    }
-                                    if (wa.clickstate)
-                                    {
-                                        await Task.Run(() =>
-                                        {
-                                            try
-                                            {
-                                                Task.Delay(eachmessagetiming, eachmessagetoken.Token).Wait();
 
-
-                                            }
-                                            catch (Exception ex)
-                                            {
-
-                                                Console.WriteLine(ex.Message.ToString());
-                                            }
-
-
-
-
-                                        });
-                                    }
-
-
-
+                                    });
                                 }
 
 
 
-                                if (stopbtnclicked != true)
-                                {
-                                    MessageBox.Show("Mensajes enviados correctamente! ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    uploadbtn.Enabled = true;
-                                    clearfilenamebtn.Enabled = true;
-                                    stopbtn.Enabled = false;
-                                    pausebtn.Enabled = false;
-                                    startbtn.Enabled = true;
-                                    logoutbtn.Enabled = true;
-                                    connectwabtn.Enabled = true;
-
-                                }
-                                else
-                                {
-                                    startbtn.Enabled = true;
-                                }
-
-                                notsendedmessagelbl.Text = Convert.ToString(rowcount - sendedmessage);
-
-                                contactsdgv.AllowUserToAddRows = true;
-                                contactsdgv.AllowUserToDeleteRows = true;
                             }
-                        }
-
-                        else
-                        {
-                            DialogResult d;
-                            d = MessageBox.Show("El navegador está cerrado, no se puede enviar mensajes!, conecte otra vez presionando <Conectar WhatsApp>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
 
+                            if (stopbtnclicked != true)
+                            {
+                                MessageBox.Show("Mensajes enviados correctamente! ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                uploadbtn.Enabled = true;
+                                clearfilenamebtn.Enabled = true;
+                                stopbtn.Enabled = false;
+                                pausebtn.Enabled = false;
+                                startbtn.Enabled = true;
+                                logoutbtn.Enabled = true;
+                                connectwabtn.Enabled = true;
+
+                            }
+                            else
+                            {
+                                startbtn.Enabled = true;
+                            }
+
+                            notsendedmessagelbl.Text = Convert.ToString(rowcount - sendedmessage);
+
+                            contactsdgv.AllowUserToAddRows = true;
+                            contactsdgv.AllowUserToDeleteRows = true;
                         }
                     }
+
+                    else
+                    {
+                        DialogResult d;
+                        d = MessageBox.Show("El navegador está cerrado, no se puede enviar mensajes!, conecte otra vez presionando <Conectar WhatsApp>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+
+                    }
+                    
                 }
 
 
@@ -5321,7 +5352,33 @@ namespace Presentation
             }
             return sb.ToString();
         }
-        
-        
+        private bool CheckAttachMessageStatus()
+        {
+            if (!CheckAttachMessageStatusSub() || sendonlyattachcb.Checked)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        private bool CheckAttachMessageStatusSub()
+        {
+            if (!string.IsNullOrEmpty(filenametxt.Text)
+                && string.IsNullOrWhiteSpace(m1txt.Text)
+                && string.IsNullOrWhiteSpace(m2txt.Text)
+                && string.IsNullOrWhiteSpace(m3txt.Text)
+                && string.IsNullOrWhiteSpace(m4txt.Text)
+                && string.IsNullOrWhiteSpace(m5txt.Text)
+
+
+
+                )
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
