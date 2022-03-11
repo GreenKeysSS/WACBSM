@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -334,10 +334,10 @@
             // 
             this.apptab.Controls.Add(this.wabottab);
             this.apptab.Controls.Add(this.smsbottab);
-            this.apptab.Location = new System.Drawing.Point(70, 15);
+            this.apptab.Location = new System.Drawing.Point(60, -23);
             this.apptab.Name = "apptab";
             this.apptab.SelectedIndex = 0;
-            this.apptab.Size = new System.Drawing.Size(970, 667);
+            this.apptab.Size = new System.Drawing.Size(970, 670);
             this.apptab.TabIndex = 17;
             this.apptab.TabStop = false;
             // 
@@ -362,7 +362,7 @@
             this.wabottab.Location = new System.Drawing.Point(4, 22);
             this.wabottab.Name = "wabottab";
             this.wabottab.Padding = new System.Windows.Forms.Padding(3);
-            this.wabottab.Size = new System.Drawing.Size(962, 641);
+            this.wabottab.Size = new System.Drawing.Size(962, 644);
             this.wabottab.TabIndex = 1;
             this.wabottab.Text = " wabottab";
             // 
@@ -370,10 +370,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(488, 57);
+            this.label12.Location = new System.Drawing.Point(488, 62);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(157, 13);
+            this.label12.Size = new System.Drawing.Size(151, 15);
             this.label12.TabIndex = 39;
             this.label12.Text = "Exp. Imp. Contactos Gmail";
             // 
@@ -381,10 +382,11 @@
             // 
             this.extractlbl.AutoSize = true;
             this.extractlbl.BackColor = System.Drawing.Color.Transparent;
+            this.extractlbl.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.extractlbl.ForeColor = System.Drawing.Color.Black;
-            this.extractlbl.Location = new System.Drawing.Point(658, 57);
+            this.extractlbl.Location = new System.Drawing.Point(658, 62);
             this.extractlbl.Name = "extractlbl";
-            this.extractlbl.Size = new System.Drawing.Size(115, 13);
+            this.extractlbl.Size = new System.Drawing.Size(117, 15);
             this.extractlbl.TabIndex = 38;
             this.extractlbl.Text = "Extraer num. Grupo";
             // 
@@ -392,10 +394,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(430, 57);
+            this.label11.Location = new System.Drawing.Point(430, 62);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 13);
+            this.label11.Size = new System.Drawing.Size(43, 15);
             this.label11.TabIndex = 38;
             this.label11.Text = "Emojis";
             // 
@@ -403,10 +406,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(271, 57);
+            this.label10.Location = new System.Drawing.Point(271, 62);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 13);
+            this.label10.Size = new System.Drawing.Size(138, 15);
             this.label10.TabIndex = 37;
             this.label10.Text = "Importar Contactos .txt";
             // 
@@ -414,10 +418,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(116, 57);
+            this.label9.Location = new System.Drawing.Point(116, 62);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 13);
+            this.label9.Size = new System.Drawing.Size(137, 15);
             this.label9.TabIndex = 36;
             this.label9.Text = "Exportar Contactos .txt";
             // 
@@ -425,10 +430,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(34, 57);
+            this.label8.Location = new System.Drawing.Point(34, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.Size = new System.Drawing.Size(73, 15);
             this.label8.TabIndex = 35;
             this.label8.Text = "Pegar Datos";
             // 
@@ -445,7 +451,7 @@
             this.extractgroupnumbersbtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.extractgroupnumbersbtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.extractgroupnumbersbtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.extractgroupnumbersbtn.Location = new System.Drawing.Point(686, 15);
+            this.extractgroupnumbersbtn.Location = new System.Drawing.Point(686, 14);
             this.extractgroupnumbersbtn.Name = "extractgroupnumbersbtn";
             this.extractgroupnumbersbtn.Size = new System.Drawing.Size(53, 37);
             this.extractgroupnumbersbtn.TabIndex = 34;
@@ -466,7 +472,7 @@
             this.emojibtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.emojibtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.emojibtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.emojibtn.Location = new System.Drawing.Point(425, 15);
+            this.emojibtn.Location = new System.Drawing.Point(425, 14);
             this.emojibtn.Name = "emojibtn";
             this.emojibtn.Size = new System.Drawing.Size(53, 37);
             this.emojibtn.TabIndex = 34;
@@ -487,7 +493,7 @@
             this.gmailbtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.gmailbtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.gmailbtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.gmailbtn.Location = new System.Drawing.Point(532, 15);
+            this.gmailbtn.Location = new System.Drawing.Point(532, 14);
             this.gmailbtn.Name = "gmailbtn";
             this.gmailbtn.Size = new System.Drawing.Size(62, 37);
             this.gmailbtn.TabIndex = 33;
@@ -508,7 +514,7 @@
             this.openbtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.openbtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.openbtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.openbtn.Location = new System.Drawing.Point(317, 16);
+            this.openbtn.Location = new System.Drawing.Point(317, 15);
             this.openbtn.Name = "openbtn";
             this.openbtn.Size = new System.Drawing.Size(53, 36);
             this.openbtn.TabIndex = 32;
@@ -529,7 +535,7 @@
             this.savebtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.savebtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.savebtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.savebtn.Location = new System.Drawing.Point(161, 15);
+            this.savebtn.Location = new System.Drawing.Point(161, 14);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(53, 37);
             this.savebtn.TabIndex = 31;
@@ -550,7 +556,7 @@
             this.pastedatabtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.pastedatabtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.pastedatabtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.pastedatabtn.Location = new System.Drawing.Point(42, 16);
+            this.pastedatabtn.Location = new System.Drawing.Point(42, 15);
             this.pastedatabtn.Name = "pastedatabtn";
             this.pastedatabtn.Size = new System.Drawing.Size(53, 37);
             this.pastedatabtn.TabIndex = 28;
@@ -562,7 +568,7 @@
             // 
             this.severalpausetxt.BorderColor = System.Drawing.Color.SeaGreen;
             this.severalpausetxt.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.severalpausetxt.Location = new System.Drawing.Point(832, 21);
+            this.severalpausetxt.Location = new System.Drawing.Point(832, 20);
             this.severalpausetxt.Name = "severalpausetxt";
             this.severalpausetxt.Size = new System.Drawing.Size(56, 23);
             this.severalpausetxt.TabIndex = 24;
@@ -572,10 +578,11 @@
             // severalpauselbl
             // 
             this.severalpauselbl.AutoSize = true;
+            this.severalpauselbl.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.severalpauselbl.ForeColor = System.Drawing.Color.Black;
-            this.severalpauselbl.Location = new System.Drawing.Point(793, 57);
+            this.severalpauselbl.Location = new System.Drawing.Point(793, 62);
             this.severalpauselbl.Name = "severalpauselbl";
-            this.severalpauselbl.Size = new System.Drawing.Size(139, 13);
+            this.severalpauselbl.Size = new System.Drawing.Size(134, 15);
             this.severalpauselbl.TabIndex = 23;
             this.severalpauselbl.Text = "# Mensajes para Pausar";
             // 
@@ -586,6 +593,7 @@
             this.maintab.BorderColor = System.Drawing.Color.White;
             this.maintab.Controls.Add(this.contactlisttab);
             this.maintab.Controls.Add(this.messagewatab);
+            this.maintab.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintab.HeaderBackgroundColor = System.Drawing.Color.White;
             this.maintab.InActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.maintab.InActiveTextColor = System.Drawing.Color.Black;
@@ -638,18 +646,18 @@
             this.contactsdgv.Location = new System.Drawing.Point(0, 47);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 467);
             this.contactsdgv.TabIndex = 1;
@@ -727,10 +735,11 @@
             // 
             this.manymessagescb.AutoSize = true;
             this.manymessagescb.BackColor = System.Drawing.Color.Transparent;
+            this.manymessagescb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manymessagescb.ForeColor = System.Drawing.Color.Black;
             this.manymessagescb.Location = new System.Drawing.Point(17, 119);
             this.manymessagescb.Name = "manymessagescb";
-            this.manymessagescb.Size = new System.Drawing.Size(248, 17);
+            this.manymessagescb.Size = new System.Drawing.Size(227, 19);
             this.manymessagescb.TabIndex = 34;
             this.manymessagescb.Text = "Enviar Varios textos en un solo envio";
             this.manymessagescb.UseVisualStyleBackColor = false;
@@ -739,9 +748,9 @@
             // sendpbr
             // 
             this.sendpbr.BackColor = System.Drawing.Color.Silver;
-            this.sendpbr.Location = new System.Drawing.Point(17, 368);
+            this.sendpbr.Location = new System.Drawing.Point(17, 364);
             this.sendpbr.Name = "sendpbr";
-            this.sendpbr.Size = new System.Drawing.Size(380, 27);
+            this.sendpbr.Size = new System.Drawing.Size(380, 31);
             this.sendpbr.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.sendpbr.TabIndex = 4;
             // 
@@ -750,6 +759,7 @@
             this.stopbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.stopbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.stopbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopbtn.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopbtn.ForeColor = System.Drawing.Color.White;
             this.stopbtn.Location = new System.Drawing.Point(273, 287);
             this.stopbtn.Name = "stopbtn";
@@ -764,6 +774,7 @@
             this.pausebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.pausebtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.pausebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pausebtn.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pausebtn.ForeColor = System.Drawing.Color.White;
             this.pausebtn.Location = new System.Drawing.Point(173, 287);
             this.pausebtn.Name = "pausebtn";
@@ -779,6 +790,7 @@
             this.startbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.startbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.startbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startbtn.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startbtn.ForeColor = System.Drawing.Color.White;
             this.startbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.startbtn.Location = new System.Drawing.Point(69, 287);
@@ -791,7 +803,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.panel1.Controls.Add(this.totalmessageslbl);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.panel7);
@@ -810,7 +822,7 @@
             // 
             this.totalmessageslbl.BackColor = System.Drawing.Color.Transparent;
             this.totalmessageslbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalmessageslbl.ForeColor = System.Drawing.Color.Black;
+            this.totalmessageslbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
             this.totalmessageslbl.Location = new System.Drawing.Point(3, 27);
             this.totalmessageslbl.Name = "totalmessageslbl";
             this.totalmessageslbl.Size = new System.Drawing.Size(115, 37);
@@ -821,10 +833,10 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(13, 5);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label17.Location = new System.Drawing.Point(20, 5);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 13);
+            this.label17.Size = new System.Drawing.Size(79, 15);
             this.label17.TabIndex = 38;
             this.label17.Text = "Total a Enviar";
             // 
@@ -840,7 +852,7 @@
             // 
             this.sendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
             this.sendedmessagelbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendedmessagelbl.ForeColor = System.Drawing.Color.Black;
+            this.sendedmessagelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
             this.sendedmessagelbl.Location = new System.Drawing.Point(255, 27);
             this.sendedmessagelbl.Name = "sendedmessagelbl";
             this.sendedmessagelbl.Size = new System.Drawing.Size(122, 37);
@@ -852,7 +864,7 @@
             // 
             this.notsendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
             this.notsendedmessagelbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.Black;
+            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
             this.notsendedmessagelbl.Location = new System.Drawing.Point(122, 27);
             this.notsendedmessagelbl.Name = "notsendedmessagelbl";
             this.notsendedmessagelbl.Size = new System.Drawing.Size(129, 37);
@@ -863,10 +875,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(290, 5);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label14.Location = new System.Drawing.Point(289, 5);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.Size = new System.Drawing.Size(55, 15);
             this.label14.TabIndex = 35;
             this.label14.Text = "Enviados";
             // 
@@ -889,10 +901,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(149, 5);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label13.Location = new System.Drawing.Point(150, 5);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.Size = new System.Drawing.Size(74, 15);
             this.label13.TabIndex = 0;
             this.label13.Text = "No Enviados";
             // 
@@ -900,10 +912,11 @@
             // 
             this.senddatetimecb.AutoSize = true;
             this.senddatetimecb.BackColor = System.Drawing.Color.Transparent;
+            this.senddatetimecb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senddatetimecb.ForeColor = System.Drawing.Color.Black;
             this.senddatetimecb.Location = new System.Drawing.Point(17, 96);
             this.senddatetimecb.Name = "senddatetimecb";
-            this.senddatetimecb.Size = new System.Drawing.Size(140, 17);
+            this.senddatetimecb.Size = new System.Drawing.Size(133, 19);
             this.senddatetimecb.TabIndex = 9;
             this.senddatetimecb.Text = "Enviar Fecha y Hora";
             this.senddatetimecb.UseVisualStyleBackColor = false;
@@ -914,7 +927,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(14, 352);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 27;
             this.label4.Text = "Progreso";
             // 
@@ -922,10 +935,11 @@
             // 
             this.sendfullnamecb.AutoSize = true;
             this.sendfullnamecb.BackColor = System.Drawing.Color.Transparent;
+            this.sendfullnamecb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendfullnamecb.ForeColor = System.Drawing.Color.Black;
             this.sendfullnamecb.Location = new System.Drawing.Point(17, 25);
             this.sendfullnamecb.Name = "sendfullnamecb";
-            this.sendfullnamecb.Size = new System.Drawing.Size(158, 17);
+            this.sendfullnamecb.Size = new System.Drawing.Size(166, 19);
             this.sendfullnamecb.TabIndex = 0;
             this.sendfullnamecb.Text = "Enviar Nombre Completo";
             this.sendfullnamecb.UseVisualStyleBackColor = false;
@@ -935,10 +949,11 @@
             this.connectwabtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.connectwabtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.connectwabtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.connectwabtn.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectwabtn.ForeColor = System.Drawing.Color.White;
-            this.connectwabtn.Location = new System.Drawing.Point(17, 228);
+            this.connectwabtn.Location = new System.Drawing.Point(17, 231);
             this.connectwabtn.Name = "connectwabtn";
-            this.connectwabtn.Size = new System.Drawing.Size(166, 25);
+            this.connectwabtn.Size = new System.Drawing.Size(166, 32);
             this.connectwabtn.TabIndex = 30;
             this.connectwabtn.Text = "Conectar WhatsApp";
             this.connectwabtn.UseVisualStyleBackColor = false;
@@ -947,10 +962,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(14, 182);
+            this.label3.Location = new System.Drawing.Point(14, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Adjunto";
             // 
@@ -959,34 +975,36 @@
             this.logoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(111)))));
             this.logoutbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.logoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutbtn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutbtn.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutbtn.ForeColor = System.Drawing.Color.Black;
-            this.logoutbtn.Location = new System.Drawing.Point(189, 228);
+            this.logoutbtn.Location = new System.Drawing.Point(189, 231);
             this.logoutbtn.Name = "logoutbtn";
-            this.logoutbtn.Size = new System.Drawing.Size(208, 25);
+            this.logoutbtn.Size = new System.Drawing.Size(208, 32);
             this.logoutbtn.TabIndex = 27;
             this.logoutbtn.Text = "Cerrar Sesión  WhatsApp";
             this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Visible = false;
             this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
             // loadmessagelbl
             // 
             this.loadmessagelbl.AutoSize = true;
-            this.loadmessagelbl.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadmessagelbl.Font = new System.Drawing.Font("Corbel", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadmessagelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(38)))), ((int)(((byte)(99)))));
-            this.loadmessagelbl.Location = new System.Drawing.Point(15, 410);
+            this.loadmessagelbl.Location = new System.Drawing.Point(15, 400);
             this.loadmessagelbl.Name = "loadmessagelbl";
-            this.loadmessagelbl.Size = new System.Drawing.Size(127, 13);
+            this.loadmessagelbl.Size = new System.Drawing.Size(130, 15);
             this.loadmessagelbl.TabIndex = 22;
             this.loadmessagelbl.Text = "Estado: No Conectado";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(299, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "Segundos";
             // 
@@ -995,7 +1013,7 @@
             this.filenametxt.Enabled = false;
             this.filenametxt.Location = new System.Drawing.Point(17, 198);
             this.filenametxt.Name = "filenametxt";
-            this.filenametxt.Size = new System.Drawing.Size(296, 20);
+            this.filenametxt.Size = new System.Drawing.Size(296, 23);
             this.filenametxt.TabIndex = 7;
             // 
             // mtab
@@ -1008,7 +1026,8 @@
             this.mtab.Controls.Add(this.m3tab);
             this.mtab.Controls.Add(this.m4tab);
             this.mtab.Controls.Add(this.m5tab);
-            this.mtab.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.mtab.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtab.HeaderBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.mtab.InActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.mtab.InActiveTextColor = System.Drawing.Color.Black;
             this.mtab.ItemSize = new System.Drawing.Size(240, 16);
@@ -1034,25 +1053,25 @@
             // 
             // m1txt
             // 
-            this.m1txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(248)))), ((int)(((byte)(198)))));
+            this.m1txt.BackColor = System.Drawing.Color.White;
             this.m1txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m1txt.BulletIndent = 5;
             this.m1txt.Font = new System.Drawing.Font("Corbel", 9.75F);
             this.m1txt.ForeColor = System.Drawing.Color.Black;
-            this.m1txt.Location = new System.Drawing.Point(6, 24);
+            this.m1txt.Location = new System.Drawing.Point(6, 29);
             this.m1txt.Name = "m1txt";
-            this.m1txt.Size = new System.Drawing.Size(459, 438);
+            this.m1txt.Size = new System.Drawing.Size(459, 433);
             this.m1txt.TabIndex = 7;
             this.m1txt.Text = "";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label16.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(3, 6);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.Size = new System.Drawing.Size(69, 18);
             this.label16.TabIndex = 4;
             this.label16.Text = "Contenido";
             // 
@@ -1071,24 +1090,24 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label20.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(3, 6);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 15);
+            this.label20.Size = new System.Drawing.Size(69, 18);
             this.label20.TabIndex = 10;
             this.label20.Text = "Contenido";
             // 
             // m2txt
             // 
-            this.m2txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(248)))), ((int)(((byte)(198)))));
+            this.m2txt.BackColor = System.Drawing.Color.White;
             this.m2txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m2txt.BulletIndent = 5;
             this.m2txt.Font = new System.Drawing.Font("Corbel", 9.75F);
             this.m2txt.ForeColor = System.Drawing.Color.Black;
-            this.m2txt.Location = new System.Drawing.Point(6, 24);
+            this.m2txt.Location = new System.Drawing.Point(6, 29);
             this.m2txt.Name = "m2txt";
-            this.m2txt.Size = new System.Drawing.Size(459, 438);
+            this.m2txt.Size = new System.Drawing.Size(459, 433);
             this.m2txt.TabIndex = 6;
             this.m2txt.Text = "";
             // 
@@ -1106,24 +1125,24 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label23.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(3, 6);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 15);
+            this.label23.Size = new System.Drawing.Size(69, 18);
             this.label23.TabIndex = 10;
             this.label23.Text = "Contenido";
             // 
             // m3txt
             // 
-            this.m3txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(248)))), ((int)(((byte)(198)))));
+            this.m3txt.BackColor = System.Drawing.Color.White;
             this.m3txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m3txt.BulletIndent = 5;
             this.m3txt.Font = new System.Drawing.Font("Corbel", 9.75F);
             this.m3txt.ForeColor = System.Drawing.Color.Black;
-            this.m3txt.Location = new System.Drawing.Point(6, 24);
+            this.m3txt.Location = new System.Drawing.Point(6, 29);
             this.m3txt.Name = "m3txt";
-            this.m3txt.Size = new System.Drawing.Size(459, 438);
+            this.m3txt.Size = new System.Drawing.Size(459, 433);
             this.m3txt.TabIndex = 6;
             this.m3txt.Text = "";
             // 
@@ -1141,24 +1160,24 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label26.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(3, 6);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(64, 15);
+            this.label26.Size = new System.Drawing.Size(69, 18);
             this.label26.TabIndex = 10;
             this.label26.Text = "Contenido";
             // 
             // m4txt
             // 
-            this.m4txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(248)))), ((int)(((byte)(198)))));
+            this.m4txt.BackColor = System.Drawing.Color.White;
             this.m4txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m4txt.BulletIndent = 5;
             this.m4txt.Font = new System.Drawing.Font("Corbel", 9.75F);
             this.m4txt.ForeColor = System.Drawing.Color.Black;
-            this.m4txt.Location = new System.Drawing.Point(6, 24);
+            this.m4txt.Location = new System.Drawing.Point(6, 29);
             this.m4txt.Name = "m4txt";
-            this.m4txt.Size = new System.Drawing.Size(459, 438);
+            this.m4txt.Size = new System.Drawing.Size(459, 433);
             this.m4txt.TabIndex = 6;
             this.m4txt.Text = "";
             // 
@@ -1176,32 +1195,33 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label29.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label29.ForeColor = System.Drawing.Color.Black;
             this.label29.Location = new System.Drawing.Point(3, 6);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 15);
+            this.label29.Size = new System.Drawing.Size(69, 18);
             this.label29.TabIndex = 10;
             this.label29.Text = "Contenido";
             // 
             // m5txt
             // 
-            this.m5txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(248)))), ((int)(((byte)(198)))));
+            this.m5txt.BackColor = System.Drawing.Color.White;
             this.m5txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m5txt.BulletIndent = 5;
             this.m5txt.Font = new System.Drawing.Font("Corbel", 9.75F);
             this.m5txt.ForeColor = System.Drawing.Color.Black;
-            this.m5txt.Location = new System.Drawing.Point(6, 24);
+            this.m5txt.Location = new System.Drawing.Point(6, 29);
             this.m5txt.Name = "m5txt";
-            this.m5txt.Size = new System.Drawing.Size(459, 438);
+            this.m5txt.Size = new System.Drawing.Size(459, 433);
             this.m5txt.TabIndex = 6;
             this.m5txt.Text = "";
             // 
             // uploadbtn
             // 
+            this.uploadbtn.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadbtn.Location = new System.Drawing.Point(323, 198);
             this.uploadbtn.Name = "uploadbtn";
-            this.uploadbtn.Size = new System.Drawing.Size(35, 20);
+            this.uploadbtn.Size = new System.Drawing.Size(35, 23);
             this.uploadbtn.TabIndex = 8;
             this.uploadbtn.Text = "...";
             this.uploadbtn.UseVisualStyleBackColor = true;
@@ -1218,9 +1238,10 @@
             // 
             // clearfilenamebtn
             // 
+            this.clearfilenamebtn.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearfilenamebtn.Location = new System.Drawing.Point(362, 198);
             this.clearfilenamebtn.Name = "clearfilenamebtn";
-            this.clearfilenamebtn.Size = new System.Drawing.Size(35, 20);
+            this.clearfilenamebtn.Size = new System.Drawing.Size(35, 23);
             this.clearfilenamebtn.TabIndex = 23;
             this.clearfilenamebtn.Text = "X";
             this.clearfilenamebtn.UseVisualStyleBackColor = true;
@@ -1230,10 +1251,11 @@
             // 
             this.sendonlyattachcb.AutoSize = true;
             this.sendonlyattachcb.BackColor = System.Drawing.Color.Transparent;
+            this.sendonlyattachcb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendonlyattachcb.ForeColor = System.Drawing.Color.Black;
             this.sendonlyattachcb.Location = new System.Drawing.Point(246, 25);
             this.sendonlyattachcb.Name = "sendonlyattachcb";
-            this.sendonlyattachcb.Size = new System.Drawing.Size(140, 17);
+            this.sendonlyattachcb.Size = new System.Drawing.Size(132, 19);
             this.sendonlyattachcb.TabIndex = 1;
             this.sendonlyattachcb.Text = "Enviar solo Adjunto";
             this.sendonlyattachcb.UseVisualStyleBackColor = true;
@@ -1242,10 +1264,11 @@
             // 
             this.preventblockcb.AutoSize = true;
             this.preventblockcb.BackColor = System.Drawing.Color.Transparent;
+            this.preventblockcb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preventblockcb.ForeColor = System.Drawing.Color.Black;
             this.preventblockcb.Location = new System.Drawing.Point(17, 73);
             this.preventblockcb.Name = "preventblockcb";
-            this.preventblockcb.Size = new System.Drawing.Size(170, 17);
+            this.preventblockcb.Size = new System.Drawing.Size(164, 19);
             this.preventblockcb.TabIndex = 4;
             this.preventblockcb.Text = "Evitar bloqueo de cuenta";
             this.preventblockcb.UseVisualStyleBackColor = false;
@@ -1254,10 +1277,11 @@
             // 
             this.eachmessagetimingcb.AutoSize = true;
             this.eachmessagetimingcb.BackColor = System.Drawing.Color.Transparent;
+            this.eachmessagetimingcb.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eachmessagetimingcb.ForeColor = System.Drawing.Color.Black;
             this.eachmessagetimingcb.Location = new System.Drawing.Point(17, 49);
             this.eachmessagetimingcb.Name = "eachmessagetimingcb";
-            this.eachmessagetimingcb.Size = new System.Drawing.Size(194, 17);
+            this.eachmessagetimingcb.Size = new System.Drawing.Size(187, 19);
             this.eachmessagetimingcb.TabIndex = 3;
             this.eachmessagetimingcb.Text = "Hacer pausa entre cada envio";
             this.eachmessagetimingcb.UseVisualStyleBackColor = false;
@@ -1291,7 +1315,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(488, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 57;
             this.label1.Text = "Exp. Imp. Contactos Gmail";
             // 
@@ -1302,7 +1326,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(430, 57);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 56;
             this.label6.Text = "Emojis";
             // 
@@ -1313,7 +1337,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(271, 57);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 13);
+            this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 54;
             this.label7.Text = "Importar Contactos .txt";
             // 
@@ -1324,7 +1348,7 @@
             this.label31.ForeColor = System.Drawing.Color.Black;
             this.label31.Location = new System.Drawing.Point(116, 57);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(145, 13);
+            this.label31.Size = new System.Drawing.Size(113, 13);
             this.label31.TabIndex = 53;
             this.label31.Text = "Exportar Contactos .txt";
             // 
@@ -1335,7 +1359,7 @@
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(34, 57);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.Size = new System.Drawing.Size(61, 13);
             this.label32.TabIndex = 52;
             this.label32.Text = "Pegar Datos";
             // 
@@ -1460,7 +1484,7 @@
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(661, 57);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(139, 13);
+            this.label33.Size = new System.Drawing.Size(111, 13);
             this.label33.TabIndex = 44;
             this.label33.Text = "# Mensajes para Pausar";
             // 
@@ -1511,18 +1535,18 @@
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -1592,7 +1616,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(208, 152);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 26);
+            this.label5.Size = new System.Drawing.Size(131, 26);
             this.label5.TabIndex = 57;
             this.label5.Text = "1024; 678 wabutt form size\r\n57; -23 app tab location";
             // 
@@ -1603,7 +1627,7 @@
             this.manymessages2cb.ForeColor = System.Drawing.Color.Black;
             this.manymessages2cb.Location = new System.Drawing.Point(17, 119);
             this.manymessages2cb.Name = "manymessages2cb";
-            this.manymessages2cb.Size = new System.Drawing.Size(248, 17);
+            this.manymessages2cb.Size = new System.Drawing.Size(190, 17);
             this.manymessages2cb.TabIndex = 56;
             this.manymessages2cb.Text = "Enviar Varios textos en un solo envio";
             this.manymessages2cb.UseVisualStyleBackColor = false;
@@ -1696,7 +1720,7 @@
             this.label73.ForeColor = System.Drawing.Color.Black;
             this.label73.Location = new System.Drawing.Point(13, 5);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(91, 13);
+            this.label73.Size = new System.Drawing.Size(68, 13);
             this.label73.TabIndex = 38;
             this.label73.Text = "Total a Enviar";
             // 
@@ -1738,7 +1762,7 @@
             this.label76.ForeColor = System.Drawing.Color.Black;
             this.label76.Location = new System.Drawing.Point(290, 5);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(55, 13);
+            this.label76.Size = new System.Drawing.Size(48, 13);
             this.label76.TabIndex = 35;
             this.label76.Text = "Enviados";
             // 
@@ -1764,7 +1788,7 @@
             this.label77.ForeColor = System.Drawing.Color.Black;
             this.label77.Location = new System.Drawing.Point(149, 5);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(73, 13);
+            this.label77.Size = new System.Drawing.Size(64, 13);
             this.label77.TabIndex = 0;
             this.label77.Text = "No Enviados";
             // 
@@ -1775,7 +1799,7 @@
             this.senddatetime2cb.ForeColor = System.Drawing.Color.Black;
             this.senddatetime2cb.Location = new System.Drawing.Point(17, 96);
             this.senddatetime2cb.Name = "senddatetime2cb";
-            this.senddatetime2cb.Size = new System.Drawing.Size(140, 17);
+            this.senddatetime2cb.Size = new System.Drawing.Size(115, 17);
             this.senddatetime2cb.TabIndex = 45;
             this.senddatetime2cb.Text = "Enviar Fecha y Hora";
             this.senddatetime2cb.UseVisualStyleBackColor = false;
@@ -1786,7 +1810,7 @@
             this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(10, 353);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(55, 13);
+            this.label78.Size = new System.Drawing.Size(48, 13);
             this.label78.TabIndex = 48;
             this.label78.Text = "Progreso";
             // 
@@ -1797,7 +1821,7 @@
             this.sendfullname2cb.ForeColor = System.Drawing.Color.Black;
             this.sendfullname2cb.Location = new System.Drawing.Point(17, 25);
             this.sendfullname2cb.Name = "sendfullname2cb";
-            this.sendfullname2cb.Size = new System.Drawing.Size(158, 17);
+            this.sendfullname2cb.Size = new System.Drawing.Size(142, 17);
             this.sendfullname2cb.TabIndex = 35;
             this.sendfullname2cb.Text = "Enviar Nombre Completo";
             this.sendfullname2cb.UseVisualStyleBackColor = false;
@@ -1847,7 +1871,7 @@
             this.label80.ForeColor = System.Drawing.Color.Black;
             this.label80.Location = new System.Drawing.Point(299, 50);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(55, 13);
+            this.label80.Size = new System.Drawing.Size(52, 13);
             this.label80.TabIndex = 43;
             this.label80.Text = "Segundos";
             // 
@@ -2067,7 +2091,7 @@
             this.preventblock2cb.ForeColor = System.Drawing.Color.Black;
             this.preventblock2cb.Location = new System.Drawing.Point(17, 73);
             this.preventblock2cb.Name = "preventblock2cb";
-            this.preventblock2cb.Size = new System.Drawing.Size(170, 17);
+            this.preventblock2cb.Size = new System.Drawing.Size(139, 17);
             this.preventblock2cb.TabIndex = 39;
             this.preventblock2cb.Text = "Evitar bloqueo de cuenta";
             this.preventblock2cb.UseVisualStyleBackColor = false;
@@ -2079,7 +2103,7 @@
             this.eachmessagetiming2cb.ForeColor = System.Drawing.Color.Black;
             this.eachmessagetiming2cb.Location = new System.Drawing.Point(17, 49);
             this.eachmessagetiming2cb.Name = "eachmessagetiming2cb";
-            this.eachmessagetiming2cb.Size = new System.Drawing.Size(194, 17);
+            this.eachmessagetiming2cb.Size = new System.Drawing.Size(156, 17);
             this.eachmessagetiming2cb.TabIndex = 37;
             this.eachmessagetiming2cb.Text = "Hacer pausa entre cada envio";
             this.eachmessagetiming2cb.UseVisualStyleBackColor = false;
@@ -2090,13 +2114,13 @@
             // 
             // apppanel
             // 
-            this.apppanel.BackColor = System.Drawing.Color.White;
+            this.apppanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.apppanel.Controls.Add(this.colorpanel);
             this.apppanel.Controls.Add(this.apptab);
             this.apppanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.apppanel.Location = new System.Drawing.Point(0, 0);
             this.apppanel.Name = "apppanel";
-            this.apppanel.Size = new System.Drawing.Size(1119, 749);
+            this.apppanel.Size = new System.Drawing.Size(1024, 642);
             this.apppanel.TabIndex = 18;
             // 
             // colorpanel
@@ -2108,7 +2132,7 @@
             this.colorpanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.colorpanel.Location = new System.Drawing.Point(0, 0);
             this.colorpanel.Name = "colorpanel";
-            this.colorpanel.Size = new System.Drawing.Size(64, 749);
+            this.colorpanel.Size = new System.Drawing.Size(64, 642);
             this.colorpanel.TabIndex = 42;
             // 
             // selectgmbtn
@@ -2243,9 +2267,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 749);
+            this.ClientSize = new System.Drawing.Size(1024, 642);
             this.Controls.Add(this.apppanel);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
