@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using Keys = OpenQA.Selenium.Keys;
 
@@ -40,12 +41,12 @@ namespace Presentation
 
 
 
-
+        //WHATSAPP SELECTORS
 
         private static string actualuser = Environment.UserName;
         public static string AttachPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]";
-        public static string ContactSearchBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/label[1]/div[1]/div[2]";
-        public static string ContactSearchIconPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/button[1]/div[2]/span[1]";
+        public static string ContactSearchBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]";
+        public static string ContactSearchIconPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]/div[2]/span[1]";
         public static string DocumentAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[4]/button[1]/input[1]";
         public static string ImageAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]";
         public static string MessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[2]";
@@ -55,8 +56,11 @@ namespace Presentation
         public static string SendIADButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/span[1]";
         public static string LogOutButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]";
 
+        //GOOGLE SMS SELECTORS
 
-
+        public static string SMSContactTextBox = "/html[1]/body[1]/mw-app[1]/mw-bootstrap[1]/div[1]/main[1]/mw-main-container[1]/div[1]/mw-new-conversation-container[1]/mw-new-conversation-sub-header[1]/div[1]/div[2]/mw-contact-chips-input[1]/div[1]/mat-chip-listbox[1]/span[1]/input[1]";
+        public static string SMSChatTextBox = "/html[1]/body[1]/mw-app[1]/mw-bootstrap[1]/div[1]/main[1]/mw-main-container[1]/div[1]/mw-conversation-container[1]/div[1]/div[1]/div[1]/mws-message-compose[1]/div[1]/div[2]/div[1]/mws-autosize-textarea[1]/textarea[1]";
+        public static string SMSContactSearchIconPath = "/html[1]/body[1]/mw-app[1]/mw-bootstrap[1]/div[1]/main[1]/mw-main-container[1]/div[1]/mw-main-nav[1]/div[1]/mw-fab-link[1]/a[1]/span[2]";
 
         public async Task LaunchBrowser()
         {
@@ -74,16 +78,28 @@ namespace Presentation
                     ChromeOptions options = new ChromeOptions();
 
                     options.AddArguments("user-data-dir=" + userProfile);
-                  
+                    
 
 
                     driver = new ChromeDriver(service, options)
                     {
-                        Url = ("https://web.whatsapp.com/")
+                        Url = ("https://web.whatsapp.com/"),
+                        
                     };
 
+
+                    /*
+                    ICapabilities capabilities = ((ChromeDriver)driver).Capabilities;
+                  
                     
-                        driverstate = true;
+                    WriteJSONToFile(Regex.Replace
+                        (Regex.Replace
+                        ((capabilities.GetCapability("chrome") 
+                        as Dictionary<string, object>)["chromedriverVersion"].ToString(),
+                        @"\(.*?\)", ""), @"\s+", string.Empty), "chromeversion.txt");
+                        */
+
+                    driverstate = true;
 
 
 
@@ -108,35 +124,55 @@ namespace Presentation
 
 
         }
-       
+        private void WriteJSONToFile(string data, string filename)
+        {
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt";
+
+            DirectoryInfo di = Directory.CreateDirectory(path);
+
+            File.WriteAllText(path + "\\" + filename, data);
+
+        }
+
         public async Task LaunchBrowser2()
         {
+
+
 
             await Task.Run(() =>
             {
 
+                try { 
+                    string userProfile = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile\\Default\\";
 
-                string userProfile = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile\\Default\\";
+                    var service = ChromeDriverService.CreateDefaultService("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\");
+                    service.HideCommandPromptWindow = true;
+                    ChromeOptions options = new ChromeOptions();
 
-                var service = ChromeDriverService.CreateDefaultService("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\");
-                service.HideCommandPromptWindow = true;
-                ChromeOptions options = new ChromeOptions();
-
-               options.AddArguments("user-data-dir=" + userProfile);
-
-
-                driver2 = new ChromeDriver(service, options)
-                {
-                    Url = ("https://messages.google.com/web/conversations")
-                    //Url = ("https://google.com")
+                   options.AddArguments("user-data-dir=" + userProfile);
 
 
+                    driver2 = new ChromeDriver(service, options)
+                    {
+                        Url = ("https://messages.google.com/web/conversations")
+                        //Url = ("https://google.com")
 
-                };
+
+
+                    };
                
 
-                driverstate2 = true;
+                    driverstate2 = true;
 
+
+
+                }
+                catch (Exception ex)
+                {
+
+                Console.WriteLine(ex.Message);
+                }
 
 
             });
@@ -152,7 +188,12 @@ namespace Presentation
         {
             WA.driver.FindElement(By.XPath(ContactSearchIconPath)).Click();
         }
-        
+        public void ClickSearchIcon2()
+        {
+            WA.driver2.FindElement(By.XPath(SMSContactSearchIconPath)).Click();
+        }
+
+
         public void ContactSearch(string tosearch)
         {
 
@@ -195,30 +236,15 @@ namespace Presentation
 
             try
             {
-               
 
-                /*
-                IJavaScriptExecutor js = (IJavaScriptExecutor)driver2;
-
-
-                string _script1 = "document.evaluate" +
-                    "('//mw-new-conversation-sub-header/div[1]/div[2]/mw-contact-chips-input[1]/div[1]/mat-chip-list[1]/div[1]/input[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + tosearch + "'";
-                string _script2 = "document.evaluate" +
-                    "('//mw-new-conversation-sub-header/div[1]/div[2]/mw-contact-chips-input[1]/div[1]/mat-chip-list[1]/div[1]/input[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML=''";
-
-
-                string title2 = (string)js.ExecuteScript(_script2);
-                string title = (string)js.ExecuteScript(_script1);
-                */
-                if (FindElement(driver, By.XPath("//mw-new-conversation-sub-header/div[1]/div[2]/" +
-                                  "mw-contact-chips-input[1]/div[1]/mat-chip-list[1]/div[1]/input[1]"), 20))
+                if (FindElement(driver2, By.XPath(SMSContactTextBox), 20))
                 {
-                    driver2.FindElement(By.XPath("//mw-new-conversation-sub-header/div[1]/div[2]/" +
-                                   "mw-contact-chips-input[1]/div[1]/mat-chip-list[1]/div[1]/input[1]")).SendKeys(tosearch);
+                    driver2.FindElement(By.XPath(SMSContactTextBox)).SendKeys(tosearch);
 
                 }
 
                
+
 
 
             }
@@ -424,11 +450,9 @@ namespace Presentation
             {
                 
 
-                if (FindElement(driver, By.XPath("//body/mw-app[1]/mw-bootstrap[1]/div[1]/main[1]/mw-main-container[1]/div[1]/mw-conversation-container[1]/div[1]/div[1]" +
-                    "/mws-message-compose[1]/div[1]/div[2]/div[1]/mws-autosize-textarea[1]/textarea[1]"), 20))
+                if (FindElement(driver2, By.XPath(SMSChatTextBox), 20))
                 {
-                    driver2.FindElement(By.XPath("//body/mw-app[1]/mw-bootstrap[1]/div[1]/main[1]/mw-main-container[1]/div[1]/mw-conversation-container[1]/div[1]/div[1]" +
-                   "/mws-message-compose[1]/div[1]/div[2]/div[1]/mws-autosize-textarea[1]/textarea[1]")).SendKeys(totype);
+                    driver2.FindElement(By.XPath(SMSChatTextBox)).SendKeys(totype);
                 }
                    
 
@@ -725,7 +749,7 @@ namespace Presentation
 
 
         }
-        public void ContactSend2()
+        public void ContactActionEnter2()
         {
             try
             {

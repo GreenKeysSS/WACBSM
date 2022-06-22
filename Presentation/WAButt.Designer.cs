@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -609,6 +609,7 @@
             // contactlisttab
             // 
             this.contactlisttab.BackColor = System.Drawing.Color.White;
+            this.contactlisttab.Controls.Add(this.selectgmbtn);
             this.contactlisttab.Controls.Add(this.deleteduplicatedbtn);
             this.contactlisttab.Controls.Add(this.contactsdgv);
             this.contactlisttab.Location = new System.Drawing.Point(4, 20);
@@ -646,18 +647,18 @@
             this.contactsdgv.Location = new System.Drawing.Point(0, 47);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle26;
             this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 467);
             this.contactsdgv.TabIndex = 1;
@@ -1303,7 +1304,7 @@
             this.smsbottab.Controls.Add(this.main2tab);
             this.smsbottab.Location = new System.Drawing.Point(4, 22);
             this.smsbottab.Name = "smsbottab";
-            this.smsbottab.Size = new System.Drawing.Size(962, 641);
+            this.smsbottab.Size = new System.Drawing.Size(962, 644);
             this.smsbottab.TabIndex = 2;
             this.smsbottab.Text = "smsbottab";
             this.smsbottab.UseVisualStyleBackColor = true;
@@ -1535,18 +1536,18 @@
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -2126,7 +2127,6 @@
             // colorpanel
             // 
             this.colorpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(94)))), ((int)(((byte)(84)))));
-            this.colorpanel.Controls.Add(this.selectgmbtn);
             this.colorpanel.Controls.Add(this.selectsmsbtn);
             this.colorpanel.Controls.Add(this.selectwabtn);
             this.colorpanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2143,12 +2143,13 @@
             this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
             this.selectgmbtn.ForeColor = System.Drawing.Color.White;
-            this.selectgmbtn.Location = new System.Drawing.Point(13, 436);
+            this.selectgmbtn.Location = new System.Drawing.Point(318, 190);
             this.selectgmbtn.Name = "selectgmbtn";
             this.selectgmbtn.Size = new System.Drawing.Size(39, 191);
             this.selectgmbtn.TabIndex = 43;
             this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
             this.selectgmbtn.UseVisualStyleBackColor = false;
+            this.selectgmbtn.Visible = false;
             this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
             // 
             // selectsmsbtn
@@ -2159,9 +2160,9 @@
             this.selectsmsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectsmsbtn.Font = new System.Drawing.Font("Consolas", 12F);
             this.selectsmsbtn.ForeColor = System.Drawing.Color.White;
-            this.selectsmsbtn.Location = new System.Drawing.Point(13, 299);
+            this.selectsmsbtn.Location = new System.Drawing.Point(13, 407);
             this.selectsmsbtn.Name = "selectsmsbtn";
-            this.selectsmsbtn.Size = new System.Drawing.Size(39, 131);
+            this.selectsmsbtn.Size = new System.Drawing.Size(39, 216);
             this.selectsmsbtn.TabIndex = 43;
             this.selectsmsbtn.Text = "S\r\nM\r\nS";
             this.selectsmsbtn.UseVisualStyleBackColor = false;
@@ -2176,7 +2177,7 @@
             this.selectwabtn.ForeColor = System.Drawing.Color.White;
             this.selectwabtn.Location = new System.Drawing.Point(13, 15);
             this.selectwabtn.Name = "selectwabtn";
-            this.selectwabtn.Size = new System.Drawing.Size(39, 278);
+            this.selectwabtn.Size = new System.Drawing.Size(39, 386);
             this.selectwabtn.TabIndex = 42;
             this.selectwabtn.Text = "W\r\nH\r\nA\r\nT\r\nS\r\nA\r\nP\r\nP";
             this.selectwabtn.UseVisualStyleBackColor = false;

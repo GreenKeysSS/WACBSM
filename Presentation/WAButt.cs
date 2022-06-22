@@ -163,17 +163,17 @@ namespace Presentation
         {
 
             try
-            {
+            {/*
                 WIN32.RegistryKey key = WIN32.Registry.CurrentUser.OpenSubKey(@"Software\Google\Chrome\BLBeacon");
-
+                
                 if (key != null)
                 {
                     Console.WriteLine(key.GetValue("version"));
                     chromedriverversion = Convert.ToString( key.GetValue("version"));
 
                     key.Close();
-                }
-                /*
+                }*/
+
                 var webRequest = WebRequest.Create(@"https://chromedriver.storage.googleapis.com/LATEST_RELEASE");
 
                 using (var response = webRequest.GetResponse())
@@ -182,10 +182,11 @@ namespace Presentation
                 {
                     var strContent = reader.ReadToEnd();
                     chromedriverversion = strContent;
-                    Console.WriteLine(Convert.ToString(strContent));
+                    Console.WriteLine(Convert.ToString("bitches are bad"+strContent));
 
                 }
-                */
+
+
 
             }
             catch (Exception ex)
@@ -213,8 +214,8 @@ namespace Presentation
                     });*/
 
                      FetchChromeDriverVersion();
-                   
 
+                   
 
                     chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
                     Dwchromedriver();
@@ -319,48 +320,157 @@ namespace Presentation
 
                 bool file1 = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
                 bool file2 = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                bool file3 = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt");
+
+                bool cdriverfile = File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt");
 
 
-                if (file1)
+
+                if (!cdriverfile)
                 {
 
-                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
-                    Console.WriteLine("FILES DELETED");
-                }
-                if (file2)
-                {
+                    if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe"))
+                    {
+                        using (WebClient Client = new WebClient())
+                        {
+                            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt", chromedriverversion);
+                            Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                            
+                            var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
 
-                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
-                    Console.WriteLine("FILES DELETED");
-                }
-
-
-                // AddUpdateAppSettings("cv", "false");
+                            var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
 
 
+                            FastZip fastZip = new FastZip();
+                            string fileFilter = null;
 
-                if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe"))
-                {
-                    using (WebClient Client = new WebClient())
+                            // Will always overwrite if target filenames already exist
+                            fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
+
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+
+
+
+
+
+                        }
+
+                    }
+                    else
                     {
 
-                        Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+
+                        if (file1)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
+                            Console.WriteLine("FILES 1 DELETED");
+                        }
+                        if (file2)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                            Console.WriteLine("FILES 2 DELETED");
+
+                        }
+                        if (file3)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt");
+                            Console.WriteLine("FILES 3 DELETED");
+
+                        }
+
+                        using (WebClient Client = new WebClient())
+                        {
+                            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt", chromedriverversion);
+                            Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+
+                            var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
+
+                            var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
+
+
+                            FastZip fastZip = new FastZip();
+                            string fileFilter = null;
+
+                            // Will always overwrite if target filenames already exist
+                            fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
+
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
 
 
 
-                        var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
-
-                        var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
 
 
-                        FastZip fastZip = new FastZip();
-                        string fileFilter = null;
-
-                        // Will always overwrite if target filenames already exist
-                        fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
+                        }
+                    }
 
 
-                        File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                }
+                else
+                {
+
+                    string tempcdriverV = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt");
+
+                    if (tempcdriverV != chromedriverversion)
+                    {
+
+                        if (file1)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe");
+                            Console.WriteLine("FILES 1 DELETED");
+                        }
+                        if (file2)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+                            Console.WriteLine("FILES 2 DELETED");
+
+                        }
+                        if (file3)
+                        {
+
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt");
+                            Console.WriteLine("FILES 3 DELETED");
+
+                        }
+
+
+                        if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.exe"))
+                        {
+                            using (WebClient Client = new WebClient())
+                            {
+                                File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt", chromedriverversion);
+
+                                Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+
+
+
+                                var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
+
+                                var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
+
+
+                                FastZip fastZip = new FastZip();
+                                string fileFilter = null;
+
+                                // Will always overwrite if target filenames already exist
+                                fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
+
+
+                                File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
+
+
+
+
+
+                            }
+
+                        }
 
 
 
@@ -368,7 +478,20 @@ namespace Presentation
 
                     }
 
+
+
+
+                    
                 }
+
+
+               
+
+                // AddUpdateAppSettings("cv", "false");
+
+
+
+               
             }
             catch (Exception ex)
             {
@@ -532,6 +655,8 @@ namespace Presentation
             File.WriteAllText(path + "\\" + filename, data);
 
         }
+
+
 
         private void StoreSettings()
         {
@@ -3410,24 +3535,16 @@ namespace Presentation
                                                     try
                                                     {
 
-
-
-
-
+                                                        
 
                                                         Actions action = new Actions(WA.driver2);
 
 
+                                                        wa.ClickSearchIcon2();
 
 
 
-                                                        WA.driver2.FindElement(By.XPath("//body/mw-app[1]/mw-bootstrap[1]/div[1]" +
-                                                        "/main[1]/mw-main-container[1]/div[1]/mw-main-nav[1]/div[1]" +
-                                                        "/mw-fab-link[1]/a[1]/span[1]")).Click();
-
-
-
-                                                        WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                                                        //WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
                                                         action.SendKeys(Keys.Space).Build().Perform();
 
@@ -3437,9 +3554,9 @@ namespace Presentation
 
 
 
-                                                        WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                                                       // WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-                                                        Task.Delay(2000).Wait();
+                                                       // Task.Delay(2000).Wait();
 
                                                         Console.WriteLine("doy click en el contacto");
 
@@ -3447,13 +3564,14 @@ namespace Presentation
 
 
 
-                                                        WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                                                        //WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
 
 
                                                         Task.Delay(2000).Wait();
 
-                                                        Console.WriteLine(actualmessagetosend + "MESSAGEEEEEEEE SMS");
+
+                                                        //Console.WriteLine(actualmessagetosend + "MESSAGEEEEEEEE SMS");
 
 
                                                         wa.ContactMessage2(actualmessagetosend);
@@ -3464,7 +3582,7 @@ namespace Presentation
 
                                                         Task.Delay(1000 + wa.preventblocktiming2).Wait();
 
-                                                        wa.ContactSend2();
+                                                        wa.ContactActionEnter2();
 
                                                         Console.WriteLine("presione enter para enviar");
 
