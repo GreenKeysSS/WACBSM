@@ -2259,7 +2259,7 @@ namespace Presentation
 
                 //condicionales y token de cancellation
 
-                //ClearEmptyRows();
+                ClearEmptyRows();
 
 
                 string actualnumber = "";
@@ -3765,6 +3765,7 @@ namespace Presentation
 
         private void pastedatabtn_Click(object sender, EventArgs e)
         {
+
             maintab.SelectedTab = contactlisttab;
             try
             {
@@ -3795,8 +3796,11 @@ namespace Presentation
             }
             catch (Exception)
             {
-                MessageBox.Show("Solo se pueden pegar 2 COLUMNAS (NUMERO, NOMBRE DE CONTACTO) de EXCEL", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("pegar 2 COLUMNAS (NUMERO, NOMBRE DE CONTACTO) de EXCEL", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+
+
 
         }
 
@@ -5470,10 +5474,17 @@ namespace Presentation
 
         private void deleteduplicatedbtn_Click(object sender, EventArgs e)
         {
+            
+
+        }
+        private void DeleteDuplicate1()
+        {
             DataTable items = new DataTable();
-            items.Columns.Add("Numero o Grupo");
-            items.Columns.Add("Nombre");
-            items.Columns.Add("Enviado(S/N)");
+          
+            items.Columns.Add("Numero o Grupo", typeof(string));
+            items.Columns.Add("Nombre", typeof(string));
+            items.Columns.Add("Enviado(S/N)", typeof(string));
+
             for (int i = 0; i < contactsdgv.Rows.Count; i++)
             {
                 DataRow rw = items.NewRow();
@@ -5483,10 +5494,36 @@ namespace Presentation
                 if (!items.Rows.Cast<DataRow>().Any(row => row["Numero o Grupo"].Equals(rw["Numero o Grupo"])))
                     items.Rows.Add(rw);
             }
-            contactsdgv.Columns.Clear();
-            contactsdgv.DataSource = items;
-        }
 
+
+
+            contactsdgv.Rows.Clear();
+            
+
+            foreach (DataRow item in items.Rows)
+            {
+                contactsdgv.Rows.Add(Convert.ToString(item[0]), Convert.ToString(item[1]), Convert.ToString(item[2]));
+            }
+
+
+
+
+            DataGridViewColumn column = contactsdgv.Columns[0];
+            column.Width = 200;
+
+
+
+            DataGridViewColumn column1 = contactsdgv.Columns[1];
+            column1.Width = 350;
+
+
+
+
+            DataGridViewColumn column2 = contactsdgv.Columns[2];
+            column2.Width = 100;
+            column2.ReadOnly = true;
+        }
+      
         private void dgvwacopymodecms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -5494,16 +5531,19 @@ namespace Presentation
 
         private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in contactsdgv.SelectedRows)
+            if (this.contactsdgv.SelectedRows.Count > 0)
             {
-                int index = contactsdgv.Rows.Add(r.Clone() as DataGridViewRow);
-
-                foreach (DataGridViewCell o in r.Cells)
+                StringBuilder ClipboardBuillder = new StringBuilder();
+                foreach (DataGridViewRow Row in contactsdgv.SelectedRows)
                 {
-                    contactsdgv.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
-
-
+                    foreach (DataGridViewColumn Column in contactsdgv.Columns)
+                    {
+                        ClipboardBuillder.Append(Row.Cells[Column.Index].FormattedValue.ToString() + " ");
+                    }
+                    ClipboardBuillder.AppendLine();
                 }
+
+                Clipboard.SetText(ClipboardBuillder.ToString());
             }
         }
 
@@ -5592,6 +5632,68 @@ namespace Presentation
             }
             return false;
 
+        }
+
+        private void eliminarDuplicadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteDuplicate1();
+        }
+
+        private void eliminarFilasVaciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearEmptyRows();
+        }
+
+        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string s = Clipboard.GetText();
+                string[] lines = s.Split('\n');
+                int iFail = 0, iRow = contactsdgv.CurrentCell.RowIndex;
+                int iCol = contactsdgv.CurrentCell.ColumnIndex;
+                DataGridViewCell oCell;
+                foreach (string line in lines)
+                {
+                    if (iRow < contactsdgv.RowCount && line.Length > 0)
+                    {
+                        string[] sCells = line.Split('\t');
+                        for (int i = 0; i < sCells.GetLength(0); ++i)
+                        {
+                            if (iCol + i < this.contactsdgv.ColumnCount)
+                            {
+                                oCell = contactsdgv[iCol + i, iRow];
+                                if (!oCell.ReadOnly)
+                                {
+                                    if (oCell.Value.ToString() != sCells[i])
+                                    {
+                                        oCell.Value = Convert.ChangeType(sCells[i],
+                                                              oCell.ValueType);
+                                        oCell.Style.BackColor = Color.Tomato;
+                                    }
+                                    else
+                                        iFail++;
+                                    //only traps a fail if the data has changed 
+                                    //and you are pasting into a read only cell
+                                }
+                            }
+                            else
+                            { break; }
+                        }
+                        iRow++;
+                    }
+                    else
+                    { break; }
+                    if (iFail > 0)
+                        MessageBox.Show(string.Format("{0} updates failed due" +
+                                        " to read only column setting", iFail));
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("The data you pasted is in the wrong format for the cell");
+                return;
+            }
         }
     }
 }

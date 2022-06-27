@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -68,7 +68,7 @@
             this.severalpauselbl = new System.Windows.Forms.Label();
             this.maintab = new XanderUI.XUIFlatTab();
             this.contactlisttab = new System.Windows.Forms.TabPage();
-            this.deleteduplicatedbtn = new System.Windows.Forms.Button();
+            this.selectgmbtn = new System.Windows.Forms.Button();
             this.contactsdgv = new System.Windows.Forms.DataGridView();
             this.numbercol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namecol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,7 +187,6 @@
             this.detailtimer = new System.Windows.Forms.Timer(this.components);
             this.apppanel = new System.Windows.Forms.Panel();
             this.colorpanel = new System.Windows.Forms.Panel();
-            this.selectgmbtn = new System.Windows.Forms.Button();
             this.selectsmsbtn = new System.Windows.Forms.Button();
             this.selectwabtn = new System.Windows.Forms.Button();
             this.cmsgmail2 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -201,6 +200,8 @@
             this.copyrowcms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarDuplicadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarFilasVaciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsupload.SuspendLayout();
             this.cmsgmail.SuspendLayout();
             this.cmspause.SuspendLayout();
@@ -344,6 +345,7 @@
             // wabottab
             // 
             this.wabottab.BackColor = System.Drawing.Color.White;
+            this.wabottab.Controls.Add(this.selectgmbtn);
             this.wabottab.Controls.Add(this.label12);
             this.wabottab.Controls.Add(this.extractlbl);
             this.wabottab.Controls.Add(this.label11);
@@ -420,7 +422,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(116, 62);
+            this.label9.Location = new System.Drawing.Point(124, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 15);
             this.label9.TabIndex = 36;
@@ -432,11 +434,11 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(34, 62);
+            this.label8.Location = new System.Drawing.Point(10, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 15);
+            this.label8.Size = new System.Drawing.Size(106, 15);
             this.label8.TabIndex = 35;
-            this.label8.Text = "Pegar Datos";
+            this.label8.Text = "Pegar Datos Excel";
             // 
             // extractgroupnumbersbtn
             // 
@@ -535,7 +537,7 @@
             this.savebtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.savebtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.savebtn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.savebtn.Location = new System.Drawing.Point(161, 14);
+            this.savebtn.Location = new System.Drawing.Point(169, 14);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(53, 37);
             this.savebtn.TabIndex = 31;
@@ -609,8 +611,6 @@
             // contactlisttab
             // 
             this.contactlisttab.BackColor = System.Drawing.Color.White;
-            this.contactlisttab.Controls.Add(this.selectgmbtn);
-            this.contactlisttab.Controls.Add(this.deleteduplicatedbtn);
             this.contactlisttab.Controls.Add(this.contactsdgv);
             this.contactlisttab.Location = new System.Drawing.Point(4, 20);
             this.contactlisttab.Name = "contactlisttab";
@@ -619,15 +619,22 @@
             this.contactlisttab.TabIndex = 0;
             this.contactlisttab.Text = "Contactos WhatsApp";
             // 
-            // deleteduplicatedbtn
+            // selectgmbtn
             // 
-            this.deleteduplicatedbtn.Location = new System.Drawing.Point(6, 18);
-            this.deleteduplicatedbtn.Name = "deleteduplicatedbtn";
-            this.deleteduplicatedbtn.Size = new System.Drawing.Size(182, 23);
-            this.deleteduplicatedbtn.TabIndex = 2;
-            this.deleteduplicatedbtn.Text = "Eliminar duplicados";
-            this.deleteduplicatedbtn.UseVisualStyleBackColor = true;
-            this.deleteduplicatedbtn.Click += new System.EventHandler(this.deleteduplicatedbtn_Click);
+            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
+            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
+            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
+            this.selectgmbtn.Location = new System.Drawing.Point(927, 227);
+            this.selectgmbtn.Name = "selectgmbtn";
+            this.selectgmbtn.Size = new System.Drawing.Size(39, 191);
+            this.selectgmbtn.TabIndex = 43;
+            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
+            this.selectgmbtn.UseVisualStyleBackColor = false;
+            this.selectgmbtn.Visible = false;
+            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
             // 
             // contactsdgv
             // 
@@ -644,23 +651,23 @@
             this.namecol,
             this.statecol});
             this.contactsdgv.GridColor = System.Drawing.Color.Black;
-            this.contactsdgv.Location = new System.Drawing.Point(0, 47);
+            this.contactsdgv.Location = new System.Drawing.Point(0, 0);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.contactsdgv.Size = new System.Drawing.Size(919, 467);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.contactsdgv.Size = new System.Drawing.Size(919, 514);
             this.contactsdgv.TabIndex = 1;
             this.contactsdgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contactsdgv_MouseClick);
             // 
@@ -1536,18 +1543,18 @@
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -2135,23 +2142,6 @@
             this.colorpanel.Size = new System.Drawing.Size(64, 642);
             this.colorpanel.TabIndex = 42;
             // 
-            // selectgmbtn
-            // 
-            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
-            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
-            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
-            this.selectgmbtn.Location = new System.Drawing.Point(318, 190);
-            this.selectgmbtn.Name = "selectgmbtn";
-            this.selectgmbtn.Size = new System.Drawing.Size(39, 191);
-            this.selectgmbtn.TabIndex = 43;
-            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
-            this.selectgmbtn.UseVisualStyleBackColor = false;
-            this.selectgmbtn.Visible = false;
-            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
-            // 
             // selectsmsbtn
             // 
             this.selectsmsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(116)))), ((int)(((byte)(233)))));
@@ -2247,22 +2237,39 @@
             // 
             this.copyrowcms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copiarToolStripMenuItem,
-            this.pegarToolStripMenuItem});
+            this.pegarToolStripMenuItem,
+            this.eliminarDuplicadosToolStripMenuItem,
+            this.eliminarFilasVaciasToolStripMenuItem});
             this.copyrowcms.Name = "copyrowcms";
-            this.copyrowcms.Size = new System.Drawing.Size(110, 48);
+            this.copyrowcms.Size = new System.Drawing.Size(180, 92);
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
+            this.pegarToolStripMenuItem.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
+            // 
+            // eliminarDuplicadosToolStripMenuItem
+            // 
+            this.eliminarDuplicadosToolStripMenuItem.Name = "eliminarDuplicadosToolStripMenuItem";
+            this.eliminarDuplicadosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.eliminarDuplicadosToolStripMenuItem.Text = "Eliminar Duplicados";
+            this.eliminarDuplicadosToolStripMenuItem.Click += new System.EventHandler(this.eliminarDuplicadosToolStripMenuItem_Click);
+            // 
+            // eliminarFilasVaciasToolStripMenuItem
+            // 
+            this.eliminarFilasVaciasToolStripMenuItem.Name = "eliminarFilasVaciasToolStripMenuItem";
+            this.eliminarFilasVaciasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.eliminarFilasVaciasToolStripMenuItem.Text = "Eliminar Filas Vacias";
+            this.eliminarFilasVaciasToolStripMenuItem.Click += new System.EventHandler(this.eliminarFilasVaciasToolStripMenuItem_Click);
             // 
             // WAButtfrm
             // 
@@ -2496,10 +2503,11 @@
         private System.Windows.Forms.TextBox eachmessagetimingtxt;
         private System.Windows.Forms.Button selectgmbtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button deleteduplicatedbtn;
         private System.Windows.Forms.ContextMenuStrip copyrowcms;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarDuplicadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarFilasVaciasToolStripMenuItem;
     }
 }
 

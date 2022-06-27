@@ -71,9 +71,9 @@ namespace Presentation
             {
                 try
                 {
-                    string userProfile = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile\\Default\\";
+                    string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\Chrome WA Profile\\Default\\";
 
-                    var service = ChromeDriverService.CreateDefaultService("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\");
+                    var service = ChromeDriverService.CreateDefaultService(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\");
                     service.HideCommandPromptWindow = true;
                     ChromeOptions options = new ChromeOptions();
 
@@ -83,7 +83,7 @@ namespace Presentation
 
                     driver = new ChromeDriver(service, options)
                     {
-                        Url = ("https://web.whatsapp.com/"),
+                        Url = ("https://web.whatsapp.com/")
                         
                     };
 

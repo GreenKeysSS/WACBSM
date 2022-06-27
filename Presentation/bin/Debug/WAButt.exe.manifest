@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kKWhfi9f/E2UVayUg5wQdRWI2td4KF3u/vkrX+IYom8=</dsig:DigestValue>
+        <dsig:DigestValue>dWxKI1lYIbTVbnQYAsRpVi3aTAhspqdXYPU5+5VIY8E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L+D7mgoYxWw79X2cIllpU8OH8fb9LZYXFdx74MIjcOM=</dsig:DigestValue>
+        <dsig:DigestValue>FuRWm2gnWbY1AXBxuHUZVRMFnYgBCe/SrljHsxPd2gM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1459,26 +1459,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WAButt.exe" size="1038336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WAButt.exe" size="1040384">
       <assemblyIdentity name="WAButt" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XBDFxD2y+QSDxXpUe9jRwnsq6OJ57SXgDVk6n1NOWpc=</dsig:DigestValue>
+        <dsig:DigestValue>gD1y04M6WOlv8jADdWdCGHE7Yf0SSZtPSa64MXRpD6Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebDriver.dll" size="7857664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebDriver.dll" size="7990272">
       <assemblyIdentity name="WebDriver" version="4.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Vdk4Y3igRreQ1d63IC0g7SQ+BCLanFm5uPLIJZm4ZsE=</dsig:DigestValue>
+        <dsig:DigestValue>wgNjO7CK4cGTr2d6QX8yKdBPhfRd1d/q9vPf50uqoik=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
