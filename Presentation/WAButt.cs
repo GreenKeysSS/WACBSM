@@ -2348,8 +2348,8 @@ namespace Presentation
 
                                 if (fila.IsNewRow) continue;
 
-
-
+                                
+                                
 
                                 if (CheckForInternetConnection())
                                 {
@@ -2532,13 +2532,14 @@ namespace Presentation
                                         loadmessagelbl.Text = "";
                                         loadmessagelbl.Text = "Estado: Conectado . . .";
 
-
+                                        
 
 
                                         if (actualnumber != "numero vacio")
                                         {
+                                            WA.driver.Manage().Window.Maximize();
                                             Console.WriteLine("el numero no esta vacio y paso a busca contacto");
-
+                                            
 
                                             await Task.Run(() =>
                                             {
@@ -3157,6 +3158,7 @@ namespace Presentation
                             if (stopbtnclicked != true)
                             {
                                 MessageBox.Show("Mensajes enviados correctamente! ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                
                                 uploadbtn.Enabled = true;
                                 clearfilenamebtn.Enabled = true;
                                 stopbtn.Enabled = false;
@@ -5531,20 +5533,7 @@ namespace Presentation
 
         private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.contactsdgv.SelectedRows.Count > 0)
-            {
-                StringBuilder ClipboardBuillder = new StringBuilder();
-                foreach (DataGridViewRow Row in contactsdgv.SelectedRows)
-                {
-                    foreach (DataGridViewColumn Column in contactsdgv.Columns)
-                    {
-                        ClipboardBuillder.Append(Row.Cells[Column.Index].FormattedValue.ToString() + " ");
-                    }
-                    ClipboardBuillder.AppendLine();
-                }
-
-                Clipboard.SetText(ClipboardBuillder.ToString());
-            }
+            SendKeys.Send("^C");
         }
 
         private void contactsdgv_MouseClick(object sender, MouseEventArgs e)
@@ -5648,52 +5637,68 @@ namespace Presentation
         {
             try
             {
+                
                 string s = Clipboard.GetText();
-                string[] lines = s.Split('\n');
-                int iFail = 0, iRow = contactsdgv.CurrentCell.RowIndex;
-                int iCol = contactsdgv.CurrentCell.ColumnIndex;
-                DataGridViewCell oCell;
-                foreach (string line in lines)
+
+                string[] lines = s.Replace("\n", "").Split('\r');
+
+                string[] fields;
+                int row = contactsdgv.CurrentCell.RowIndex;
+                int col = 0;
+                int sum = row + lines.Length;
+                int totalrows = contactsdgv.Rows.Cast<DataGridViewRow>().Where(rown => !(rown.Cells[0].Value == null && rown.Cells[1].Value== null)).Count();
+
+                Console.WriteLine(lines.Length);
+                Console.WriteLine(row+2);
+                Console.WriteLine(totalrows);
+               
+
+                for (int i = 0; i < sum - totalrows; i++)
                 {
-                    if (iRow < contactsdgv.RowCount && line.Length > 0)
+                    contactsdgv.Rows.Add();
+                }
+                            
+               
+
+                foreach (string item in lines)
+                {
+                    
+                    fields = item.Split('\t');
+                    foreach (string f in fields)
                     {
-                        string[] sCells = line.Split('\t');
-                        for (int i = 0; i < sCells.GetLength(0); ++i)
-                        {
-                            if (iCol + i < this.contactsdgv.ColumnCount)
-                            {
-                                oCell = contactsdgv[iCol + i, iRow];
-                                if (!oCell.ReadOnly)
-                                {
-                                    if (oCell.Value.ToString() != sCells[i])
-                                    {
-                                        oCell.Value = Convert.ChangeType(sCells[i],
-                                                              oCell.ValueType);
-                                        oCell.Style.BackColor = Color.Tomato;
-                                    }
-                                    else
-                                        iFail++;
-                                    //only traps a fail if the data has changed 
-                                    //and you are pasting into a read only cell
-                                }
-                            }
-                            else
-                            { break; }
-                        }
-                        iRow++;
+
+                        
+
+                        contactsdgv[col, row].Value = f;
+
+
+
+                        col++;
+
+                        
+
                     }
-                    else
-                    { break; }
-                    if (iFail > 0)
-                        MessageBox.Show(string.Format("{0} updates failed due" +
-                                        " to read only column setting", iFail));
+                    
+                    row++;
+                    
+                    col = 0;
+                }
+
+                foreach (DataGridViewRow item in contactsdgv.Rows)
+                {
+                    item.Cells[2].Value = null;
                 }
             }
-            catch (FormatException)
+            catch (Exception ex)
             {
-                MessageBox.Show("The data you pasted is in the wrong format for the cell");
-                return;
+                MessageBox.Show(ex.Message, "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void limpiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            contactsdgv.Rows.Clear();
+            contactsdgv.Refresh();
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -52,6 +52,7 @@
             this.horaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.apptab = new System.Windows.Forms.TabControl();
             this.wabottab = new System.Windows.Forms.TabPage();
+            this.selectgmbtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.extractlbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.severalpauselbl = new System.Windows.Forms.Label();
             this.maintab = new XanderUI.XUIFlatTab();
             this.contactlisttab = new System.Windows.Forms.TabPage();
-            this.selectgmbtn = new System.Windows.Forms.Button();
             this.contactsdgv = new System.Windows.Forms.DataGridView();
             this.numbercol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namecol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,6 +202,7 @@
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarDuplicadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarFilasVaciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsupload.SuspendLayout();
             this.cmsgmail.SuspendLayout();
             this.cmspause.SuspendLayout();
@@ -367,6 +368,23 @@
             this.wabottab.Size = new System.Drawing.Size(962, 644);
             this.wabottab.TabIndex = 1;
             this.wabottab.Text = " wabottab";
+            // 
+            // selectgmbtn
+            // 
+            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
+            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
+            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
+            this.selectgmbtn.Location = new System.Drawing.Point(927, 227);
+            this.selectgmbtn.Name = "selectgmbtn";
+            this.selectgmbtn.Size = new System.Drawing.Size(39, 191);
+            this.selectgmbtn.TabIndex = 43;
+            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
+            this.selectgmbtn.UseVisualStyleBackColor = false;
+            this.selectgmbtn.Visible = false;
+            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
             // 
             // label12
             // 
@@ -619,23 +637,6 @@
             this.contactlisttab.TabIndex = 0;
             this.contactlisttab.Text = "Contactos WhatsApp";
             // 
-            // selectgmbtn
-            // 
-            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
-            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
-            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
-            this.selectgmbtn.Location = new System.Drawing.Point(927, 227);
-            this.selectgmbtn.Name = "selectgmbtn";
-            this.selectgmbtn.Size = new System.Drawing.Size(39, 191);
-            this.selectgmbtn.TabIndex = 43;
-            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
-            this.selectgmbtn.UseVisualStyleBackColor = false;
-            this.selectgmbtn.Visible = false;
-            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
-            // 
             // contactsdgv
             // 
             this.contactsdgv.AllowUserToResizeColumns = false;
@@ -654,19 +655,20 @@
             this.contactsdgv.Location = new System.Drawing.Point(0, 0);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
+            this.contactsdgv.RowHeadersVisible = false;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle46;
+            this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 514);
             this.contactsdgv.TabIndex = 1;
             this.contactsdgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contactsdgv_MouseClick);
@@ -1543,18 +1545,18 @@
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle48;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -2239,9 +2241,10 @@
             this.copiarToolStripMenuItem,
             this.pegarToolStripMenuItem,
             this.eliminarDuplicadosToolStripMenuItem,
-            this.eliminarFilasVaciasToolStripMenuItem});
+            this.eliminarFilasVaciasToolStripMenuItem,
+            this.limpiarToolStripMenuItem});
             this.copyrowcms.Name = "copyrowcms";
-            this.copyrowcms.Size = new System.Drawing.Size(180, 92);
+            this.copyrowcms.Size = new System.Drawing.Size(180, 114);
             // 
             // copiarToolStripMenuItem
             // 
@@ -2270,6 +2273,13 @@
             this.eliminarFilasVaciasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.eliminarFilasVaciasToolStripMenuItem.Text = "Eliminar Filas Vacias";
             this.eliminarFilasVaciasToolStripMenuItem.Click += new System.EventHandler(this.eliminarFilasVaciasToolStripMenuItem_Click);
+            // 
+            // limpiarToolStripMenuItem
+            // 
+            this.limpiarToolStripMenuItem.Name = "limpiarToolStripMenuItem";
+            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.limpiarToolStripMenuItem.Text = "Limpiar";
+            this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
             // 
             // WAButtfrm
             // 
@@ -2508,6 +2518,7 @@
         private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarDuplicadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarFilasVaciasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limpiarToolStripMenuItem;
     }
 }
 

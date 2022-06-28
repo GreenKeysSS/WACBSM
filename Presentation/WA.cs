@@ -55,6 +55,7 @@ namespace Presentation
         public static string ContactOrChatBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]";
         public static string SendIADButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/span[1]";
         public static string LogOutButton = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/header[1]/div[2]/div[1]/span[1]/div[3]/div[1]/span[1]";
+        public static string GroupHeaderContent = "//header/div[2]/div[2]";
 
         //GOOGLE SMS SELECTORS
 
@@ -770,7 +771,7 @@ namespace Presentation
             Actions action = new Actions(driver);
 
 
-            driver.FindElement(By.XPath("//div[@id='side']//div//div//label")).Click();
+            driver.FindElement(By.XPath(ContactSearchIconPath)).Click();
 
 
             ContactSearch(tosearch);
@@ -788,9 +789,8 @@ namespace Presentation
                 Task.Delay(5000).Wait();
 
 
-                if (FindElement(driver,By.XPath(ContactOrChatBoxPath),10))
-                {
-                    IList<IWebElement> selectElements = driver.FindElements(By.XPath("//header/div[2]/div[2]"));
+               
+                    IList<IWebElement> selectElements = driver.FindElements(By.XPath(GroupHeaderContent));
 
 
 
@@ -813,7 +813,7 @@ namespace Presentation
 
                         str.Append(item.ToString());
                     }
-                }
+           
                 
                
             }
