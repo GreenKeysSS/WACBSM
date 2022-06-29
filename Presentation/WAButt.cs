@@ -50,15 +50,15 @@ namespace Presentation
         private CancellationTokenSource pauseToken2;
         private CancellationTokenSource eachmessagetoken2;
         private CancellationTokenSource severalpausetoken2;
-        
+
         int pausetiming = 0;
         int pausetiming2 = 0;
 
         bool stopbtnclicked;
         bool stopbtnclicked2;
 
-       
-       
+
+
         int sendedmessage;
         int sendedmessage2;
 
@@ -152,12 +152,12 @@ namespace Presentation
 
 
 
-          
+
 
         }
-        
-       
-        
+
+
+
 
         private void FetchChromeDriverVersion()
         {
@@ -182,7 +182,7 @@ namespace Presentation
                 {
                     var strContent = reader.ReadToEnd();
                     chromedriverversion = strContent;
-                    Console.WriteLine(Convert.ToString("bitches are bad"+strContent));
+                    Console.WriteLine(Convert.ToString("bitches are bad" + strContent));
 
                 }
 
@@ -213,9 +213,9 @@ namespace Presentation
                         
                     });*/
 
-                     FetchChromeDriverVersion();
+                    FetchChromeDriverVersion();
 
-                   
+
 
                     chromedriverdwlink = "https://chromedriver.storage.googleapis.com/" + chromedriverversion + "/chromedriver_win32.zip";
                     Dwchromedriver();
@@ -335,7 +335,7 @@ namespace Presentation
                         {
                             File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriverversion.txt", chromedriverversion);
                             Client.DownloadFile(chromedriverdwlink, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip");
-                            
+
                             var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\chromedriver.zip";
 
                             var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\webdriver\\";
@@ -481,17 +481,17 @@ namespace Presentation
 
 
 
-                    
+
                 }
 
 
-               
+
 
                 // AddUpdateAppSettings("cv", "false");
 
 
 
-               
+
             }
             catch (Exception ex)
             {
@@ -846,7 +846,7 @@ namespace Presentation
                     MessageBox.Show("El tamaño del archivo supera el maximo permitido por WhatsApp de 64 MB", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
-                
+
             }
         }
 
@@ -864,9 +864,9 @@ namespace Presentation
 
                 if (size < 67108864)
                 {
-                    filenametxt.Text = filename; 
+                    filenametxt.Text = filename;
 
-                    filetype = "A"; 
+                    filetype = "A";
                 }
                 else
                 {
@@ -2348,8 +2348,8 @@ namespace Presentation
 
                                 if (fila.IsNewRow) continue;
 
-                                
-                                
+
+
 
                                 if (CheckForInternetConnection())
                                 {
@@ -2532,14 +2532,14 @@ namespace Presentation
                                         loadmessagelbl.Text = "";
                                         loadmessagelbl.Text = "Estado: Conectado . . .";
 
-                                        
+
 
 
                                         if (actualnumber != "numero vacio")
                                         {
-                                            WA.driver.Manage().Window.Maximize();
+                                            WA.driver.Manage().Window.Size = new Size(850,650); 
                                             Console.WriteLine("el numero no esta vacio y paso a busca contacto");
-                                            
+
 
                                             await Task.Run(() =>
                                             {
@@ -2567,12 +2567,12 @@ namespace Presentation
 
                                                     wa.ContactSearch(actualnumber);
 
-                                               
+
                                                     action.SendKeys(Keys.Space).Build().Perform();
-                                                        
+
 
                                                     //Task.Delay(3000).Wait();
-                                                    
+
                                                     Console.WriteLine("doy click en el contacto");
 
 
@@ -2613,7 +2613,7 @@ namespace Presentation
 
                                                 if (!string.IsNullOrEmpty(filenametxt.Text))
                                                 {
-                                                      
+
 
                                                     if (filetype == "I")
                                                     {
@@ -2649,8 +2649,8 @@ namespace Presentation
 
 
 
-                                                                   
-                                                                
+
+
                                                                 if (!CheckAttachMessageStatus())
                                                                 {
                                                                     wa.ImageMessage(filename);
@@ -2663,7 +2663,7 @@ namespace Presentation
                                                                 {
                                                                     if (GetImageState(filename))
                                                                     {
-                                                                        
+
                                                                         wa.ImageTextMessage(filename, actualmessagetosend);
                                                                         action.SendKeys(".").Build().Perform();
                                                                         action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
@@ -2675,7 +2675,7 @@ namespace Presentation
 
                                                                     else if (GetVideoState(filename))
                                                                     {
-                                                                       
+
                                                                         wa.VideoTextMessage(filename, actualmessagetosend);
                                                                         action.SendKeys(".").Build().Perform();
                                                                         action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
@@ -2728,11 +2728,11 @@ namespace Presentation
 
 
                                                                 }
-                                                                
-                                                               
-                                                               
 
-                                                                
+
+
+
+
 
                                                                 fila.Cells[2].Value = "S";
 
@@ -2743,10 +2743,10 @@ namespace Presentation
                                                                 Console.WriteLine("Envio imagen o video y texto");
 
                                                             }
-                                                            catch (Exception)
+                                                            catch (Exception ex)
                                                             {
 
-                                                                throw;
+                                                                Console.WriteLine(ex.Message) ;
                                                             }
 
 
@@ -2826,10 +2826,10 @@ namespace Presentation
 
                                                                     Console.WriteLine("presione enter para enviar");
                                                                 }
-                                                                    
 
 
-                                                                    
+
+
 
 
 
@@ -2939,7 +2939,7 @@ namespace Presentation
 
                                                                 Console.WriteLine("presione enter para enviar");
 
-                                                                    
+
 
                                                                 fila.Cells[2].Value = "S";
 
@@ -3158,7 +3158,7 @@ namespace Presentation
                             if (stopbtnclicked != true)
                             {
                                 MessageBox.Show("Mensajes enviados correctamente! ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
+
                                 uploadbtn.Enabled = true;
                                 clearfilenamebtn.Enabled = true;
                                 stopbtn.Enabled = false;
@@ -3188,7 +3188,7 @@ namespace Presentation
 
 
                     }
-                    
+
                 }
 
 
@@ -3537,7 +3537,7 @@ namespace Presentation
                                                     try
                                                     {
 
-                                                        
+
 
                                                         Actions action = new Actions(WA.driver2);
 
@@ -3556,9 +3556,9 @@ namespace Presentation
 
 
 
-                                                       // WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                                                        // WA.driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-                                                       // Task.Delay(2000).Wait();
+                                                        // Task.Delay(2000).Wait();
 
                                                         Console.WriteLine("doy click en el contacto");
 
@@ -4965,8 +4965,8 @@ namespace Presentation
                 extractlbl.Visible = true;
 
 
-                severalpauselbl.Location = new Point(786, 57);
-                severalpausetxt.Location = new Point(823, 22);
+                severalpauselbl.Location = new Point(720, 60);
+                severalpausetxt.Location = new Point(755, 22);
 
 
 
@@ -4975,8 +4975,8 @@ namespace Presentation
             {
                 extractgroupnumbersbtn.Visible = false; extractlbl.Visible = false;
 
-                severalpauselbl.Location = new Point(658, 57);
-                severalpausetxt.Location = new Point(695, 22);
+                severalpauselbl.Location = new Point(605, 60);
+                severalpausetxt.Location = new Point(640, 22);
             }
 
 
@@ -5476,13 +5476,13 @@ namespace Presentation
 
         private void deleteduplicatedbtn_Click(object sender, EventArgs e)
         {
-            
+
 
         }
         private void DeleteDuplicate1()
         {
             DataTable items = new DataTable();
-          
+
             items.Columns.Add("Numero o Grupo", typeof(string));
             items.Columns.Add("Nombre", typeof(string));
             items.Columns.Add("Enviado(S/N)", typeof(string));
@@ -5500,7 +5500,7 @@ namespace Presentation
 
 
             contactsdgv.Rows.Clear();
-            
+
 
             foreach (DataRow item in items.Rows)
             {
@@ -5525,7 +5525,7 @@ namespace Presentation
             column2.Width = 100;
             column2.ReadOnly = true;
         }
-      
+
         private void dgvwacopymodecms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -5594,14 +5594,14 @@ namespace Presentation
             return true;
         }
 
-        
+
         private string GetExtension(string path)
         {
             return Path.GetExtension(path);
         }
         private bool GetImageState(string path)
         {
-            if (GetExtension(path) ==".svg" || GetExtension(path) == ".png" || GetExtension(path) == ".jpg"
+            if (GetExtension(path) == ".svg" || GetExtension(path) == ".png" || GetExtension(path) == ".jpg"
                 || GetExtension(path) == ".jpeg" || GetExtension(path) == ".ico" || GetExtension(path) == ".gif" || GetExtension(path) == ".jfif"
                 || GetExtension(path) == ".webp" || GetExtension(path) == ".pjpeg" || GetExtension(path) == ".avif")
             {
@@ -5637,7 +5637,7 @@ namespace Presentation
         {
             try
             {
-                
+
                 string s = Clipboard.GetText();
 
                 string[] lines = s.Replace("\n", "").Split('\r');
@@ -5646,28 +5646,28 @@ namespace Presentation
                 int row = contactsdgv.CurrentCell.RowIndex;
                 int col = 0;
                 int sum = row + lines.Length;
-                int totalrows = contactsdgv.Rows.Cast<DataGridViewRow>().Where(rown => !(rown.Cells[0].Value == null && rown.Cells[1].Value== null)).Count();
+                int totalrows = contactsdgv.Rows.Cast<DataGridViewRow>().Where(rown => !(rown.Cells[0].Value == null && rown.Cells[1].Value == null)).Count();
 
                 Console.WriteLine(lines.Length);
-                Console.WriteLine(row+2);
+                Console.WriteLine(row + 2);
                 Console.WriteLine(totalrows);
-               
+
 
                 for (int i = 0; i < sum - totalrows; i++)
                 {
                     contactsdgv.Rows.Add();
                 }
-                            
-               
+
+
 
                 foreach (string item in lines)
                 {
-                    
+
                     fields = item.Split('\t');
                     foreach (string f in fields)
                     {
 
-                        
+
 
                         contactsdgv[col, row].Value = f;
 
@@ -5675,12 +5675,12 @@ namespace Presentation
 
                         col++;
 
-                        
+
 
                     }
-                    
+
                     row++;
-                    
+
                     col = 0;
                 }
 
@@ -5701,4 +5701,5 @@ namespace Presentation
             contactsdgv.Refresh();
         }
     }
+    
 }

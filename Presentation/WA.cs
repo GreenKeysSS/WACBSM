@@ -79,7 +79,7 @@ namespace Presentation
                     ChromeOptions options = new ChromeOptions();
 
                     options.AddArguments("user-data-dir=" + userProfile);
-                    
+                    options.AddArguments("--window-size=850,650");
 
 
                     driver = new ChromeDriver(service, options)
@@ -87,8 +87,11 @@ namespace Presentation
                         Url = ("https://web.whatsapp.com/")
                         
                     };
-
-
+                    /*
+                    IWebElement html = driver.FindElement(By.TagName("html"));
+                    Actions action = new Actions(WA.driver);
+                      action.SendKeys(html,Keys.Control +Keys.Add).Build().Perform();
+                      */
                     /*
                     ICapabilities capabilities = ((ChromeDriver)driver).Capabilities;
                   
