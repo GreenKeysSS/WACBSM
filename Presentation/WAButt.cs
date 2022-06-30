@@ -73,13 +73,6 @@ namespace Presentation
 
 
 
-
-
-        private static string actualuser = Environment.UserName;
-
-
-
-
         public string chromedriverversion;
 
         public string chromedriverdwlink;
@@ -529,14 +522,14 @@ namespace Presentation
             }
         }
 
-        private async void OpenSaved()
+        private void OpenSaved()
         {
 
             Restoremessages();
 
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac.csv"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Contacts.json"))
             {
-                if (new FileInfo("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac.csv").Length > 23)
+                if (new FileInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Contacts.json").Length > 23)
                 {
                     DialogResult d;
 
@@ -546,7 +539,7 @@ namespace Presentation
                     {
                         try
                         {
-                            await ReadCSV();
+                             ReadJsonContacts("Contacts.json");
 
 
                         }
@@ -566,14 +559,14 @@ namespace Presentation
 
 
         }
-        private async void OpenSaved2()
+        private void OpenSaved2()
         {
 
             Restoremessages2();
 
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac2.csv"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\datac2.csv"))
             {
-                if (new FileInfo("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac2.csv").Length > 23)
+                if (new FileInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\datac2.csv").Length > 23)
                 {
                     DialogResult d;
 
@@ -583,7 +576,7 @@ namespace Presentation
                     {
                         try
                         {
-                            await ReadCSV2();
+                             ReadJson2Contacts("Contacts2.json");
 
 
                         }
@@ -3809,8 +3802,8 @@ namespace Presentation
         private void Storecontaacts()
         {
 
-            ToCsV(contactsdgv, "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac.csv");
-            ToCsV(contacts2dgv, "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac2.csv");
+            ToJson(contactsdgv, "Contacts.json");
+            ToJson(contacts2dgv, "Contacts2.json");
 
 
 
@@ -3820,7 +3813,7 @@ namespace Presentation
         {
 
 
-            string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt";
             DirectoryInfo di = Directory.CreateDirectory(path);
 
 
@@ -3848,25 +3841,25 @@ namespace Presentation
 
 
 
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m1.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m1.txt"))
             {
-                m1txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m1.txt");
+                m1txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m1.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m2.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m2.txt"))
             {
-                m2txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m2.txt");
+                m2txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m2.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m3.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m3.txt"))
             {
-                m3txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m3.txt");
+                m3txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m3.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m4.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m4.txt"))
             {
-                m4txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m4.txt");
+                m4txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m4.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m5.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m5.txt"))
             {
-                m5txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\m5.txt");
+                m5txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\m5.txt");
             }
 
 
@@ -3876,25 +3869,25 @@ namespace Presentation
         private void Restoremessages2()
         {
 
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms1.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms1.txt"))
             {
-                sms1txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms1.txt");
+                sms1txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms1.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms2.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms2.txt"))
             {
-                sms2txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms2.txt");
+                sms2txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms2.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms3.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms3.txt"))
             {
-                sms3txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms3.txt");
+                sms3txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms3.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms4.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms4.txt"))
             {
-                sms4txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms4.txt");
+                sms4txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms4.txt");
             }
-            if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms5.txt"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms5.txt"))
             {
-                sms5txt.Text = File.ReadAllText("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\sms5.txt");
+                sms5txt.Text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\sms5.txt");
             }
 
 
@@ -3902,8 +3895,53 @@ namespace Presentation
 
         }
 
-        private void ToCsV(DataGridView dGV, string filename)
+        private void ToJson(DataGridView dGV, string filename)
         {
+
+            DataTable dt = new DataTable();
+
+
+
+            dt.Columns.Add("number", typeof(string));
+            dt.Columns.Add("name", typeof(string));
+
+            foreach (DataGridViewRow item in dGV.Rows)
+            {
+                if ( !string.IsNullOrEmpty(Convert.ToString(item.Cells[0].Value))) 
+                {
+                    DataRow row = dt.NewRow();
+
+                    row["number"] = Convert.ToString(item.Cells[0].Value);
+                    row["name"] = Convert.ToString(item.Cells[1].Value);
+
+
+                    dt.Rows.Add(row);
+                }
+                
+
+            }
+
+
+           
+
+
+            string JSONDataTable;
+            JSONDataTable = JsonConvert.SerializeObject(dt);
+
+
+            WriteJSONToFile(JSONDataTable, filename);
+
+
+
+
+
+
+
+            /*
+
+
+
+
 
 
             string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt";
@@ -3954,7 +3992,7 @@ namespace Presentation
                 }
             }
             swOut.Close();
-
+            */
 
 
 
@@ -3962,8 +4000,41 @@ namespace Presentation
 
         }
 
-        public async Task ReadCSV()
+        public void ReadJsonContacts(string filename)
         {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\" + filename;
+            Console.WriteLine(path);
+
+            string jsonReadResult;
+
+            if (File.Exists(path))
+            {
+                jsonReadResult = File.ReadAllText(path);
+
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(jsonReadResult, typeof(DataTable));
+
+
+                foreach (DataRow item in dt.Rows)
+                {
+                    contactsdgv.Rows.Add(item[0], item[1]);
+                }
+                
+
+            }
+            else
+            {
+                MessageBox.Show("Contactos no encontrados", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+
+
+
+
+
+
+            /*
 
             if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac.csv"))
             {
@@ -4025,11 +4096,43 @@ namespace Presentation
                 }
 
             }
-
+            */
 
         }
-        public async Task ReadCSV2()
+        public void ReadJson2Contacts(string filename)
         {
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\tempfilesWAButt\\" + filename;
+            Console.WriteLine(path);
+
+            string jsonReadResult;
+
+            if (File.Exists(path))
+            {
+                jsonReadResult = File.ReadAllText(path);
+
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(jsonReadResult, typeof(DataTable));
+
+
+                foreach (DataRow item in dt.Rows)
+                {
+                    contacts2dgv.Rows.Add(item[0], item[1]);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Contactos no encontrados", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+
+
+
+
+            /*
 
             if (File.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\datac2.csv"))
             {
@@ -4091,7 +4194,7 @@ namespace Presentation
                 }
 
             }
-
+            */
 
         }
 
@@ -4441,13 +4544,13 @@ namespace Presentation
         {
 
 
-            if (!Directory.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile\\"))
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome WA Profile\\"))
             {
 
                 try
                 {
 
-                    string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\";
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\";
                     DirectoryInfo di = Directory.CreateDirectory(path);
 
 
@@ -4457,7 +4560,7 @@ namespace Presentation
                     using (WebClient Client = new WebClient())
                     {
 
-                        Client.DownloadFile(chromewadefaultuserdata, "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile.zip");
+                        Client.DownloadFile(chromewadefaultuserdata, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome WA Profile.zip");
 
 
 
@@ -4465,9 +4568,9 @@ namespace Presentation
 
 
 
-                        var zipFileName = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile.zip";
+                        var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome WA Profile.zip";
 
-                        var targetDir = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\";
+                        var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\";
 
 
                         FastZip fastZip = new FastZip();
@@ -4477,7 +4580,7 @@ namespace Presentation
                         fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
 
 
-                        File.Delete("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome WA Profile.zip");
+                        File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome WA Profile.zip");
 
 
 
@@ -4503,13 +4606,13 @@ namespace Presentation
             }
 
 
-            if (!Directory.Exists("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile\\"))
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome SMS Profile\\"))
             {
 
                 try
                 {
 
-                    string path = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\";
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\";
                     DirectoryInfo di = Directory.CreateDirectory(path);
 
 
@@ -4519,15 +4622,15 @@ namespace Presentation
                     using (WebClient Client = new WebClient())
                     {
 
-                        Client.DownloadFile(chromesmsdefaultuserdata, "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile.zip");
+                        Client.DownloadFile(chromesmsdefaultuserdata, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome SMS Profile.zip");
 
 
 
 
 
-                        var zipFileName = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile.zip";
+                        var zipFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome SMS Profile.zip";
 
-                        var targetDir = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\";
+                        var targetDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\";
 
 
                         FastZip fastZip = new FastZip();
@@ -4537,7 +4640,7 @@ namespace Presentation
                         fastZip.ExtractZip(zipFileName, targetDir, fileFilter);
 
 
-                        File.Delete("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile.zip");
+                        File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\tempfilesWAButt\\Chrome SMS Profile.zip");
 
 
 

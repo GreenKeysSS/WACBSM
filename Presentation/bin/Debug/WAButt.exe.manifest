@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="7680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="8192">
       <assemblyIdentity name="DataAccess" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dWxKI1lYIbTVbnQYAsRpVi3aTAhspqdXYPU5+5VIY8E=</dsig:DigestValue>
+        <dsig:DigestValue>/KE1mUrr2alOxfmUvsQtMohiMHeFs85K0FGS0A6ZyfI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FuRWm2gnWbY1AXBxuHUZVRMFnYgBCe/SrljHsxPd2gM=</dsig:DigestValue>
+        <dsig:DigestValue>L+D7mgoYxWw79X2cIllpU8OH8fb9LZYXFdx74MIjcOM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1459,14 +1459,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WAButt.exe" size="2227712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WAButt.exe" size="2223104">
       <assemblyIdentity name="WAButt" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cTMs/4gCJUzqaWREG1W1XUiYPBCpU8aHaFz9Rzji1Ns=</dsig:DigestValue>
+        <dsig:DigestValue>Pqts+dQMQasHjjOnNikIVcYBfzSpQxBrULZz8BfWILY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
