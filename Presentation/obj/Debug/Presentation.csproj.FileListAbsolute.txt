@@ -339,7 +339,6 @@ C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\Presentation.LoadWi
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\obj\Debug\Presentation.LoadWindow.resources
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\AutoUpdater.NET.pdb
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\Microsoft.Bcl.HashCode.dll
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\ICSharpCode.SharpZipLib.pdb
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\SpeedTest.Net.dll
 C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -541,3 +540,6 @@ C:\Users\USER\Documents\GitHub\WACBSM\Presentation\bin\Debug\System.Xml.XmlSeria
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\bin\Debug\System.Xml.XPath.dll
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\USER\Documents\GitHub\WACBSM\Presentation\obj\Debug\WAButt.exe.config
+C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\SONIC\Desktop\GITHUBTRASHCAN\WACBSM\Presentation\bin\Debug\Microsoft.Web.WebView2.Wpf.dll

@@ -16,6 +16,7 @@
     <Import Project="$(NuGetPackageRoot)ilmerge\3.0.41\build\ILMerge.props" Condition="Exists('$(NuGetPackageRoot)ilmerge\3.0.41\build\ILMerge.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\SONIC\.nuget\packages\microsoft.web.webview2\1.0.1210.39</PkgMicrosoft_Web_WebView2>
     <PkgILMerge Condition=" '$(PkgILMerge)' == '' ">C:\Users\SONIC\.nuget\packages\ilmerge\3.0.41</PkgILMerge>
   </PropertyGroup>
 </Project>

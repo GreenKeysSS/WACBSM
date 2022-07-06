@@ -80,6 +80,7 @@ namespace Presentation
 
                     options.AddArguments("user-data-dir=" + userProfile);
                     options.AddArguments("--window-size=850,650");
+                    		
 
 
                     driver = new ChromeDriver(service, options)
@@ -109,10 +110,10 @@ namespace Presentation
 
 
                 }
-                catch (Exception ex)
+                catch (WebDriverException ex)
                 {
 
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Error :" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 
@@ -147,16 +148,16 @@ namespace Presentation
             await Task.Run(() =>
             {
 
-                try { 
-                    string userProfile = "C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\Chrome SMS Profile\\Default\\";
+                try {
+                    string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +"\\tempfilesWAButt\\Chrome SMS Profile\\Default\\";
 
-                    var service = ChromeDriverService.CreateDefaultService("C:\\Users\\" + actualuser + "\\Documents\\tempfilesWAButt\\webdriver\\");
+                    var service = ChromeDriverService.CreateDefaultService(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +"\\tempfilesWAButt\\webdriver\\");
                     service.HideCommandPromptWindow = true;
                     ChromeOptions options = new ChromeOptions();
 
-                   options.AddArguments("user-data-dir=" + userProfile);
-
-
+                    options.AddArguments("user-data-dir=" + userProfile);
+                    options.AddArguments("--window-size=850,650");
+                    //options.AddArguments("--incognito");
                     driver2 = new ChromeDriver(service, options)
                     {
                         Url = ("https://messages.google.com/web/conversations")
@@ -172,10 +173,10 @@ namespace Presentation
 
 
                 }
-                catch (Exception ex)
+                catch (WebDriverException ex)
                 {
 
-                Console.WriteLine(ex.Message);
+                    MessageBox.Show("Error :" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
@@ -869,7 +870,7 @@ namespace Presentation
             }
         }
         
-        public bool IsBrowserClosed(IWebDriver driver)
+        public bool IsBrowserClosed()
         {
             bool isClosed = false;
 
@@ -878,6 +879,21 @@ namespace Presentation
                 string myTitle = driver.Title;
             }
             catch ( WebDriverException)
+            {
+                isClosed = true;
+            }
+
+            return isClosed;
+        }
+        public bool IsBrowserClosed2()
+        {
+            bool isClosed = false;
+
+            try
+            {
+                string myTitle = driver2.Title;
+            }
+            catch (WebDriverException)
             {
                 isClosed = true;
             }

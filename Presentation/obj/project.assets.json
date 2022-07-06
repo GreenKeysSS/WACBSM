@@ -2,8 +2,11 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "Autoupdater.NET.Official/1.7.0": {
+      "Autoupdater.NET.Official/1.7.3": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.1210.39"
+        },
         "frameworkAssemblies": [
           "PresentationFramework",
           "System",
@@ -22,11 +25,10 @@
           "lib/net45/AutoUpdater.NET.dll": {}
         }
       },
-      "CsvHelper/19.0.0": {
+      "CsvHelper/17.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
-          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.2"
         },
@@ -70,19 +72,6 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Bcl.HashCode/1.1.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
-        },
-        "runtime": {
-          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -93,6 +82,36 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.1210.39": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -181,8 +200,11 @@
       }
     },
     ".NETFramework,Version=v4.7/win": {
-      "Autoupdater.NET.Official/1.7.0": {
+      "Autoupdater.NET.Official/1.7.3": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.1210.39"
+        },
         "frameworkAssemblies": [
           "PresentationFramework",
           "System",
@@ -201,11 +223,10 @@
           "lib/net45/AutoUpdater.NET.dll": {}
         }
       },
-      "CsvHelper/19.0.0": {
+      "CsvHelper/17.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
-          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.2"
         },
@@ -249,19 +270,6 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Bcl.HashCode/1.1.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
-        },
-        "runtime": {
-          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -272,6 +280,22 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.1210.39": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -360,8 +384,11 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x64": {
-      "Autoupdater.NET.Official/1.7.0": {
+      "Autoupdater.NET.Official/1.7.3": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.1210.39"
+        },
         "frameworkAssemblies": [
           "PresentationFramework",
           "System",
@@ -380,11 +407,10 @@
           "lib/net45/AutoUpdater.NET.dll": {}
         }
       },
-      "CsvHelper/19.0.0": {
+      "CsvHelper/17.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
-          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.2"
         },
@@ -428,19 +454,6 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Bcl.HashCode/1.1.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
-        },
-        "runtime": {
-          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -451,6 +464,25 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.1210.39": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/WebView2Loader.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -539,8 +571,11 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x86": {
-      "Autoupdater.NET.Official/1.7.0": {
+      "Autoupdater.NET.Official/1.7.3": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.1210.39"
+        },
         "frameworkAssemblies": [
           "PresentationFramework",
           "System",
@@ -559,11 +594,10 @@
           "lib/net45/AutoUpdater.NET.dll": {}
         }
       },
-      "CsvHelper/19.0.0": {
+      "CsvHelper/17.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
-          "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.CSharp": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.2"
         },
@@ -607,19 +641,6 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Bcl.HashCode/1.1.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
-        },
-        "runtime": {
-          "lib/net461/Microsoft.Bcl.HashCode.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -630,6 +651,25 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.1210.39": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
+        },
+        "native": {
+          "runtimes/win-x86/native/WebView2Loader.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -719,43 +759,42 @@
     }
   },
   "libraries": {
-    "Autoupdater.NET.Official/1.7.0": {
-      "sha512": "gNBNXwaiLc9oNtJ0WWwRvWsmGVpCN8ii2acpHpYtttkKh3xYJjmbLG2uf243r+nXbmo6KVauXGC82Igt2kHhxw==",
+    "Autoupdater.NET.Official/1.7.3": {
+      "sha512": "231QXHE/vvfzzE+xENBfqpCJkHig7TMkW8GklYyHvUzzDviUfviMwJi3/ImNM+dxJmrHh+NHHYnFL+ik8qpmwg==",
       "type": "package",
-      "path": "autoupdater.net.official/1.7.0",
+      "path": "autoupdater.net.official/1.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "autoupdater.net.official.1.7.0.nupkg.sha512",
+        "autoupdater.net.official.1.7.3.nupkg.sha512",
         "autoupdater.net.official.nuspec",
         "lib/net45/AutoUpdater.NET.dll",
         "lib/net45/AutoUpdater.NET.pdb",
         "lib/net45/AutoUpdater.NET.xml",
-        "lib/net5.0-windows/AutoUpdater.NET.deps.json",
-        "lib/net5.0-windows/AutoUpdater.NET.dll",
-        "lib/net5.0-windows/AutoUpdater.NET.pdb",
-        "lib/net5.0-windows/AutoUpdater.NET.xml",
-        "lib/net5.0-windows/ar/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/cs/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/da/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/de/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/es/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/fr/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/it/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/ja-JP/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/ko/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/nl/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/pl/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/pt-BR/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/pt/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/ru/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/sk/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/sv/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/th/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/tr/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/zh-tw/AutoUpdater.NET.resources.dll",
-        "lib/net5.0-windows/zh/AutoUpdater.NET.resources.dll",
-        "lib/netcoreapp3.1/AutoUpdater.NET.deps.json",
+        "lib/net5.0-windows7.0/AutoUpdater.NET.dll",
+        "lib/net5.0-windows7.0/AutoUpdater.NET.pdb",
+        "lib/net5.0-windows7.0/AutoUpdater.NET.xml",
+        "lib/net5.0-windows7.0/ar/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/cs/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/da/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/de/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/es/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/fr/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/it/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/ja-JP/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/ko/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/lv/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/nl/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/pl/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/pt/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/ru/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/sk/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/sv/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/th/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/tr/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/zh-tw/AutoUpdater.NET.resources.dll",
+        "lib/net5.0-windows7.0/zh/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/AutoUpdater.NET.dll",
         "lib/netcoreapp3.1/AutoUpdater.NET.pdb",
         "lib/netcoreapp3.1/AutoUpdater.NET.xml",
@@ -768,6 +807,7 @@
         "lib/netcoreapp3.1/it/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/ja-JP/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/ko/AutoUpdater.NET.resources.dll",
+        "lib/netcoreapp3.1/lv/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/nl/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/pl/AutoUpdater.NET.resources.dll",
         "lib/netcoreapp3.1/pt-BR/AutoUpdater.NET.resources.dll",
@@ -781,15 +821,15 @@
         "lib/netcoreapp3.1/zh/AutoUpdater.NET.resources.dll"
       ]
     },
-    "CsvHelper/19.0.0": {
-      "sha512": "vUHF8wPOVvdtUQ4sXQI62jEIGcz5p7MG3Qf4Hazg+3EZQFh+UoTASEG0a1tsGmhNsHZ/Y+qRO+SgLMZO8jNcSg==",
+    "CsvHelper/17.0.1": {
+      "sha512": "ch+ir0GHSWOH0KVLC9f+iTIIwapqtId8f/X2hXT6F89QN0tkEGd6U6zbOmh+oemnMZjmfHoZQXcf5AJafQkW9g==",
       "type": "package",
-      "path": "csvhelper/19.0.0",
+      "path": "csvhelper/17.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "csvhelper.19.0.0.nupkg.sha512",
+        "csvhelper.17.0.1.nupkg.sha512",
         "csvhelper.nuspec",
         "lib/net45/CsvHelper.dll",
         "lib/net45/CsvHelper.xml",
@@ -852,33 +892,6 @@
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "Microsoft.Bcl.HashCode/1.1.0": {
-      "sha512": "J2G1k+u5unBV+aYcwxo94ip16Rkp65pgWFb0R6zwJipzWNMgvqlWeuI7/+R+e8bob66LnSG+llLJ+z8wI94cHg==",
-      "type": "package",
-      "path": "microsoft.bcl.hashcode/1.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Bcl.HashCode.dll",
-        "lib/net461/Microsoft.Bcl.HashCode.xml",
-        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
-        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.xml",
-        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
-        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
-        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
-        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
-        "microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
-        "microsoft.bcl.hashcode.nuspec",
-        "ref/net461/Microsoft.Bcl.HashCode.dll",
-        "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
-        "ref/netstandard2.0/Microsoft.Bcl.HashCode.dll",
-        "ref/netstandard2.1/Microsoft.Bcl.HashCode.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -949,6 +962,58 @@
         "ref/xamarinwatchos10/_._",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.Web.WebView2/1.0.1210.39": {
+      "sha512": "BjNSaIg/Dvct5o5fhiN8dWf3SZYzU8QZlqyd3Gtj24x3Of5AWH9aUcji4Esj1NJPfnVOgvJDTCeG7JsuhjL0Ew==",
+      "type": "package",
+      "path": "microsoft.web.webview2/1.0.1210.39",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include-winrt/WebView2Interop.h",
+        "build/native/include-winrt/WebView2Interop.idl",
+        "build/native/include-winrt/WebView2Interop.tlb",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "lib/Microsoft.Web.WebView2.Core.winmd",
+        "lib/net45/Microsoft.Web.WebView2.Core.dll",
+        "lib/net45/Microsoft.Web.WebView2.Core.xml",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.1210.39.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-arm64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "runtimes/win-x86/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "Newtonsoft.Json/12.0.3": {
@@ -1111,8 +1176,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "Autoupdater.NET.Official >= 1.7.0",
-      "CsvHelper >= 19.0.0",
+      "Autoupdater.NET.Official >= 1.7.3",
+      "CsvHelper >= 17.0.1",
       "Domain >= 1.0.0",
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
       "ILMerge >= 3.0.41",
@@ -1160,11 +1225,11 @@
         "dependencies": {
           "Autoupdater.NET.Official": {
             "target": "Package",
-            "version": "[1.7.0, )"
+            "version": "[1.7.3, )"
           },
           "CsvHelper": {
             "target": "Package",
-            "version": "[19.0.0, )"
+            "version": "[17.0.1, )"
           },
           "DotNetSeleniumExtras.WaitHelpers": {
             "target": "Package",

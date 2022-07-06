@@ -30,12 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle185 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle186 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle187 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle188 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle189 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle190 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle191 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle192 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -199,12 +201,18 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyrowcms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copycms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarDuplicadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarFilasVaciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copy2cms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsupload.SuspendLayout();
             this.cmsgmail.SuspendLayout();
             this.cmspause.SuspendLayout();
@@ -238,7 +246,8 @@
             this.colorpanel.SuspendLayout();
             this.cmsgmail2.SuspendLayout();
             this.cmspause2.SuspendLayout();
-            this.copyrowcms.SuspendLayout();
+            this.copycms.SuspendLayout();
+            this.copy2cms.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsupload
@@ -338,7 +347,7 @@
             // 
             this.apptab.Controls.Add(this.wabottab);
             this.apptab.Controls.Add(this.smsbottab);
-            this.apptab.Location = new System.Drawing.Point(60, -23);
+            this.apptab.Location = new System.Drawing.Point(70, 3);
             this.apptab.Name = "apptab";
             this.apptab.SelectedIndex = 0;
             this.apptab.Size = new System.Drawing.Size(970, 670);
@@ -648,44 +657,44 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contactsdgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.contactsdgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle185.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle185.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle185.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle185.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle185.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle185.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle185.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle185;
             this.contactsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contactsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numbercol,
             this.namecol,
             this.statecol});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.contactsdgv.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle186.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle186.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle186.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle186.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle186.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle186.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle186.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.contactsdgv.DefaultCellStyle = dataGridViewCellStyle186;
             this.contactsdgv.GridColor = System.Drawing.Color.Black;
             this.contactsdgv.Location = new System.Drawing.Point(0, 0);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Poor Richard", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle187.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle187.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle187.Font = new System.Drawing.Font("Poor Richard", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle187.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle187.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle187.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle187.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle187;
             this.contactsdgv.RowHeadersVisible = false;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle188.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle188;
             this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 514);
             this.contactsdgv.TabIndex = 1;
@@ -850,7 +859,7 @@
             // 
             this.totalmessageslbl.BackColor = System.Drawing.Color.Transparent;
             this.totalmessageslbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalmessageslbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.totalmessageslbl.ForeColor = System.Drawing.Color.Black;
             this.totalmessageslbl.Location = new System.Drawing.Point(3, 27);
             this.totalmessageslbl.Name = "totalmessageslbl";
             this.totalmessageslbl.Size = new System.Drawing.Size(115, 37);
@@ -861,7 +870,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(20, 5);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(76, 16);
@@ -880,7 +889,7 @@
             // 
             this.sendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
             this.sendedmessagelbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendedmessagelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.sendedmessagelbl.ForeColor = System.Drawing.Color.Black;
             this.sendedmessagelbl.Location = new System.Drawing.Point(255, 27);
             this.sendedmessagelbl.Name = "sendedmessagelbl";
             this.sendedmessagelbl.Size = new System.Drawing.Size(122, 37);
@@ -892,7 +901,7 @@
             // 
             this.notsendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
             this.notsendedmessagelbl.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.Black;
             this.notsendedmessagelbl.Location = new System.Drawing.Point(122, 27);
             this.notsendedmessagelbl.Name = "notsendedmessagelbl";
             this.notsendedmessagelbl.Size = new System.Drawing.Size(129, 37);
@@ -903,7 +912,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(289, 5);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 16);
@@ -929,7 +938,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(129)))), ((int)(((byte)(153)))));
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(150, 5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 16);
@@ -1341,10 +1350,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(488, 57);
+            this.label1.Location = new System.Drawing.Point(456, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 57;
             this.label1.Text = "Exp. Imp. Contactos Gmail";
             // 
@@ -1352,10 +1362,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(430, 57);
+            this.label6.Location = new System.Drawing.Point(403, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 56;
             this.label6.Text = "Emojis";
             // 
@@ -1363,10 +1374,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(271, 57);
+            this.label7.Location = new System.Drawing.Point(265, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 54;
             this.label7.Text = "Importar Contactos .txt";
             // 
@@ -1374,10 +1386,11 @@
             // 
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(116, 57);
+            this.label31.Location = new System.Drawing.Point(130, 62);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(113, 13);
+            this.label31.Size = new System.Drawing.Size(121, 16);
             this.label31.TabIndex = 53;
             this.label31.Text = "Exportar Contactos .txt";
             // 
@@ -1385,12 +1398,13 @@
             // 
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(34, 57);
+            this.label32.Location = new System.Drawing.Point(21, 62);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(61, 13);
+            this.label32.Size = new System.Drawing.Size(97, 16);
             this.label32.TabIndex = 52;
-            this.label32.Text = "Pegar Datos";
+            this.label32.Text = "Pegar Datos Excel";
             // 
             // emoji2btn
             // 
@@ -1405,7 +1419,7 @@
             this.emoji2btn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.emoji2btn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.emoji2btn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.emoji2btn.Location = new System.Drawing.Point(425, 15);
+            this.emoji2btn.Location = new System.Drawing.Point(396, 14);
             this.emoji2btn.Name = "emoji2btn";
             this.emoji2btn.Size = new System.Drawing.Size(53, 37);
             this.emoji2btn.TabIndex = 51;
@@ -1426,7 +1440,7 @@
             this.gmail2btn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.gmail2btn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.gmail2btn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.gmail2btn.Location = new System.Drawing.Point(532, 15);
+            this.gmail2btn.Location = new System.Drawing.Point(494, 14);
             this.gmail2btn.Name = "gmail2btn";
             this.gmail2btn.Size = new System.Drawing.Size(62, 37);
             this.gmail2btn.TabIndex = 49;
@@ -1447,7 +1461,7 @@
             this.open2btn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.open2btn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.open2btn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.open2btn.Location = new System.Drawing.Point(317, 16);
+            this.open2btn.Location = new System.Drawing.Point(299, 15);
             this.open2btn.Name = "open2btn";
             this.open2btn.Size = new System.Drawing.Size(53, 36);
             this.open2btn.TabIndex = 48;
@@ -1468,7 +1482,7 @@
             this.save2btn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.save2btn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.save2btn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.save2btn.Location = new System.Drawing.Point(161, 15);
+            this.save2btn.Location = new System.Drawing.Point(165, 14);
             this.save2btn.Name = "save2btn";
             this.save2btn.Size = new System.Drawing.Size(53, 37);
             this.save2btn.TabIndex = 47;
@@ -1489,7 +1503,7 @@
             this.pastedata2btn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
             this.pastedata2btn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.pastedata2btn.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.pastedata2btn.Location = new System.Drawing.Point(42, 16);
+            this.pastedata2btn.Location = new System.Drawing.Point(42, 15);
             this.pastedata2btn.Name = "pastedata2btn";
             this.pastedata2btn.Size = new System.Drawing.Size(53, 37);
             this.pastedata2btn.TabIndex = 46;
@@ -1501,7 +1515,7 @@
             // 
             this.severalpause2txt.BorderColor = System.Drawing.Color.SeaGreen;
             this.severalpause2txt.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.severalpause2txt.Location = new System.Drawing.Point(698, 22);
+            this.severalpause2txt.Location = new System.Drawing.Point(640, 20);
             this.severalpause2txt.Name = "severalpause2txt";
             this.severalpause2txt.Size = new System.Drawing.Size(56, 23);
             this.severalpause2txt.TabIndex = 45;
@@ -1510,20 +1524,22 @@
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(661, 57);
+            this.label33.Location = new System.Drawing.Point(605, 62);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(111, 13);
+            this.label33.Size = new System.Drawing.Size(124, 16);
             this.label33.TabIndex = 44;
             this.label33.Text = "# Mensajes para Pausar";
             // 
             // main2tab
             // 
-            this.main2tab.ActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
+            this.main2tab.ActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
             this.main2tab.ActiveTextColor = System.Drawing.Color.White;
             this.main2tab.BorderColor = System.Drawing.Color.White;
             this.main2tab.Controls.Add(this.contactlist2tab);
             this.main2tab.Controls.Add(this.messagesmstab);
+            this.main2tab.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.main2tab.HeaderBackgroundColor = System.Drawing.Color.White;
             this.main2tab.InActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.main2tab.InActiveTextColor = System.Drawing.Color.Black;
@@ -1555,30 +1571,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contacts2dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.contacts2dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle189.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle189.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle189.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle189.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle189.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle189.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle189.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle189;
             this.contacts2dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contacts2dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
+            dataGridViewCellStyle190.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle190.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle190.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle190.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle190.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle190.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle190.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.contacts2dgv.DefaultCellStyle = dataGridViewCellStyle190;
             this.contacts2dgv.GridColor = System.Drawing.Color.Black;
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle191.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle191.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle191.Font = new System.Drawing.Font("Poor Richard", 9.75F);
+            dataGridViewCellStyle191.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle191.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle191.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle191.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle191;
+            this.contacts2dgv.RowHeadersVisible = false;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle192.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle192;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
+            this.contacts2dgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contacts2dgv_MouseClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1645,7 +1679,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(208, 152);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 26);
+            this.label5.Size = new System.Drawing.Size(137, 32);
             this.label5.TabIndex = 57;
             this.label5.Text = "1024; 678 wabutt form size\r\n57; -23 app tab location";
             // 
@@ -1656,7 +1690,7 @@
             this.manymessages2cb.ForeColor = System.Drawing.Color.Black;
             this.manymessages2cb.Location = new System.Drawing.Point(17, 119);
             this.manymessages2cb.Name = "manymessages2cb";
-            this.manymessages2cb.Size = new System.Drawing.Size(190, 17);
+            this.manymessages2cb.Size = new System.Drawing.Size(204, 20);
             this.manymessages2cb.TabIndex = 56;
             this.manymessages2cb.Text = "Enviar Varios textos en un solo envio";
             this.manymessages2cb.UseVisualStyleBackColor = false;
@@ -1664,15 +1698,15 @@
             // send2pbr
             // 
             this.send2pbr.BackColor = System.Drawing.Color.Silver;
-            this.send2pbr.Location = new System.Drawing.Point(17, 368);
+            this.send2pbr.Location = new System.Drawing.Point(17, 364);
             this.send2pbr.Name = "send2pbr";
-            this.send2pbr.Size = new System.Drawing.Size(380, 27);
+            this.send2pbr.Size = new System.Drawing.Size(380, 31);
             this.send2pbr.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.send2pbr.TabIndex = 38;
             // 
             // stop2btn
             // 
-            this.stop2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
+            this.stop2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
             this.stop2btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.stop2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stop2btn.ForeColor = System.Drawing.Color.White;
@@ -1686,10 +1720,10 @@
             // 
             // pause2btn
             // 
-            this.pause2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
+            this.pause2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
             this.pause2btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.pause2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pause2btn.ForeColor = System.Drawing.Color.White;
+            this.pause2btn.ForeColor = System.Drawing.Color.Black;
             this.pause2btn.Location = new System.Drawing.Point(173, 257);
             this.pause2btn.Name = "pause2btn";
             this.pause2btn.Size = new System.Drawing.Size(89, 38);
@@ -1700,7 +1734,7 @@
             // 
             // start2btn
             // 
-            this.start2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
+            this.start2btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
             this.start2btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.start2btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.start2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1716,7 +1750,7 @@
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.panel16.Controls.Add(this.totalmessages2lbl);
             this.panel16.Controls.Add(this.label73);
             this.panel16.Controls.Add(this.panel17);
@@ -1747,9 +1781,9 @@
             // 
             this.label73.AutoSize = true;
             this.label73.ForeColor = System.Drawing.Color.Black;
-            this.label73.Location = new System.Drawing.Point(13, 5);
+            this.label73.Location = new System.Drawing.Point(20, 5);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(68, 13);
+            this.label73.Size = new System.Drawing.Size(76, 16);
             this.label73.TabIndex = 38;
             this.label73.Text = "Total a Enviar";
             // 
@@ -1789,9 +1823,9 @@
             // 
             this.label76.AutoSize = true;
             this.label76.ForeColor = System.Drawing.Color.Black;
-            this.label76.Location = new System.Drawing.Point(290, 5);
+            this.label76.Location = new System.Drawing.Point(289, 5);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(48, 13);
+            this.label76.Size = new System.Drawing.Size(52, 16);
             this.label76.TabIndex = 35;
             this.label76.Text = "Enviados";
             // 
@@ -1815,9 +1849,9 @@
             // 
             this.label77.AutoSize = true;
             this.label77.ForeColor = System.Drawing.Color.Black;
-            this.label77.Location = new System.Drawing.Point(149, 5);
+            this.label77.Location = new System.Drawing.Point(150, 5);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(64, 13);
+            this.label77.Size = new System.Drawing.Size(69, 16);
             this.label77.TabIndex = 0;
             this.label77.Text = "No Enviados";
             // 
@@ -1828,7 +1862,7 @@
             this.senddatetime2cb.ForeColor = System.Drawing.Color.Black;
             this.senddatetime2cb.Location = new System.Drawing.Point(17, 96);
             this.senddatetime2cb.Name = "senddatetime2cb";
-            this.senddatetime2cb.Size = new System.Drawing.Size(115, 17);
+            this.senddatetime2cb.Size = new System.Drawing.Size(125, 20);
             this.senddatetime2cb.TabIndex = 45;
             this.senddatetime2cb.Text = "Enviar Fecha y Hora";
             this.senddatetime2cb.UseVisualStyleBackColor = false;
@@ -1839,7 +1873,7 @@
             this.label78.ForeColor = System.Drawing.Color.White;
             this.label78.Location = new System.Drawing.Point(10, 353);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(48, 13);
+            this.label78.Size = new System.Drawing.Size(50, 16);
             this.label78.TabIndex = 48;
             this.label78.Text = "Progreso";
             // 
@@ -1850,7 +1884,7 @@
             this.sendfullname2cb.ForeColor = System.Drawing.Color.Black;
             this.sendfullname2cb.Location = new System.Drawing.Point(17, 25);
             this.sendfullname2cb.Name = "sendfullname2cb";
-            this.sendfullname2cb.Size = new System.Drawing.Size(142, 17);
+            this.sendfullname2cb.Size = new System.Drawing.Size(153, 20);
             this.sendfullname2cb.TabIndex = 35;
             this.sendfullname2cb.Text = "Enviar Nombre Completo";
             this.sendfullname2cb.UseVisualStyleBackColor = false;
@@ -1863,9 +1897,9 @@
             this.connectgoobtn.ForeColor = System.Drawing.Color.White;
             this.connectgoobtn.Location = new System.Drawing.Point(17, 198);
             this.connectgoobtn.Name = "connectgoobtn";
-            this.connectgoobtn.Size = new System.Drawing.Size(166, 23);
+            this.connectgoobtn.Size = new System.Drawing.Size(179, 32);
             this.connectgoobtn.TabIndex = 52;
-            this.connectgoobtn.Text = "Conectar Messages";
+            this.connectgoobtn.Text = "Conectar Mensages";
             this.connectgoobtn.UseVisualStyleBackColor = false;
             this.connectgoobtn.Click += new System.EventHandler(this.connectgoobtn_Click);
             // 
@@ -1876,21 +1910,22 @@
             this.logout2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout2btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout2btn.ForeColor = System.Drawing.Color.Black;
-            this.logout2btn.Location = new System.Drawing.Point(189, 198);
+            this.logout2btn.Location = new System.Drawing.Point(189, 335);
             this.logout2btn.Name = "logout2btn";
             this.logout2btn.Size = new System.Drawing.Size(208, 23);
             this.logout2btn.TabIndex = 49;
             this.logout2btn.Text = "Cerrar Sesión";
             this.logout2btn.UseVisualStyleBackColor = false;
+            this.logout2btn.Visible = false;
             // 
             // loadmessage2lbl
             // 
             this.loadmessage2lbl.AutoSize = true;
-            this.loadmessage2lbl.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadmessage2lbl.Font = new System.Drawing.Font("Corbel", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.loadmessage2lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(38)))), ((int)(((byte)(99)))));
-            this.loadmessage2lbl.Location = new System.Drawing.Point(15, 410);
+            this.loadmessage2lbl.Location = new System.Drawing.Point(15, 400);
             this.loadmessage2lbl.Name = "loadmessage2lbl";
-            this.loadmessage2lbl.Size = new System.Drawing.Size(127, 13);
+            this.loadmessage2lbl.Size = new System.Drawing.Size(130, 15);
             this.loadmessage2lbl.TabIndex = 46;
             this.loadmessage2lbl.Text = "Estado: No Conectado";
             // 
@@ -1898,15 +1933,15 @@
             // 
             this.label80.AutoSize = true;
             this.label80.ForeColor = System.Drawing.Color.Black;
-            this.label80.Location = new System.Drawing.Point(299, 50);
+            this.label80.Location = new System.Drawing.Point(299, 53);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(52, 13);
+            this.label80.Size = new System.Drawing.Size(54, 16);
             this.label80.TabIndex = 43;
             this.label80.Text = "Segundos";
             // 
             // xuiFlatTab4
             // 
-            this.xuiFlatTab4.ActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))));
+            this.xuiFlatTab4.ActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
             this.xuiFlatTab4.ActiveTextColor = System.Drawing.Color.White;
             this.xuiFlatTab4.BorderColor = System.Drawing.Color.White;
             this.xuiFlatTab4.Controls.Add(this.tabPage14);
@@ -1914,6 +1949,7 @@
             this.xuiFlatTab4.Controls.Add(this.tabPage16);
             this.xuiFlatTab4.Controls.Add(this.tabPage17);
             this.xuiFlatTab4.Controls.Add(this.tabPage18);
+            this.xuiFlatTab4.Font = new System.Drawing.Font("Poor Richard", 9.75F);
             this.xuiFlatTab4.HeaderBackgroundColor = System.Drawing.Color.White;
             this.xuiFlatTab4.InActiveHeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.xuiFlatTab4.InActiveTextColor = System.Drawing.Color.Black;
@@ -1941,24 +1977,24 @@
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label81.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label81.ForeColor = System.Drawing.Color.Black;
             this.label81.Location = new System.Drawing.Point(2, 6);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(64, 15);
+            this.label81.Size = new System.Drawing.Size(69, 18);
             this.label81.TabIndex = 4;
             this.label81.Text = "Contenido";
             // 
             // sms1txt
             // 
-            this.sms1txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
+            this.sms1txt.BackColor = System.Drawing.Color.White;
             this.sms1txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sms1txt.BulletIndent = 5;
-            this.sms1txt.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sms1txt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.sms1txt.ForeColor = System.Drawing.Color.Black;
-            this.sms1txt.Location = new System.Drawing.Point(6, 24);
+            this.sms1txt.Location = new System.Drawing.Point(6, 29);
             this.sms1txt.Name = "sms1txt";
-            this.sms1txt.Size = new System.Drawing.Size(459, 438);
+            this.sms1txt.Size = new System.Drawing.Size(459, 433);
             this.sms1txt.TabIndex = 0;
             this.sms1txt.Text = "";
             // 
@@ -1977,25 +2013,25 @@
             // label82
             // 
             this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label82.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label82.ForeColor = System.Drawing.Color.Black;
             this.label82.Location = new System.Drawing.Point(2, 6);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(64, 15);
+            this.label82.Size = new System.Drawing.Size(69, 18);
             this.label82.TabIndex = 6;
             this.label82.Text = "Contenido";
             // 
             // sms2txt
             // 
             this.sms2txt.AcceptsTab = true;
-            this.sms2txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
+            this.sms2txt.BackColor = System.Drawing.Color.White;
             this.sms2txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sms2txt.BulletIndent = 5;
-            this.sms2txt.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sms2txt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.sms2txt.ForeColor = System.Drawing.Color.Black;
-            this.sms2txt.Location = new System.Drawing.Point(6, 24);
+            this.sms2txt.Location = new System.Drawing.Point(6, 29);
             this.sms2txt.Name = "sms2txt";
-            this.sms2txt.Size = new System.Drawing.Size(459, 438);
+            this.sms2txt.Size = new System.Drawing.Size(459, 433);
             this.sms2txt.TabIndex = 5;
             this.sms2txt.Text = "";
             // 
@@ -2013,24 +2049,24 @@
             // label83
             // 
             this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label83.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label83.ForeColor = System.Drawing.Color.Black;
             this.label83.Location = new System.Drawing.Point(2, 6);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(64, 15);
+            this.label83.Size = new System.Drawing.Size(69, 18);
             this.label83.TabIndex = 6;
             this.label83.Text = "Contenido";
             // 
             // sms3txt
             // 
-            this.sms3txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
+            this.sms3txt.BackColor = System.Drawing.Color.White;
             this.sms3txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sms3txt.BulletIndent = 5;
-            this.sms3txt.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sms3txt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.sms3txt.ForeColor = System.Drawing.Color.Black;
-            this.sms3txt.Location = new System.Drawing.Point(6, 24);
+            this.sms3txt.Location = new System.Drawing.Point(6, 29);
             this.sms3txt.Name = "sms3txt";
-            this.sms3txt.Size = new System.Drawing.Size(459, 438);
+            this.sms3txt.Size = new System.Drawing.Size(459, 433);
             this.sms3txt.TabIndex = 5;
             this.sms3txt.Text = "";
             // 
@@ -2048,24 +2084,24 @@
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label84.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label84.ForeColor = System.Drawing.Color.Black;
             this.label84.Location = new System.Drawing.Point(2, 6);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(64, 15);
+            this.label84.Size = new System.Drawing.Size(69, 18);
             this.label84.TabIndex = 8;
             this.label84.Text = "Contenido";
             // 
             // sms4txt
             // 
-            this.sms4txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
+            this.sms4txt.BackColor = System.Drawing.Color.White;
             this.sms4txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sms4txt.BulletIndent = 5;
-            this.sms4txt.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sms4txt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.sms4txt.ForeColor = System.Drawing.Color.Black;
-            this.sms4txt.Location = new System.Drawing.Point(6, 24);
+            this.sms4txt.Location = new System.Drawing.Point(6, 29);
             this.sms4txt.Name = "sms4txt";
-            this.sms4txt.Size = new System.Drawing.Size(459, 438);
+            this.sms4txt.Size = new System.Drawing.Size(459, 433);
             this.sms4txt.TabIndex = 7;
             this.sms4txt.Text = "";
             // 
@@ -2083,31 +2119,31 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Corbel", 9.75F);
+            this.label85.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label85.ForeColor = System.Drawing.Color.Black;
             this.label85.Location = new System.Drawing.Point(2, 6);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(64, 15);
+            this.label85.Size = new System.Drawing.Size(69, 18);
             this.label85.TabIndex = 8;
             this.label85.Text = "Contenido";
             // 
             // sms5txt
             // 
-            this.sms5txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
+            this.sms5txt.BackColor = System.Drawing.Color.White;
             this.sms5txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sms5txt.BulletIndent = 5;
-            this.sms5txt.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sms5txt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.sms5txt.ForeColor = System.Drawing.Color.Black;
-            this.sms5txt.Location = new System.Drawing.Point(6, 24);
+            this.sms5txt.Location = new System.Drawing.Point(6, 29);
             this.sms5txt.Name = "sms5txt";
-            this.sms5txt.Size = new System.Drawing.Size(459, 438);
+            this.sms5txt.Size = new System.Drawing.Size(459, 433);
             this.sms5txt.TabIndex = 7;
             this.sms5txt.Text = "";
             // 
             // eachmessagetiming2txt
             // 
             this.eachmessagetiming2txt.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eachmessagetiming2txt.Location = new System.Drawing.Point(246, 45);
+            this.eachmessagetiming2txt.Location = new System.Drawing.Point(246, 49);
             this.eachmessagetiming2txt.Name = "eachmessagetiming2txt";
             this.eachmessagetiming2txt.Size = new System.Drawing.Size(44, 23);
             this.eachmessagetiming2txt.TabIndex = 42;
@@ -2120,7 +2156,7 @@
             this.preventblock2cb.ForeColor = System.Drawing.Color.Black;
             this.preventblock2cb.Location = new System.Drawing.Point(17, 73);
             this.preventblock2cb.Name = "preventblock2cb";
-            this.preventblock2cb.Size = new System.Drawing.Size(139, 17);
+            this.preventblock2cb.Size = new System.Drawing.Size(148, 20);
             this.preventblock2cb.TabIndex = 39;
             this.preventblock2cb.Text = "Evitar bloqueo de cuenta";
             this.preventblock2cb.UseVisualStyleBackColor = false;
@@ -2132,7 +2168,7 @@
             this.eachmessagetiming2cb.ForeColor = System.Drawing.Color.Black;
             this.eachmessagetiming2cb.Location = new System.Drawing.Point(17, 49);
             this.eachmessagetiming2cb.Name = "eachmessagetiming2cb";
-            this.eachmessagetiming2cb.Size = new System.Drawing.Size(156, 17);
+            this.eachmessagetiming2cb.Size = new System.Drawing.Size(169, 20);
             this.eachmessagetiming2cb.TabIndex = 37;
             this.eachmessagetiming2cb.Text = "Hacer pausa entre cada envio";
             this.eachmessagetiming2cb.UseVisualStyleBackColor = false;
@@ -2149,7 +2185,7 @@
             this.apppanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.apppanel.Location = new System.Drawing.Point(0, 0);
             this.apppanel.Name = "apppanel";
-            this.apppanel.Size = new System.Drawing.Size(1024, 642);
+            this.apppanel.Size = new System.Drawing.Size(1083, 678);
             this.apppanel.TabIndex = 18;
             // 
             // colorpanel
@@ -2160,7 +2196,7 @@
             this.colorpanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.colorpanel.Location = new System.Drawing.Point(0, 0);
             this.colorpanel.Name = "colorpanel";
-            this.colorpanel.Size = new System.Drawing.Size(64, 642);
+            this.colorpanel.Size = new System.Drawing.Size(64, 678);
             this.colorpanel.TabIndex = 42;
             // 
             // selectsmsbtn
@@ -2254,16 +2290,16 @@
             this.toolStripMenuItem4.Text = "2 Hora";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
-            // copyrowcms
+            // copycms
             // 
-            this.copyrowcms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copycms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copiarToolStripMenuItem,
             this.pegarToolStripMenuItem,
             this.eliminarDuplicadosToolStripMenuItem,
             this.eliminarFilasVaciasToolStripMenuItem,
             this.limpiarToolStripMenuItem});
-            this.copyrowcms.Name = "copyrowcms";
-            this.copyrowcms.Size = new System.Drawing.Size(180, 114);
+            this.copycms.Name = "copyrowcms";
+            this.copycms.Size = new System.Drawing.Size(180, 114);
             // 
             // copiarToolStripMenuItem
             // 
@@ -2300,11 +2336,57 @@
             this.limpiarToolStripMenuItem.Text = "Limpiar";
             this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
             // 
+            // copy2cms
+            // 
+            this.copy2cms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem9});
+            this.copy2cms.Name = "copyrowcms";
+            this.copy2cms.Size = new System.Drawing.Size(180, 114);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "Copiar";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Text = "Pegar";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Text = "Eliminar Duplicados";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Text = "Eliminar Filas Vacias";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem9.Text = "Limpiar";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
+            // 
             // WAButtfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 642);
+            this.ClientSize = new System.Drawing.Size(1083, 678);
             this.Controls.Add(this.apppanel);
             this.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2363,7 +2445,8 @@
             this.colorpanel.ResumeLayout(false);
             this.cmsgmail2.ResumeLayout(false);
             this.cmspause2.ResumeLayout(false);
-            this.copyrowcms.ResumeLayout(false);
+            this.copycms.ResumeLayout(false);
+            this.copy2cms.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2532,12 +2615,18 @@
         private System.Windows.Forms.TextBox eachmessagetimingtxt;
         private System.Windows.Forms.Button selectgmbtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ContextMenuStrip copyrowcms;
+        private System.Windows.Forms.ContextMenuStrip copycms;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarDuplicadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarFilasVaciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem limpiarToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip copy2cms;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
     }
 }
 

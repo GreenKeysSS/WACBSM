@@ -43,7 +43,7 @@ namespace Presentation
 
             if (tosearchtxt.Text!="")
             {
-                if (!wabutt.wa.IsBrowserClosed(driver))
+                if (!wabutt.wa.IsBrowserClosed())
                 {
 
                     await wabutt.GetContactsFromGroup(tosearchtxt.Text);
@@ -123,7 +123,7 @@ namespace Presentation
                 wabutt.maintab.SelectedTab = wabutt.maintab.TabPages[0];
                 
                 this.Close();
-                wabutt.ClearEmptyRows();
+                wabutt.ClearEmptyRows(wabutt.contactsdgv);
             }
             catch (Exception ex)
             {

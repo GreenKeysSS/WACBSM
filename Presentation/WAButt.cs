@@ -2252,7 +2252,7 @@ namespace Presentation
 
                 //condicionales y token de cancellation
 
-                ClearEmptyRows();
+                ClearEmptyRows(contactsdgv);
 
 
                 string actualnumber = "";
@@ -2294,7 +2294,7 @@ namespace Presentation
 
 
 
-                    if (wa.IsBrowserClosed(WA.driver) == false)
+                    if (wa.IsBrowserClosed() == false)
                     {
                         if (wa.IfConnected(By.XPath("//header/div[2]/div[1]/span[1]/div[2]/div[1]/span[1]")) == false)
                         {
@@ -3251,7 +3251,7 @@ namespace Presentation
 
 
 
-                        if (wa.IsBrowserClosed(WA.driver2) == false)
+                        if (wa.IsBrowserClosed2() == false)
                         {
                             if (!wa.IfConnected2(By.XPath("//div[contains(text(),'Iniciar chat')]")))
                             {
@@ -5380,7 +5380,16 @@ namespace Presentation
             pauseToken2 = new CancellationTokenSource();
             eachmessagetoken2 = new CancellationTokenSource();
             severalpausetoken2 = new CancellationTokenSource();
-            await Excecutesendtask2();
+            try
+            {
+                await Excecutesendtask2();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.TargetSite);
+            }
+            
 
 
 
@@ -5552,17 +5561,17 @@ namespace Presentation
             }
         }
 
-        public void ClearEmptyRows()
+        public void ClearEmptyRows(DataGridView dgv)
         {
 
 
 
-            for (int i = contactsdgv.Rows.Count - 1; i > -1; i--)
+            for (int i = dgv.Rows.Count - 1; i > -1; i--)
             {
-                DataGridViewRow row = contactsdgv.Rows[i];
+                DataGridViewRow row = dgv.Rows[i];
                 if (!row.IsNewRow && Convert.ToString(row.Cells[0].Value) == "")
                 {
-                    contactsdgv.Rows.RemoveAt(i);
+                    dgv.Rows.RemoveAt(i);
                 }
             }
 
@@ -5574,7 +5583,7 @@ namespace Presentation
 
         private void clearemptyrowsbtn_Click(object sender, EventArgs e)
         {
-            ClearEmptyRows();
+            ClearEmptyRows(contactsdgv);
         }
 
         private void deleteduplicatedbtn_Click(object sender, EventArgs e)
@@ -5628,7 +5637,52 @@ namespace Presentation
             column2.Width = 100;
             column2.ReadOnly = true;
         }
+        private void DeleteDuplicate2()
+        {
+            DataTable items = new DataTable();
 
+            items.Columns.Add("Numero o Grupo", typeof(string));
+            items.Columns.Add("Nombre", typeof(string));
+            items.Columns.Add("Enviado(S/N)", typeof(string));
+
+            for (int i = 0; i < contacts2dgv.Rows.Count; i++)
+            {
+                DataRow rw = items.NewRow();
+                rw[0] = Convert.ToString(contacts2dgv.Rows[i].Cells[0].Value);
+                rw[1] = Convert.ToString(contacts2dgv.Rows[i].Cells[1].Value);
+                rw[2] = Convert.ToString(contacts2dgv.Rows[i].Cells[2].Value);
+                if (!items.Rows.Cast<DataRow>().Any(row => row["Numero o Grupo"].Equals(rw["Numero o Grupo"])))
+                    items.Rows.Add(rw);
+            }
+
+
+
+            contacts2dgv.Rows.Clear();
+
+
+            foreach (DataRow item in items.Rows)
+            {
+                contacts2dgv.Rows.Add(Convert.ToString(item[0]), Convert.ToString(item[1]), Convert.ToString(item[2]));
+            }
+
+
+
+
+            DataGridViewColumn column = contacts2dgv.Columns[0];
+            column.Width = 200;
+
+
+
+            DataGridViewColumn column1 = contacts2dgv.Columns[1];
+            column1.Width = 350;
+
+
+
+
+            DataGridViewColumn column2 = contacts2dgv.Columns[2];
+            column2.Width = 100;
+            column2.ReadOnly = true;
+        }
         private void dgvwacopymodecms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -5647,7 +5701,7 @@ namespace Presentation
                 int currentMouseOverRow = contactsdgv.HitTest(e.X, e.Y).RowIndex;
 
 
-                copyrowcms.Show(contactsdgv, new Point(e.X, e.Y));
+                copycms.Show(contactsdgv, new Point(e.X, e.Y));
 
             }
         }
@@ -5733,7 +5787,7 @@ namespace Presentation
 
         private void eliminarFilasVaciasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearEmptyRows();
+            ClearEmptyRows(contactsdgv);
         }
 
         private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5802,6 +5856,103 @@ namespace Presentation
         {
             contactsdgv.Rows.Clear();
             contactsdgv.Refresh();
+        }
+
+        private void contacts2dgv_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+
+                int currentMouseOverRow = contacts2dgv.HitTest(e.X, e.Y).RowIndex;
+
+
+                copy2cms.Show(contacts2dgv, new Point(e.X, e.Y));
+
+            }
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^C");
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string s = Clipboard.GetText();
+
+                string[] lines = s.Replace("\n", "").Split('\r');
+
+                string[] fields;
+                int row = contacts2dgv.CurrentCell.RowIndex;
+                int col = 0;
+                int sum = row + lines.Length;
+                int totalrows = contacts2dgv.Rows.Cast<DataGridViewRow>().Where(rown => !(rown.Cells[0].Value == null && rown.Cells[1].Value == null)).Count();
+
+                Console.WriteLine(lines.Length);
+                Console.WriteLine(row + 2);
+                Console.WriteLine(totalrows);
+
+
+                for (int i = 0; i < sum - totalrows; i++)
+                {
+                    contacts2dgv.Rows.Add();
+                }
+
+
+
+                foreach (string item in lines)
+                {
+
+                    fields = item.Split('\t');
+                    foreach (string f in fields)
+                    {
+
+
+
+                        contacts2dgv[col, row].Value = f;
+
+
+
+                        col++;
+
+
+
+                    }
+
+                    row++;
+
+                    col = 0;
+                }
+
+                foreach (DataGridViewRow item in contacts2dgv.Rows)
+                {
+                    item.Cells[2].Value = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Observación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            DeleteDuplicate2();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            ClearEmptyRows(contacts2dgv);
+
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            contacts2dgv.Rows.Clear();
+            contacts2dgv.Refresh();
         }
     }
     
