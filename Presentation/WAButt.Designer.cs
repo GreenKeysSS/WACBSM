@@ -30,14 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle185 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle186 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle187 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle188 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle189 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle190 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle191 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle192 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -657,44 +653,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contactsdgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.contactsdgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle185.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle185.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle185.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle185.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle185.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle185.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle185.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle185;
             this.contactsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contactsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numbercol,
             this.namecol,
             this.statecol});
-            dataGridViewCellStyle186.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle186.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle186.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle186.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle186.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle186.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle186.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.contactsdgv.DefaultCellStyle = dataGridViewCellStyle186;
             this.contactsdgv.GridColor = System.Drawing.Color.Black;
             this.contactsdgv.Location = new System.Drawing.Point(0, 0);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle187.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle187.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle187.Font = new System.Drawing.Font("Poor Richard", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle187.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle187.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle187.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle187.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle187;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poor Richard", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.contactsdgv.RowHeadersVisible = false;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle188.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle188;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 514);
             this.contactsdgv.TabIndex = 1;
@@ -1571,44 +1551,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contacts2dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.contacts2dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle189.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle189.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle189.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle189.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle189.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle189.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle189.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle189;
             this.contacts2dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contacts2dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            dataGridViewCellStyle190.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle190.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle190.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle190.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle190.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle190.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle190.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.contacts2dgv.DefaultCellStyle = dataGridViewCellStyle190;
             this.contacts2dgv.GridColor = System.Drawing.Color.Black;
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle191.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle191.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle191.Font = new System.Drawing.Font("Poor Richard", 9.75F);
-            dataGridViewCellStyle191.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle191.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle191.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle191.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle191;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poor Richard", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.contacts2dgv.RowHeadersVisible = false;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle192.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle192;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -1979,7 +1943,7 @@
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label81.ForeColor = System.Drawing.Color.Black;
-            this.label81.Location = new System.Drawing.Point(2, 6);
+            this.label81.Location = new System.Drawing.Point(3, 6);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(69, 18);
             this.label81.TabIndex = 4;
@@ -2015,7 +1979,7 @@
             this.label82.AutoSize = true;
             this.label82.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label82.ForeColor = System.Drawing.Color.Black;
-            this.label82.Location = new System.Drawing.Point(2, 6);
+            this.label82.Location = new System.Drawing.Point(3, 6);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(69, 18);
             this.label82.TabIndex = 6;
@@ -2051,7 +2015,7 @@
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label83.ForeColor = System.Drawing.Color.Black;
-            this.label83.Location = new System.Drawing.Point(2, 6);
+            this.label83.Location = new System.Drawing.Point(3, 6);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(69, 18);
             this.label83.TabIndex = 6;
@@ -2086,7 +2050,7 @@
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label84.ForeColor = System.Drawing.Color.Black;
-            this.label84.Location = new System.Drawing.Point(2, 6);
+            this.label84.Location = new System.Drawing.Point(3, 6);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(69, 18);
             this.label84.TabIndex = 8;
@@ -2121,7 +2085,7 @@
             this.label85.AutoSize = true;
             this.label85.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Italic);
             this.label85.ForeColor = System.Drawing.Color.Black;
-            this.label85.Location = new System.Drawing.Point(2, 6);
+            this.label85.Location = new System.Drawing.Point(3, 6);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(69, 18);
             this.label85.TabIndex = 8;
@@ -2350,35 +2314,35 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem5.Text = "Copiar";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem6.Text = "Pegar";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem7.Text = "Eliminar Duplicados";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem8.Text = "Eliminar Filas Vacias";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(179, 22);
             this.toolStripMenuItem9.Text = "Limpiar";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 

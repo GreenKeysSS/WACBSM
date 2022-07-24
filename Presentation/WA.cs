@@ -78,7 +78,7 @@ namespace Presentation
                     service.HideCommandPromptWindow = true;
                     ChromeOptions options = new ChromeOptions();
 
-                    options.AddArguments("user-data-dir=" + userProfile);
+                    options.AddArguments("user-data-dir=" + userProfil<e);
                     options.AddArguments("--window-size=850,650");
                     		
 
