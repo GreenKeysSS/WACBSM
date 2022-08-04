@@ -1187,20 +1187,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sonic\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sonic\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\WACBSM\\Presentation\\Presentation.csproj",
       "projectName": "Presentation",
-      "projectPath": "C:\\Users\\sonic\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\Presentation.csproj",
-      "packagesPath": "C:\\Users\\sonic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sonic\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Presentation\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\WACBSM\\Presentation\\Presentation.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\WACBSM\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\sonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1213,8 +1213,8 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Users\\sonic\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\sonic\\Desktop\\GITHUBTRASHCAN\\WACBSM\\Domain\\Domain.csproj"
+            "C:\\Users\\USER\\Documents\\GitHub\\WACBSM\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\WACBSM\\Domain\\Domain.csproj"
             }
           }
         }

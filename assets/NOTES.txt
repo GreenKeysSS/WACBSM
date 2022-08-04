@@ -1,0 +1,100 @@
+FILE PREVIEW WHATSAPP
+IMAGESSSSSSSSSSSSSSS
+SVG
+PNG
+JPG
+JPEG
+ICO
+GIF
+JFIF
+WEBP
+PJPEG
+AVIF
+
+VIDEOSSSSSSSSSSSSSSS
+M4V
+MOV
+MP4
+
+
+/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]
+
+
+
+
+ if (manymessagescb.Checked == true && activatemanymessages == true)
+                                    {
+                                        countmessage++;
+
+
+
+
+                                        if (countmessage == 5)
+                                        {
+                                            countmessage = 0;
+
+                                            actualmessagetosend = actualmessagetosend + messages[0];
+
+
+                                            if (sendfullnamecb.Checked == true)
+                                            {
+
+                                                if (actualname == "nombre vacio")
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
+                                                }
+
+                                                else
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
+                                                }
+
+                                            }
+                                            if (senddatetimecb.Checked)
+                                            {
+                                                DateTime actualdate = getTimeNow();
+
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
+
+                                            }
+
+
+
+
+                                            activatemanymessages = false;
+
+
+
+                                        }
+                                        else
+                                        {
+
+
+                                            actualmessagetosend = actualmessagetosend + messages[countmessage];
+
+                                            if (sendfullnamecb.Checked == true)
+                                            {
+
+                                                if (actualname == "nombre vacio")
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
+                                                }
+
+                                                else
+                                                {
+                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
+                                                }
+
+                                            }
+                                            if (senddatetimecb.Checked)
+                                            {
+                                                DateTime actualdate = getTimeNow();
+
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
+
+                                            }
+
+
+                                        }
+
+                                    }

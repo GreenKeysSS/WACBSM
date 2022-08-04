@@ -2316,23 +2316,11 @@ namespace Presentation
                             uploadbtn.Enabled = false;
                             clearfilenamebtn.Enabled = false;
                             connectwabtn.Enabled = false;
-                            int countmessage = 0;
                             loadmessagelbl.Text = "Estado: Conectado . . .";
-                            bool activatemanymessages = false;
                             contactsdgv.AllowUserToAddRows = false;
                             contactsdgv.AllowUserToDeleteRows = false;
-                            if (manymessagescb.Checked == true)
-                            {
-                                if (m2txt.Text == "" || m3txt.Text == "" || m4txt.Text == "" || m5txt.Text == "")
-                                {
-                                    manymessagescb.Checked = false;
-                                    MessageBox.Show("No llenó todos los espacios de mensajes, no se usará la opción <Enviar varios textos en un solo envío>", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-                                }
-                            }
-
+                            
+                            
 
 
                             foreach (DataGridViewRow fila in contactsdgv.Rows)
@@ -2405,81 +2393,41 @@ namespace Presentation
 
 
 
-                                    if (manymessagescb.Checked == true && activatemanymessages == true)
+                                    if (manymessagescb.Checked)
                                     {
-                                        countmessage++;
 
+                                        Random rnd = new Random();
 
+                                        List<int> lst = new List<int>();
+                                        lst = NotEmptyMessages();
 
+                                        int r = rnd.Next(lst.Count);
 
-                                        if (countmessage == 5)
-                                        {
-                                            countmessage = 0;
+                                       // Console.WriteLine(lst[r]+"this is the index of the message selected to send on manymessages option enabled");
 
-                                            actualmessagetosend = actualmessagetosend + messages[0];
+                                        actualmessagetosend = actualmessagetosend + messages[lst[r]];
 
-
-                                            if (sendfullnamecb.Checked == true)
-                                            {
-
-                                                if (actualname == "nombre vacio")
-                                                {
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
-                                                }
-
-                                                else
-                                                {
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
-                                                }
-
-                                            }
-                                            if (senddatetimecb.Checked)
-                                            {
-                                                DateTime actualdate = getTimeNow();
-
-                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
-
-                                            }
-
-
-
-
-                                            activatemanymessages = false;
-
-
-
-                                        }
-                                        else
+                                        if (sendfullnamecb.Checked == true)
                                         {
 
-
-                                            actualmessagetosend = actualmessagetosend + messages[countmessage];
-
-                                            if (sendfullnamecb.Checked == true)
+                                            if (actualname == "nombre vacio")
                                             {
-
-                                                if (actualname == "nombre vacio")
-                                                {
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
-                                                }
-
-                                                else
-                                                {
-                                                    actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
-                                                }
-
-                                            }
-                                            if (senddatetimecb.Checked)
-                                            {
-                                                DateTime actualdate = getTimeNow();
-
-                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
-
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", "");
                                             }
 
+                                            else
+                                            {
+                                                actualmessagetosend = Regex.Replace(actualmessagetosend, "{nombre}", actualname);
+                                            }
 
                                         }
+                                        if (senddatetimecb.Checked)
+                                        {
+                                            DateTime actualdate = getTimeNow();
 
+                                            actualmessagetosend = Regex.Replace(actualmessagetosend, "{fecha}", Convert.ToString(actualdate.ToString("dddd, dd MMMM yyyy HH:mm")));
+
+                                        }
                                     }
                                     else
                                     {
@@ -2989,14 +2937,12 @@ namespace Presentation
 
                                                             Actions action = new Actions(WA.driver);
 
-
-
+                                                            //  Console.WriteLine(Ascii);
+                                                            
+                                                            action.SendKeys("aaaa").Build().Perform();
                                                             wa.ContactMessage(actualmessagetosend);
-
-
-                                                            action.SendKeys("A").Build().Perform();
-                                                            action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
-
+                                                            //action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
+                                                            
 
 
                                                             Console.WriteLine("solo Mensaje escrito");
@@ -3084,7 +3030,6 @@ namespace Presentation
                                     sendpbr.Value = count;
                                 }
 
-                                activatemanymessages = true;
 
 
                                 if (severalpausetxt.Text != "")
@@ -3834,7 +3779,9 @@ namespace Presentation
 
 
         }
+        
 
+        
         private void Restoremessages()
         {
 
@@ -4197,8 +4144,42 @@ namespace Presentation
             */
 
         }
+        private string DecodeEncodedNonAsciiCharacters(string value)
+        {
+            return Regex.Replace(
+                value,
+                @"\\u(?<Value>[a-zA-Z0-9]{4})",
+                m => {
+                    return ((char)int.Parse(m.Groups["Value"].Value, NumberStyles.HexNumber)).ToString();
+                });
+        }
+        private List<int> NotEmptyMessages()
+        {
+            List<int> lst = new List<int>();
 
+            if (!string.IsNullOrWhiteSpace(Convert.ToString(m1txt.Text)) )
+            {
+                lst.Add(0);
+            }
+            if (!string.IsNullOrWhiteSpace(Convert.ToString(m2txt.Text)))
+            {
+                lst.Add(1);
+            }
+            if (!string.IsNullOrWhiteSpace(Convert.ToString(m3txt.Text)))
+            {
+                lst.Add(2);
+            }
+            if (!string.IsNullOrWhiteSpace(Convert.ToString(m4txt.Text)))
+            {
+                lst.Add(3);
+            }
+            if (!string.IsNullOrWhiteSpace(Convert.ToString(m5txt.Text)))
+            {
+                lst.Add(4);
+            }
 
+            return lst;
+        }
         private void gmailbtn_Click(object sender, EventArgs e)
         {
             cmsgmail.Show(Cursor.Position.X, Cursor.Position.Y);
@@ -4779,18 +4760,6 @@ namespace Presentation
         private void manymessagescb_Click(object sender, EventArgs e)
         {
 
-            if (manymessagescb.Checked == true)
-            {
-                if (m2txt.Text == "" || m3txt.Text == "" || m4txt.Text == "" || m5txt.Text == "")
-                {
-                    MessageBox.Show("Debe llenar todos los espacios para mensajes! para usar esta opcion", "Observación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    manymessagescb.Checked = false;
-
-
-                }
-
-            }
-
         }
         private static DateTime getTimeNow()
         {
@@ -4917,6 +4886,7 @@ namespace Presentation
 
 
         }
+        
         public static DataTable ReadCSV3(string path)
         {
             DataTable dt = new DataTable();
@@ -5068,8 +5038,8 @@ namespace Presentation
                 extractlbl.Visible = true;
 
 
-                severalpauselbl.Location = new Point(720, 60);
-                severalpausetxt.Location = new Point(755, 22);
+                severalpauselbl.Location = new Point(765, 62); 
+                severalpausetxt.Location = new Point(803, 20);
 
 
 
@@ -5078,8 +5048,8 @@ namespace Presentation
             {
                 extractgroupnumbersbtn.Visible = false; extractlbl.Visible = false;
 
-                severalpauselbl.Location = new Point(605, 60);
-                severalpausetxt.Location = new Point(640, 22);
+                severalpauselbl.Location = new Point(641,62);
+                severalpausetxt.Location = new Point(676, 22);
             }
 
 
@@ -5882,7 +5852,7 @@ namespace Presentation
             {
 
                 string s = Clipboard.GetText();
-
+                
                 string[] lines = s.Replace("\n", "").Split('\r');
 
                 string[] fields;
