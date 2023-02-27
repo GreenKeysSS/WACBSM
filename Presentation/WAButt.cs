@@ -2939,7 +2939,8 @@ namespace Presentation
 
                                                             //  Console.WriteLine(Ascii);
                                                             
-                                                            action.SendKeys("aaaa").Build().Perform();
+                                                            action.SendKeys("a").Build().Perform();
+                                                            Task.Delay(2000);
                                                             wa.ContactMessage(actualmessagetosend);
                                                             //action.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace).Build().Perform();
                                                             

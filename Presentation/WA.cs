@@ -49,7 +49,7 @@ namespace Presentation
         public static string ContactSearchIconPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1]/div[2]/span[1]";
         public static string DocumentAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[4]/button[1]/input[1]";
         public static string ImageAttachFilePath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/input[1]";
-        public static string MessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]/span[1]";
+        public static string MessageBoxPath = "//body/div[@id='app']/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]/span[1]";
         public static string ImageMessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]";
         public static string VideoMessageBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]";
         public static string ContactOrChatBoxPath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]";
@@ -425,18 +425,21 @@ namespace Presentation
 
             try
             {
-
                 
+
                 if (FindElement(driver,By.XPath(MessageBoxPath),20))
                 {
                     IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
                 
                     string _script2 = "document.evaluate" +
-                    "('/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/footer[1]/div[1]/div[1]/span[2]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]/span[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+                    "('"+MessageBoxPath+"', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerHTML='" + totype + "'";
+
+
+                
+                    string title = (string)js.ExecuteScript(_script2);
+
                    
                     
-
-                    string title = (string)js.ExecuteScript(_script2);
                 }
                 
 

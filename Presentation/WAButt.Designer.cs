@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WAButtfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle137 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle138 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle139 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle140 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pastedatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.exportdatatlp = new System.Windows.Forms.ToolTip(this.components);
             this.importdatatlp = new System.Windows.Forms.ToolTip(this.components);
@@ -52,7 +52,6 @@
             this.horaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.apptab = new System.Windows.Forms.TabControl();
             this.wabottab = new System.Windows.Forms.TabPage();
-            this.selectgmbtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.extractlbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@
             this.namecol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statecol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.messagewatab = new System.Windows.Forms.TabPage();
+            this.selectgmbtn = new System.Windows.Forms.Button();
             this.clearemptyrowsbtn = new System.Windows.Forms.Button();
             this.manymessagescb = new System.Windows.Forms.CheckBox();
             this.sendpbr = new System.Windows.Forms.ProgressBar();
@@ -81,15 +81,15 @@
             this.pausebtn = new System.Windows.Forms.Button();
             this.startbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.totalmessageslbl = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.sendedmessagelbl = new System.Windows.Forms.Label();
-            this.notsendedmessagelbl = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.sendedmessagelbl = new System.Windows.Forms.Label();
+            this.notsendedmessagelbl = new System.Windows.Forms.Label();
+            this.totalmessageslbl = new System.Windows.Forms.Label();
             this.senddatetimecb = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.sendfullnamecb = new System.Windows.Forms.CheckBox();
@@ -209,6 +209,7 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.qqqqtxt = new System.Windows.Forms.TextBox();
             this.cmsupload.SuspendLayout();
             this.cmsgmail.SuspendLayout();
             this.cmspause.SuspendLayout();
@@ -374,23 +375,6 @@
             this.wabottab.Size = new System.Drawing.Size(962, 644);
             this.wabottab.TabIndex = 1;
             this.wabottab.Text = " wabottab";
-            // 
-            // selectgmbtn
-            // 
-            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
-            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
-            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
-            this.selectgmbtn.Location = new System.Drawing.Point(386, 227);
-            this.selectgmbtn.Name = "selectgmbtn";
-            this.selectgmbtn.Size = new System.Drawing.Size(39, 73);
-            this.selectgmbtn.TabIndex = 43;
-            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
-            this.selectgmbtn.UseVisualStyleBackColor = false;
-            this.selectgmbtn.Visible = false;
-            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
             // 
             // label12
             // 
@@ -661,19 +645,19 @@
             this.contactsdgv.Location = new System.Drawing.Point(0, 0);
             this.contactsdgv.Name = "contactsdgv";
             this.contactsdgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle137.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle137.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle137.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle137.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle137.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle137.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle137.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle137;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactsdgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.contactsdgv.RowHeadersVisible = false;
             this.contactsdgv.RowHeadersWidth = 40;
             this.contactsdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle138;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contactsdgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.contactsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsdgv.Size = new System.Drawing.Size(919, 514);
             this.contactsdgv.TabIndex = 1;
@@ -706,6 +690,7 @@
             // messagewatab
             // 
             this.messagewatab.BackColor = System.Drawing.Color.White;
+            this.messagewatab.Controls.Add(this.qqqqtxt);
             this.messagewatab.Controls.Add(this.selectgmbtn);
             this.messagewatab.Controls.Add(this.clearemptyrowsbtn);
             this.messagewatab.Controls.Add(this.manymessagescb);
@@ -736,6 +721,23 @@
             this.messagewatab.Size = new System.Drawing.Size(919, 514);
             this.messagewatab.TabIndex = 1;
             this.messagewatab.Text = "Mensajes WhatsApp";
+            // 
+            // selectgmbtn
+            // 
+            this.selectgmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(90)))), ((int)(((byte)(78)))));
+            this.selectgmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.selectgmbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.selectgmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectgmbtn.Font = new System.Drawing.Font("Consolas", 12F);
+            this.selectgmbtn.ForeColor = System.Drawing.Color.White;
+            this.selectgmbtn.Location = new System.Drawing.Point(386, 227);
+            this.selectgmbtn.Name = "selectgmbtn";
+            this.selectgmbtn.Size = new System.Drawing.Size(39, 73);
+            this.selectgmbtn.TabIndex = 43;
+            this.selectgmbtn.Text = "G\r\n\r\nM\r\nA\r\nI\r\nL";
+            this.selectgmbtn.UseVisualStyleBackColor = false;
+            this.selectgmbtn.Visible = false;
+            this.selectgmbtn.Click += new System.EventHandler(this.selectsmsbtn_Click);
             // 
             // clearemptyrowsbtn
             // 
@@ -835,18 +837,6 @@
             this.panel1.Size = new System.Drawing.Size(380, 65);
             this.panel1.TabIndex = 28;
             // 
-            // totalmessageslbl
-            // 
-            this.totalmessageslbl.BackColor = System.Drawing.Color.Transparent;
-            this.totalmessageslbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalmessageslbl.ForeColor = System.Drawing.Color.Black;
-            this.totalmessageslbl.Location = new System.Drawing.Point(3, 19);
-            this.totalmessageslbl.Name = "totalmessageslbl";
-            this.totalmessageslbl.Size = new System.Drawing.Size(115, 37);
-            this.totalmessageslbl.TabIndex = 39;
-            this.totalmessageslbl.Text = "0";
-            this.totalmessageslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -865,30 +855,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(2, 75);
             this.panel7.TabIndex = 2;
-            // 
-            // sendedmessagelbl
-            // 
-            this.sendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
-            this.sendedmessagelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendedmessagelbl.ForeColor = System.Drawing.Color.Black;
-            this.sendedmessagelbl.Location = new System.Drawing.Point(255, 19);
-            this.sendedmessagelbl.Name = "sendedmessagelbl";
-            this.sendedmessagelbl.Size = new System.Drawing.Size(122, 37);
-            this.sendedmessagelbl.TabIndex = 37;
-            this.sendedmessagelbl.Text = "0";
-            this.sendedmessagelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // notsendedmessagelbl
-            // 
-            this.notsendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
-            this.notsendedmessagelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.Black;
-            this.notsendedmessagelbl.Location = new System.Drawing.Point(122, 19);
-            this.notsendedmessagelbl.Name = "notsendedmessagelbl";
-            this.notsendedmessagelbl.Size = new System.Drawing.Size(129, 37);
-            this.notsendedmessagelbl.TabIndex = 36;
-            this.notsendedmessagelbl.Text = "0";
-            this.notsendedmessagelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -927,6 +893,42 @@
             this.label13.Size = new System.Drawing.Size(82, 17);
             this.label13.TabIndex = 0;
             this.label13.Text = "No Enviados";
+            // 
+            // sendedmessagelbl
+            // 
+            this.sendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
+            this.sendedmessagelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendedmessagelbl.ForeColor = System.Drawing.Color.Black;
+            this.sendedmessagelbl.Location = new System.Drawing.Point(255, 19);
+            this.sendedmessagelbl.Name = "sendedmessagelbl";
+            this.sendedmessagelbl.Size = new System.Drawing.Size(122, 37);
+            this.sendedmessagelbl.TabIndex = 37;
+            this.sendedmessagelbl.Text = "0";
+            this.sendedmessagelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // notsendedmessagelbl
+            // 
+            this.notsendedmessagelbl.BackColor = System.Drawing.Color.Transparent;
+            this.notsendedmessagelbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notsendedmessagelbl.ForeColor = System.Drawing.Color.Black;
+            this.notsendedmessagelbl.Location = new System.Drawing.Point(122, 19);
+            this.notsendedmessagelbl.Name = "notsendedmessagelbl";
+            this.notsendedmessagelbl.Size = new System.Drawing.Size(129, 37);
+            this.notsendedmessagelbl.TabIndex = 36;
+            this.notsendedmessagelbl.Text = "0";
+            this.notsendedmessagelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // totalmessageslbl
+            // 
+            this.totalmessageslbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalmessageslbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalmessageslbl.ForeColor = System.Drawing.Color.Black;
+            this.totalmessageslbl.Location = new System.Drawing.Point(3, 19);
+            this.totalmessageslbl.Name = "totalmessageslbl";
+            this.totalmessageslbl.Size = new System.Drawing.Size(115, 37);
+            this.totalmessageslbl.TabIndex = 39;
+            this.totalmessageslbl.Text = "0";
+            this.totalmessageslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // senddatetimecb
             // 
@@ -1563,19 +1565,19 @@
             this.contacts2dgv.Location = new System.Drawing.Point(0, 0);
             this.contacts2dgv.Name = "contacts2dgv";
             this.contacts2dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle139.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle139.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle139.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle139.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle139.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle139.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle139.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle139;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contacts2dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.contacts2dgv.RowHeadersVisible = false;
             this.contacts2dgv.RowHeadersWidth = 40;
             this.contacts2dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle140.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle140;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.contacts2dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.contacts2dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contacts2dgv.Size = new System.Drawing.Size(919, 514);
             this.contacts2dgv.TabIndex = 5;
@@ -2349,6 +2351,13 @@
             this.toolStripMenuItem9.Text = "Limpiar";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
+            // qqqqtxt
+            // 
+            this.qqqqtxt.Location = new System.Drawing.Point(246, 94);
+            this.qqqqtxt.Name = "qqqqtxt";
+            this.qqqqtxt.Size = new System.Drawing.Size(100, 23);
+            this.qqqqtxt.TabIndex = 44;
+            // 
             // WAButtfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2594,6 +2603,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.TextBox qqqqtxt;
     }
 }
 
